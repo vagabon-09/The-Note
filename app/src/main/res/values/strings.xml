@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">My Notes</string>
+    <string name="app_name">MY NOTES</string>
     <string name="profile_name">Rajesh Bhadra</string>
     <string name="profile_email">rajeshbhadra62@gmail.com</string>
     <string name="drawer_home">Home</string>
@@ -11,6 +11,8 @@
     <string name="tag_one">Today</string>
     <string name="owner">By Think nXt Media</string>
     <string name="profile_edit_option">profile edit option</string>
+    <string name="open_drawer">Open Navigation Drawer</string>
+    <string name="close_drawer">Close Navigation Drawer</string>
 
 
 </resources>
