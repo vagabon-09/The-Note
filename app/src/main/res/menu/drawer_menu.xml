@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/drawer_menu_home_id"
+        android:icon="@drawable/home"
+        android:title="@string/drawer_home" />
+
+    <item
+        android:id="@+id/drawer_menu_trash_id"
+        android:icon="@drawable/trash"
+        android:title="@string/drawer_trash" />
+
+
+    <item
+        android:id="@+id/drawer_menu_setting_id"
+        android:icon="@drawable/setting"
+        android:title="@string/drawer_setting" />
+
+
+    <item
+        android:id="@+id/drawer_menu_more_id"
+        android:icon="@drawable/more_"
+        android:title="@string/drawer_more" />
+
+
+    <item
+        android:id="@+id/drawer_menu_logout_id"
+        android:icon="@drawable/log_out"
+        android:title="@string/drawer_logout" />
+
+
+    <item
+        android:id="@+id/drawer_menu_lock_id"
+        android:icon="@drawable/loc"
+        android:title="@string/drawer_lock" />
+
+
+</menu>
