@@ -12,6 +12,7 @@
         tools:ignore="UselessParent">
 
         <com.google.android.material.card.MaterialCardView
+            android:id="@+id/makeNoteBtnHome"
             android:layout_width="@dimen/_35sdp"
             android:layout_height="@dimen/_35sdp"
             android:layout_alignParentEnd="true"

@@ -18,12 +18,6 @@ public class Toolbar {
 
     }
 
-    public void setItemClickable(int FragmentId, Fragment fragment, FragmentManager fm) {
-
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(FragmentId,fragment);
-        ft.commit();
-    }
 
 
 }
