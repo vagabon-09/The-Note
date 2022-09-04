@@ -1,5 +1,6 @@
 package com.thinknxtmedia.mynotes;
 
+
 import android.os.Bundle;
 import android.view.WindowManager;
 
@@ -28,11 +29,11 @@ public class Home extends AppCompatActivity {
         //Creating object of toolbar
         tBar = new com.thinknxtmedia.mynotes.Navigation.Toolbar();
         toggleDrawer = new ToggleDrawer();
-        //Finding view
+        /* Finding view */
         getView();
-        //Replacing FrameLayout with fragment
+        /* Replacing FrameLayout with fragment */
         replaceFragment();
-        //Supporting toolbar
+        /* Supporting toolbar*/
         setToolbar();
 
     }
@@ -50,10 +51,11 @@ public class Home extends AppCompatActivity {
     private void setToolbar() {
         /* Crating toggle drawer using custom toolbar */
         setSupportActionBar(toolbar);
+        toolbar.post(() -> toolbar.setNavigationIcon(R.drawable.hamburger_32));
         tBar.ActionToolBar(this, bind.drawerId, toolbar);
         /* Replacing Fragment on clicking drawer button */
         FragmentManager fm = getSupportFragmentManager();
-        toggleDrawer.setClickFragment(fm, bind.homeNavigationId, R.id.main_container_id, bind.drawerId);
+        toggleDrawer.setClickFragment(fm, bind.homeNavigationId, bind.drawerId);
     }
 
     @Override

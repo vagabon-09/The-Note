@@ -4,7 +4,6 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.os.Bundle;
 
-import com.thinknxtmedia.mynotes.databinding.ActivityHomeBinding;
 
 public class MainActivity extends AppCompatActivity {
     @Override

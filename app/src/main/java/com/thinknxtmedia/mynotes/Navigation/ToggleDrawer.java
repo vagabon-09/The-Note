@@ -5,14 +5,13 @@ import androidx.drawerlayout.widget.DrawerLayout;
 import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
-import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
 import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.Fragments.Trash;
 import com.thinknxtmedia.mynotes.R;
 
 public class ToggleDrawer {
 Toolbar tBar = new Toolbar();
-    public void setClickFragment(FragmentManager fm, NavigationView homeNavigationId, int MainContainer, DrawerLayout DrawerId){
+    public void setClickFragment(FragmentManager fm, NavigationView homeNavigationId, DrawerLayout DrawerId){
         homeNavigationId.setNavigationItemSelectedListener(item -> {
             int id = item.getItemId();
             if (id == R.id.drawer_menu_home_id) {
@@ -25,5 +24,6 @@ Toolbar tBar = new Toolbar();
             return true;
         });
     }
+
 
 }
