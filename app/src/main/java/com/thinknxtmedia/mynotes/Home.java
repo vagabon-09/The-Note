@@ -8,7 +8,6 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
 import com.thinknxtmedia.mynotes.Navigation.ToggleDrawer;
@@ -29,6 +28,7 @@ public class Home extends AppCompatActivity {
         //Creating object of toolbar
         tBar = new com.thinknxtmedia.mynotes.Navigation.Toolbar();
         toggleDrawer = new ToggleDrawer();
+
         /* Finding view */
         getView();
         /* Replacing FrameLayout with fragment */
@@ -41,10 +41,7 @@ public class Home extends AppCompatActivity {
     private void replaceFragment() {
 
         FragmentManager fm = getSupportFragmentManager();
-        FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.main_container_id, new HomeEmpty());
-        ft.commit();
-
+        tBar.setItemClickable(R.id.main_container_id,new HomeEmpty(),fm);
 
     }
 
