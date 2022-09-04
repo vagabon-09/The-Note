@@ -42,4 +42,6 @@ dependencies {
     implementation 'de.hdodenhof:circleimageview:3.1.0'
     // Responsive size
     implementation 'com.intuit.sdp:sdp-android:1.1.0'
+    //For lottieFiles
+    implementation 'com.airbnb.android:lottie:5.2.0'
 }
