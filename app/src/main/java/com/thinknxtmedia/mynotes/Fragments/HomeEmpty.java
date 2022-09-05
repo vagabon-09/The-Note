@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentManager;
 
 import com.thinknxtmedia.mynotes.Navigation.Toolbar;
 import com.thinknxtmedia.mynotes.R;
-import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 
 
 public class HomeEmpty extends Fragment {
@@ -55,11 +54,11 @@ public class HomeEmpty extends Fragment {
 
         View v = inflater.inflate(R.layout.fragment_home_empty, container, false);
         addBtn = v.findViewById(R.id.addNote_Btn);
-        ReplaceFreagment replaceFreagment = new ReplaceFreagment();
+        Toolbar toolbar = new Toolbar();
         //Setting Action when clicking on add notes button
         addBtn.setOnClickListener(view -> {
             FragmentManager fm = getParentFragmentManager();
-            replaceFreagment.setItemClickable(R.id.main_container_id,new MakeNote(),fm,"yes");
+            toolbar.setItemClickable(R.id.main_container_id,new MakeNote(),fm);
         });
         return v;
     }

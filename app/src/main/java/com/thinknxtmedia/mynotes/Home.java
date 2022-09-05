@@ -8,16 +8,15 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
 
 import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
 import com.thinknxtmedia.mynotes.Navigation.ToggleDrawer;
-import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.databinding.ActivityHomeBinding;
 
 public class Home extends AppCompatActivity {
     ActivityHomeBinding bind;
     Toolbar toolbar;
-    ReplaceFreagment replaceFreagment;
     com.thinknxtmedia.mynotes.Navigation.Toolbar tBar;
     ToggleDrawer toggleDrawer;
 
@@ -29,9 +28,7 @@ public class Home extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Creating object of toolbar
         tBar = new com.thinknxtmedia.mynotes.Navigation.Toolbar();
-        replaceFreagment = new ReplaceFreagment();
         toggleDrawer = new ToggleDrawer();
-
         /* Finding view */
         getView();
         /* Replacing FrameLayout with fragment */
@@ -44,7 +41,10 @@ public class Home extends AppCompatActivity {
     private void replaceFragment() {
 
         FragmentManager fm = getSupportFragmentManager();
-        replaceFreagment.setItemClickable(R.id.main_container_id, new HomeEmpty(), fm);
+        FragmentTransaction ft = fm.beginTransaction();
+        ft.replace(R.id.main_container_id, new HomeEmpty());
+        ft.commit();
+
 
     }
 
