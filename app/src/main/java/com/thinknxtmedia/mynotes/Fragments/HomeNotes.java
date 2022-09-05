@@ -57,7 +57,7 @@ public class HomeNotes extends Fragment {
         //Setting Action when clicking on add notes button
         addBtn.setOnClickListener(view -> {
             FragmentManager fm = getParentFragmentManager();
-            replaceFreagment.setItemClickable(R.id.main_container_id, new MakeNote(), fm);
+            replaceFreagment.setItemClickable(R.id.main_container_id, new MakeNote(), fm,"yes");
         });
         return v;
 
