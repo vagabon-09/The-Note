@@ -1,10 +1,9 @@
 package com.thinknxtmedia.mynotes;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.content.Intent;
 import android.os.Bundle;
 import android.view.WindowManager;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
@@ -17,9 +16,7 @@ public class note_makng_page extends AppCompatActivity {
         setContentView(binding.getRoot());
         //Removing task bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-       binding.backBtnId.setOnClickListener(view -> {
-           onBackPressed();
-       });
+        binding.backBtnId.setOnClickListener(view -> onBackPressed());
 
     }
 }
