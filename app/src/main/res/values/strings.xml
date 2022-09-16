@@ -20,6 +20,8 @@
     <string name="title">Note Title</string>
     <string name="notes">Notes</string>
     <string name="back_button">back Button</string>
+    <string name="text_style">Text Style</string>
+    <string name="set_image">Set Image</string>
 
 
 </resources>
