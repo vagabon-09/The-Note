@@ -1,5 +1,6 @@
 package com.thinknxtmedia.mynotes.Fragments;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -11,6 +12,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
+import com.thinknxtmedia.mynotes.note_makng_page;
 
 
 public class HomeNotes extends Fragment {
@@ -56,8 +58,8 @@ public class HomeNotes extends Fragment {
         ReplaceFreagment replaceFreagment = new ReplaceFreagment();
         //Setting Action when clicking on add notes button
         addBtn.setOnClickListener(view -> {
-            FragmentManager fm = getParentFragmentManager();
-            replaceFreagment.setItemClickable(R.id.main_container_id, new MakeNote(), fm,"yes");
+            Intent intent = new Intent(getActivity(), note_makng_page.class);
+            startActivity(intent);
         });
         return v;
 
