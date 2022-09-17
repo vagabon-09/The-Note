@@ -68,7 +68,7 @@
             android:background="@drawable/color_panel" />
 
         <ImageView
-            android:id="@+id/textStyleId"
+            android:id="@+id/fontStyleId"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_weight="1"
@@ -86,6 +86,7 @@
             android:src="@drawable/image_icon" />
 
         <ImageView
+            android:id="@+id/TextFormatId"
             android:contentDescription="@string/content_align"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
@@ -93,6 +94,7 @@
             android:src="@drawable/align_icon" />
 
         <ImageView
+            android:id="@+id/noteTagId"
             android:contentDescription="@string/tag_button"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"

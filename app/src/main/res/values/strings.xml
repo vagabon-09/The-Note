@@ -25,6 +25,14 @@
     <string name="tag_button">Tag button</string>
     <string name="content_align">Content align</string>
     <string name="font_family">Font Family</string>
+    <string name="note_tag">Note tag</string>
+    <string name="add_tag">Add</string>
+    <string name="demo_tag">Today</string>
+    <string name="cross_button">cross Button</string>
+    <string name="align_left_btn">align left btn</string>
+    <string name="align_right_botton">align Right botton</string>
+    <string name="alignCenter">center the text</string>
+    <string name="bold_button">bold button</string>
 
 
 </resources>
