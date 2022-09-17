@@ -22,6 +22,9 @@
     <string name="back_button">back Button</string>
     <string name="text_style">Text Style</string>
     <string name="set_image">Set Image</string>
+    <string name="tag_button">Tag button</string>
+    <string name="content_align">Content align</string>
+    <string name="font_family">Font Family</string>
 
 
 </resources>

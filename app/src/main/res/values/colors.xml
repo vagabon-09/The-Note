@@ -12,5 +12,9 @@
     <color name="ash">#ECE7E7</color>
     <color name="bold_ash">#D9D9D9</color>
     <color name="ash_white">#D9D9D9</color>
+    <color name="red">#EC0D0D</color>
+    <color name="yellow">#FFFF00</color>
+    <color name="green">#2FFF00</color>
+
 
 </resources>

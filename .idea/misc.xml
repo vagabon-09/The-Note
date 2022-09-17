@@ -3,12 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/buttom_sheet.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/color_panel.xml" value="0.186" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/menue.xml" value="0.2155" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/red_circle.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/font/font.xml" value="0.2604166666666667" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_home.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_main.xml" value="0.21614583333333334" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_note_makng_page.xml" value="0.23020833333333332" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/bottom_sheet.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/content_main.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_blank.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_home_empty.xml" value="0.23020833333333332" />

@@ -4,6 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:background="@color/ash"
     tools:context=".note_makng_page">
 
     <LinearLayout
@@ -56,41 +57,47 @@
         android:layout_width="match_parent"
         android:layout_height="@dimen/_40sdp"
         android:gravity="center"
-        android:background="@color/ash_white"
         android:orientation="horizontal">
 
         <View
-            android:layout_marginStart="@dimen/_10sdp"
-            android:layout_marginEnd="@dimen/_10sdp"
             android:id="@+id/colorPanelId"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
             android:background="@drawable/color_panel" />
 
         <ImageView
-            android:contentDescription="@string/text_style"
+            android:id="@+id/textStyleId"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/font_style"
             android:layout_weight="1"
+            android:contentDescription="@string/text_style"
 
-            android:id="@+id/textStyleId"/>
+            android:src="@drawable/font_style" />
 
         <ImageView
+            android:id="@+id/ImageSetBtnId"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
             android:layout_weight="1"
             android:contentDescription="@string/set_image"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/image_icon"
 
-            android:id="@+id/ImageSetBtnId"/>
+            android:src="@drawable/image_icon" />
 
         <ImageView
-            android:layout_weight="1"
+            android:contentDescription="@string/content_align"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/align_icon"
-           />
+            android:layout_weight="1"
+            android:src="@drawable/align_icon" />
+
+        <ImageView
+            android:contentDescription="@string/tag_button"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:src="@drawable/tag_black"
+            android:layout_weight="1"/>
     </LinearLayout>
 
 </LinearLayout>
