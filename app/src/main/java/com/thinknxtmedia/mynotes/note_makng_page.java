@@ -1,19 +1,21 @@
 package com.thinknxtmedia.mynotes;
 
+import android.annotation.SuppressLint;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.EditText;
 
 import androidx.appcompat.app.AppCompatActivity;
-
-
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
+import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 public class note_makng_page extends AppCompatActivity {
     ActivityNoteMakngPageBinding binding;
     ShowDialogBox dialogBox;
+    InsertData insertData;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -27,7 +29,28 @@ public class note_makng_page extends AppCompatActivity {
         ButtonFunction();
         //Note Function
         checkNoteEmptyorNot();
+        //Sending data to the databse
+        sendDataToDataBase();
     }
+
+    private void sendDataToDataBase() {
+
+        binding.noteSaveBtnId.setOnClickListener(view -> {
+            String tag;
+            @SuppressLint("InflateParams") View buttonSheet = getLayoutInflater().inflate(R.layout.note_tag,null);
+            EditText tag_text = buttonSheet.findViewById(R.id.NoteTagId);
+            if(tag_text.getText().toString().equals("")){
+                tag = "All";
+            }else{
+               tag = tag_text.getText().toString();
+            }
+            insertData = new InsertData(getApplicationContext(),binding.NoteTitleId.getText().toString(),binding.NoteNotesId.getText().toString(),tag);
+            binding.NoteTitleId.setText("");
+            binding.NoteNotesId.setText("");
+        });
+
+    }
+
 
     private void checkNoteEmptyorNot() {
 

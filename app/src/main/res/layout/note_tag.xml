@@ -13,6 +13,7 @@
         android:orientation="horizontal">
 
         <EditText
+            android:id="@+id/NoteTagId"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
@@ -23,14 +24,14 @@
             android:padding="@dimen/_10sdp" />
 
         <Button
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
             android:id="@+id/addTagButton"
             android:layout_width="wrap_content"
             android:layout_height="match_parent"
-            android:backgroundTint="@color/green"
-            android:textColor="@color/white"
-            android:text="@string/add_tag" />
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:backgroundTint="@color/orange"
+            android:text="@string/add_tag"
+            android:textColor="@color/white" />
 
     </LinearLayout>
 
