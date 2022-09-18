@@ -1,6 +1,9 @@
 package com.thinknxtmedia.mynotes;
 
 import android.os.Bundle;
+import android.text.Editable;
+import android.text.TextWatcher;
+import android.view.View;
 import android.view.WindowManager;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -22,6 +25,46 @@ public class note_makng_page extends AppCompatActivity {
         dialogBox = new ShowDialogBox();
         //Setting bottom
         ButtonFunction();
+        //Note Function
+        checkNoteEmptyorNot();
+    }
+
+    private void checkNoteEmptyorNot() {
+
+       binding.NoteTitleId.addTextChangedListener(new TextWatcher() {
+           @Override
+           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+           }
+
+           @Override
+           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.noteSaveBtnId.setVisibility(View.GONE);
+           }
+
+           @Override
+           public void afterTextChanged(Editable editable) {
+               binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+           }
+       });
+
+       binding.NoteNotesId.addTextChangedListener(new TextWatcher() {
+           @Override
+           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+           }
+
+           @Override
+           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+                binding.noteSaveBtnId.setVisibility(View.GONE);
+           }
+
+           @Override
+           public void afterTextChanged(Editable editable) {
+               binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+           }
+       });
+
+
+
     }
 
     private void ButtonFunction() {
@@ -35,7 +78,6 @@ public class note_makng_page extends AppCompatActivity {
         binding.fontStyleId.setOnClickListener(view -> fontFamilyDialog());
         //When user clicked text format button
         binding.TextFormatId.setOnClickListener(view -> textFormatDialog());
-
 
     }
 

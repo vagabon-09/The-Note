@@ -3,11 +3,11 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/white"
     android:orientation="vertical"
-    android:background="@color/ash"
     tools:context=".note_makng_page">
 
-    <LinearLayout
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="@dimen/_50sdp"
         android:orientation="horizontal">
@@ -16,14 +16,32 @@
             android:id="@+id/backBtnId"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="match_parent"
-            android:layout_margin="@dimen/_10sdp"
+            android:layout_alignParentStart="true"
+            android:layout_marginStart="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
             android:contentDescription="@string/back_button"
             android:src="@drawable/back_button" />
 
-    </LinearLayout>
+        <ImageButton
+            android:id="@+id/noteSaveBtnId"
+            android:layout_width="@dimen/_30sdp"
+            android:layout_height="match_parent"
+            android:layout_alignParentEnd="true"
+            android:layout_centerInParent="true"
+            android:layout_marginEnd="@dimen/_15sdp"
+            android:background="@android:color/transparent"
+            android:padding="@dimen/_30sdp"
+            android:src="@drawable/done_icon_32"
+            android:visibility="gone" />
+
+
+    </RelativeLayout>
 
 
     <EditText
+        android:id="@+id/NoteTitleId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
@@ -39,7 +57,7 @@
         android:textStyle="normal" />
 
     <EditText
-        android:id="@+id/editTextTextMultiLine"
+        android:id="@+id/NoteNotesId"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginStart="@dimen/_10sdp"
@@ -87,19 +105,19 @@
 
         <ImageView
             android:id="@+id/TextFormatId"
-            android:contentDescription="@string/content_align"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_weight="1"
+            android:contentDescription="@string/content_align"
             android:src="@drawable/align_icon" />
 
         <ImageView
             android:id="@+id/noteTagId"
-            android:contentDescription="@string/tag_button"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
-            android:src="@drawable/tag_black"
-            android:layout_weight="1"/>
+            android:layout_weight="1"
+            android:contentDescription="@string/tag_button"
+            android:src="@drawable/tag_black" />
     </LinearLayout>
 
 </LinearLayout>
