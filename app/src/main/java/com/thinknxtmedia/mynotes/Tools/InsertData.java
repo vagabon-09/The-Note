@@ -8,10 +8,14 @@ import androidx.room.Room;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
+import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
+
+import java.util.List;
 
 public class InsertData {
     public InsertData(Context applicationContext, String title, String notes, String tag, ActivityNoteMakngPageBinding binding) {
+
         if (title.isEmpty()){
             Toast.makeText(applicationContext, "Please Enter Title First.", Toast.LENGTH_SHORT).show();
         }else if (notes.isEmpty()){
@@ -24,6 +28,8 @@ public class InsertData {
             binding.NoteTitleId.setText("");
             binding.NoteNotesId.setText("");
             Toast.makeText(applicationContext, "Successfully created your note.", Toast.LENGTH_SHORT).show();
+            List<NoteEntity> noteEntities = noteDao.getAllData();
+            NoteAdapter adapter = new NoteAdapter(noteEntities);
         }
 
     }
