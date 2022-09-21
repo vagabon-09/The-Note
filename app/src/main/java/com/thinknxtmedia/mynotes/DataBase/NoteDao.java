@@ -28,4 +28,7 @@ public interface NoteDao {
     @Query("UPDATE noteentity SET NoteDetails = :uNoteDetails")
     void NoteNote(String uNoteDetails);
 
+    //Checking data is available or not
+    @Query("SELECT EXISTS(SELECT * FROM noteentity)")
+    boolean getRow();
 }

@@ -9,9 +9,14 @@ import androidx.appcompat.widget.Toolbar;
 import androidx.core.view.GravityCompat;
 import androidx.fragment.app.FragmentManager;
 import androidx.fragment.app.FragmentTransaction;
+import androidx.room.Room;
 
+import com.thinknxtmedia.mynotes.DataBase.NoteDao;
+import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
+import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.Navigation.ToggleDrawer;
+import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.databinding.ActivityHomeBinding;
 
 public class Home extends AppCompatActivity {
@@ -42,8 +47,16 @@ public class Home extends AppCompatActivity {
 
         FragmentManager fm = getSupportFragmentManager();
         FragmentTransaction ft = fm.beginTransaction();
-        ft.replace(R.id.main_container_id, new HomeEmpty());
-        ft.commit();
+        NoteDataBase dataBase = Room.databaseBuilder(getApplicationContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
+        NoteDao noteDao = dataBase.noteDao();
+        FragmentManager fragmentManager = getSupportFragmentManager();
+        if (noteDao.getRow()) {
+            ReplaceFreagment replaceFreagment = new ReplaceFreagment();
+            replaceFreagment.setItemClickable(R.id.main_container_id, new HomeNotes(), fragmentManager);
+        } else {
+            ft.replace(R.id.main_container_id, new HomeEmpty());
+            ft.commit();
+        }
 
 
     }
