@@ -2,7 +2,6 @@ package com.thinknxtmedia.mynotes;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
-import android.renderscript.ScriptGroup;
 import android.text.Editable;
 import android.text.TextWatcher;
 import android.util.Log;
@@ -54,13 +53,7 @@ public class note_makng_page extends AppCompatActivity {
             Log.d("LogdIS", "sendDataToDataBase: "+ EditTag.toString());
         });
      
-        binding.noteSaveBtnId.setOnClickListener(view -> {
-//            String tag = tag_text.getText().toString();
-//            Toast.makeText(this, "YesWorking: "+tag, Toast.LENGTH_SHORT).show();
-            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), binding.NoteNotesId.getText().toString(), tag,binding);
-
-
-        });
+        binding.noteSaveBtnId.setOnClickListener(view -> insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), binding.NoteNotesId.getText().toString(), tag,binding));
 
     }
 
