@@ -59,12 +59,11 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <TextView
+            <androidx.recyclerview.widget.RecyclerView
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:gravity="center"
-                android:text="@string/home_notes"
-                android:textColor="@color/black" />
+                android:layout_height="match_parent"
+                android:layout_margin="@dimen/_10sdp"
+                android:id="@+id/recViewHomeId"/>
 
         </LinearLayout>
     </RelativeLayout>
