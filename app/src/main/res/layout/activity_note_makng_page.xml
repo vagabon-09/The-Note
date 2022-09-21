@@ -34,7 +34,8 @@
             android:background="@android:color/transparent"
             android:padding="@dimen/_30sdp"
             android:src="@drawable/done_icon_32"
-            android:visibility="gone" />
+            android:visibility="gone"
+            android:contentDescription="@string/done_btn" />
 
 
     </RelativeLayout>
@@ -72,9 +73,11 @@
         android:padding="@dimen/_10sdp" />
 
     <LinearLayout
+
         android:layout_width="match_parent"
-        android:layout_height="@dimen/_40sdp"
+        android:layout_height="@dimen/_50sdp"
         android:gravity="center"
+
         android:orientation="horizontal">
 
         <View
@@ -87,8 +90,8 @@
 
         <ImageView
             android:id="@+id/fontStyleId"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_weight="1"
             android:contentDescription="@string/text_style"
 
@@ -96,8 +99,8 @@
 
         <ImageView
             android:id="@+id/ImageSetBtnId"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_weight="1"
             android:contentDescription="@string/set_image"
 
@@ -105,16 +108,16 @@
 
         <ImageView
             android:id="@+id/TextFormatId"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_weight="1"
             android:contentDescription="@string/content_align"
             android:src="@drawable/align_icon" />
 
         <ImageView
             android:id="@+id/noteTagId"
-            android:layout_width="@dimen/_30sdp"
-            android:layout_height="@dimen/_30sdp"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_25sdp"
             android:layout_weight="1"
             android:contentDescription="@string/tag_button"
             android:src="@drawable/tag_black" />

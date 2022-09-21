@@ -2,20 +2,31 @@ package com.thinknxtmedia.mynotes;
 
 import android.annotation.SuppressLint;
 import android.os.Bundle;
+import android.renderscript.ScriptGroup;
 import android.text.Editable;
 import android.text.TextWatcher;
+import android.util.Log;
 import android.view.View;
 import android.view.WindowManager;
+import android.widget.Button;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
+
+
 public class note_makng_page extends AppCompatActivity {
     ActivityNoteMakngPageBinding binding;
     ShowDialogBox dialogBox;
     InsertData insertData;
+    String tag;
+    Button tagSave;
+    EditText EditTag;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -33,20 +44,22 @@ public class note_makng_page extends AppCompatActivity {
         sendDataToDataBase();
     }
 
+    @SuppressLint("CutPasteId")
     private void sendDataToDataBase() {
-
+        final View view1 = getLayoutInflater().inflate(R.layout.note_tag,null);
+        tagSave = view1.findViewById(R.id.addTagButton);
+        EditTag = view1.findViewById(R.id.NoteTagId);
+        tagSave.setOnClickListener(view -> {
+            Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
+            Log.d("LogdIS", "sendDataToDataBase: "+ EditTag.toString());
+        });
+     
         binding.noteSaveBtnId.setOnClickListener(view -> {
-            String tag;
-            @SuppressLint("InflateParams") View buttonSheet = getLayoutInflater().inflate(R.layout.note_tag,null);
-            EditText tag_text = buttonSheet.findViewById(R.id.NoteTagId);
-            if(tag_text.getText().toString().equals("")){
-                tag = "All";
-            }else{
-               tag = tag_text.getText().toString();
-            }
-            insertData = new InsertData(getApplicationContext(),binding.NoteTitleId.getText().toString(),binding.NoteNotesId.getText().toString(),tag);
-            binding.NoteTitleId.setText("");
-            binding.NoteNotesId.setText("");
+//            String tag = tag_text.getText().toString();
+//            Toast.makeText(this, "YesWorking: "+tag, Toast.LENGTH_SHORT).show();
+            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), binding.NoteNotesId.getText().toString(), tag,binding);
+
+
         });
 
     }
@@ -54,38 +67,37 @@ public class note_makng_page extends AppCompatActivity {
 
     private void checkNoteEmptyorNot() {
 
-       binding.NoteTitleId.addTextChangedListener(new TextWatcher() {
-           @Override
-           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-           }
+        binding.NoteTitleId.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
-           @Override
-           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 binding.noteSaveBtnId.setVisibility(View.GONE);
-           }
+            }
 
-           @Override
-           public void afterTextChanged(Editable editable) {
-               binding.noteSaveBtnId.setVisibility(View.VISIBLE);
-           }
-       });
+            @Override
+            public void afterTextChanged(Editable editable) {
+                binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+            }
+        });
 
-       binding.NoteNotesId.addTextChangedListener(new TextWatcher() {
-           @Override
-           public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
-           }
+        binding.NoteNotesId.addTextChangedListener(new TextWatcher() {
+            @Override
+            public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            }
 
-           @Override
-           public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
+            @Override
+            public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 binding.noteSaveBtnId.setVisibility(View.GONE);
-           }
+            }
 
-           @Override
-           public void afterTextChanged(Editable editable) {
-               binding.noteSaveBtnId.setVisibility(View.VISIBLE);
-           }
-       });
-
+            @Override
+            public void afterTextChanged(Editable editable) {
+                binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+            }
+        });
 
 
     }
@@ -105,20 +117,22 @@ public class note_makng_page extends AppCompatActivity {
     }
 
     private void textFormatDialog() {
-        dialogBox.show(this,R.layout.s_format_text_layout);
+        dialogBox.show(this, R.layout.s_format_text_layout);
     }
 
     private void fontFamilyDialog() {
-        dialogBox.show(this,R.layout.font_family_panel);
+        dialogBox.show(this, R.layout.font_family_panel);
     }
 
     private void TagDialogBox() {
-        dialogBox.show(this,R.layout.note_tag);
+        dialogBox.show(this, R.layout.note_tag);
     }
 
     private void bottomSheet() {
-        dialogBox.show(this,R.layout.bottom_sheet);
+        dialogBox.show(this, R.layout.bottom_sheet);
     }
+
+
 
 
 }

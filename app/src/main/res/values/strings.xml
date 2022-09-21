@@ -33,6 +33,9 @@
     <string name="align_right_botton">align Right botton</string>
     <string name="alignCenter">center the text</string>
     <string name="bold_button">bold button</string>
+    <string name="done_btn">Done btn</string>
+    <string name="title_note_making_page">This is a Test Title.</string>
+    <string name="date">March 10</string>
 
 
 </resources>
