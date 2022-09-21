@@ -4,8 +4,9 @@
     android:layout_width="@dimen/_130sdp"
     android:layout_height="wrap_content"
     android:elevation="@dimen/_10sdp"
-    android:layout_margin="@dimen/_10sdp"
+    android:layout_margin="@dimen/_5sdp"
     app:cardCornerRadius="@dimen/_10sdp"
+    app:cardPreventCornerOverlap="false"
     app:cardElevation="@dimen/_10sdp">
 <LinearLayout
     android:layout_width="match_parent"
