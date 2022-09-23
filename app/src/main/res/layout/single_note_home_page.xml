@@ -1,34 +1,66 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_width="@dimen/_130sdp"
+    android:layout_margin="@dimen/_10sdp"
+    android:id="@+id/cardViewBtn"
+    android:layout_width="wrap_content"
+    android:layout_weight="1"
     android:layout_height="wrap_content"
-    android:layout_margin="@dimen/_5sdp"
+    app:cardBackgroundColor="@color/ash"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardPreventCornerOverlap="false">
-<LinearLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:orientation="vertical">
-    <TextView
-        android:paddingTop="@dimen/_10sdp"
-        android:paddingBottom="@dimen/_10sdp"
-        android:id="@+id/s_note_title"
-        android:layout_margin="@dimen/_5sdp"
-        android:layout_width="match_parent"
+
+    <RelativeLayout
+        android:layout_width="@dimen/_130sdp"
         android:layout_height="wrap_content"
-        android:text="@string/title_note_making_page"
-        android:textColor="@color/black"
-        android:gravity="center"
-        android:textSize="@dimen/_15sdp" />
-    <TextView
-        android:id="@+id/s_data_id"
         android:layout_margin="@dimen/_5sdp"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="center"
-        android:textSize="@dimen/_10sdp"
-        android:text="@string/date"/>
-</LinearLayout>
+        android:layout_marginEnd="@dimen/_10sdp">
+
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/s_note_title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/_5sdp"
+                android:gravity="center"
+                android:paddingTop="@dimen/_10sdp"
+                android:paddingBottom="@dimen/_10sdp"
+                android:text="@string/title_note_making_page"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_15sdp" />
+
+            <TextView
+                android:id="@+id/s_data_id"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_margin="@dimen/_5sdp"
+                android:text="@string/date"
+                android:textSize="@dimen/_10sdp" />
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:orientation="horizontal"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/s_deleteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@drawable/delete"
+                android:contentDescription="@string/delete_btn" />
+
+        </LinearLayout>
+    </RelativeLayout>
+
 
 </androidx.cardview.widget.CardView>

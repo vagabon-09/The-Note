@@ -52,6 +52,12 @@ dependencies {
     //Room Database
     def room_version = "2.4.3"
 
+    //RoomData base
     implementation "androidx.room:room-runtime:$room_version"
     annotationProcessor "androidx.room:room-compiler:$room_version"
+    //Refresh layout
+    implementation 'androidx.swiperefreshlayout:swiperefreshlayout:1.1.0'
+    //Rich Text Editor
+    implementation 'jp.wasabeef:richeditor-android:2.0.0'
+
 }

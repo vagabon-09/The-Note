@@ -6,16 +6,18 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:fitsSystemWindows="true"
-    tools:openDrawer="start"
-    tools:context=".Home">
-<include layout="@layout/toolbar"/>
+    tools:context=".Home"
+    tools:openDrawer="start">
+
+    <include layout="@layout/toolbar" />
+
     <com.google.android.material.navigation.NavigationView
+        android:id="@+id/home_navigation_id"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"
+        android:layout_gravity="start"
         android:fitsSystemWindows="true"
-        android:id="@+id/home_navigation_id"
         app:headerLayout="@layout/header_layout_drawer"
-        app:menu="@menu/drawer_menu"
-        android:layout_gravity="start"/>
+        app:menu="@menu/drawer_menu" />
 
 </androidx.drawerlayout.widget.DrawerLayout>

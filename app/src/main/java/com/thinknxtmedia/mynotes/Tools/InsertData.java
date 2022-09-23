@@ -26,7 +26,7 @@ public class InsertData {
             NoteEntity noteEntity = new NoteEntity(0,title,notes,tag);
             noteDao.InsertData(noteEntity);
             binding.NoteTitleId.setText("");
-            binding.NoteNotesId.setText("");
+            binding.NoteNotesId.loadUrl("about:blank");
             Toast.makeText(applicationContext, "Successfully created your note.", Toast.LENGTH_SHORT).show();
             List<NoteEntity> noteEntities = noteDao.getAllData();
             NoteAdapter adapter = new NoteAdapter(noteEntities);

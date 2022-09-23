@@ -59,14 +59,20 @@
             android:gravity="center"
             android:orientation="vertical">
 
-            <androidx.recyclerview.widget.RecyclerView
+            <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
+                android:id="@+id/swipeRefreshId"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
-               android:layout_marginStart="@dimen/_7sdp"
-                android:layout_marginEnd="@dimen/_5sdp"
-                android:layout_marginBottom="@dimen/_5sdp"
+                android:layout_height="match_parent">
 
-                android:id="@+id/recViewHomeId"/>
+                <androidx.recyclerview.widget.RecyclerView
+
+                    android:id="@+id/recViewHomeId"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+
+                    android:layout_marginBottom="@dimen/_5sdp" />
+            </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
+
 
         </LinearLayout>
     </RelativeLayout>

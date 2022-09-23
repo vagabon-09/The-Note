@@ -11,6 +11,7 @@ import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
@@ -32,9 +33,11 @@ public class HomeNotes extends Fragment {
     private static CardView addBtn;
     RecyclerView recView;
     NoteAdapter adapter;
+    SwipeRefreshLayout swipeRefreshLayout;
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
+    NoteDao noteDao;
 
 
     public HomeNotes() {
@@ -65,13 +68,21 @@ public class HomeNotes extends Fragment {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home_notes, container, false);
         addBtn = v.findViewById(R.id.makeNoteBtnHome);
+
         //Calling InsertData
         NoteDataBase dataBase = Room.databaseBuilder(getContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
-        NoteDao noteDao = dataBase.noteDao();
+        noteDao = dataBase.noteDao();
+
         //Finding through id
         recView = v.findViewById(R.id.recViewHomeId);
         recView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2));
 
+        //setting swipe refresh layout
+        swipeRefreshLayout = v.findViewById(R.id.swipeRefreshId);
+        swipeRefreshLayout.setOnRefreshListener(() -> {
+            swipeRefreshLayout.setRefreshing(false);
+            swipDone();
+        });
         List<NoteEntity> noteEntities = noteDao.getAllData();
         NoteAdapter adapter = new NoteAdapter(noteEntities);
         recView.setAdapter(adapter);
@@ -85,6 +96,12 @@ public class HomeNotes extends Fragment {
         });
         return v;
 
+    }
+
+    private void swipDone() {
+        List<NoteEntity> noteEntities = noteDao.getAllData();
+        NoteAdapter adapter = new NoteAdapter(noteEntities);
+        recView.setAdapter(adapter);
     }
 
 

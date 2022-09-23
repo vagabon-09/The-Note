@@ -3,9 +3,10 @@ package com.thinknxtmedia.mynotes.FetchData;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
@@ -38,11 +39,23 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         return noteEntities.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView s_title ,s_date;
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
+        TextView s_title;
+        ImageView delete;
+        CardView cardView;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             s_title = itemView.findViewById(R.id.s_note_title);
+            delete = itemView.findViewById(R.id.s_deleteBtn);
+            cardView = itemView.findViewById(R.id.cardViewBtn);
+            cardView.setOnClickListener(view -> {
+
+            });
+            cardView.setOnLongClickListener(view -> {
+                delete.setVisibility(View.VISIBLE);
+
+                return false;
+            });
         }
     }
 }
