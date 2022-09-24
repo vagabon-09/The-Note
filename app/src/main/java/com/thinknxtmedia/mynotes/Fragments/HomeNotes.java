@@ -30,7 +30,6 @@ public class HomeNotes extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    private static CardView addBtn;
     RecyclerView recView;
     NoteAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
@@ -67,7 +66,7 @@ public class HomeNotes extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View v = inflater.inflate(R.layout.fragment_home_notes, container, false);
-        addBtn = v.findViewById(R.id.makeNoteBtnHome);
+        CardView addBtn = v.findViewById(R.id.makeNoteBtnHome);
 
         //Calling InsertData
         NoteDataBase dataBase = Room.databaseBuilder(getContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
