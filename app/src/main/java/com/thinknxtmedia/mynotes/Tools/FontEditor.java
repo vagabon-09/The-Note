@@ -13,5 +13,7 @@ public class FontEditor {
         binding.alignCenterId.setOnClickListener(view -> binding.NoteNotesId.setAlignCenter());
         //Align left
         binding.alignLeftId.setOnClickListener(view -> binding.NoteNotesId.setAlignLeft());
+        //Align Right
+        binding.alignRightId.setOnClickListener(view -> binding.NoteNotesId.setAlignRight());
     }
 }
