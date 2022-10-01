@@ -15,6 +15,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
+import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
@@ -27,6 +28,7 @@ public class note_makng_page extends AppCompatActivity {
     Button tagSave;
     EditText EditTag;
     ReplaceFreagment replaceFreagment;
+    FontEditor fontEditor;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -45,6 +47,9 @@ public class note_makng_page extends AppCompatActivity {
         checkNoteEmptyorNot();
         //Sending data to the databse
         sendDataToDataBase();
+        //Giving font style
+        fontEditor = new FontEditor(binding);
+
     }
 
     @SuppressLint("CutPasteId")
@@ -97,8 +102,7 @@ public class note_makng_page extends AppCompatActivity {
         binding.noteTagId.setOnClickListener(view -> TagDialogBox());
         //When user clicked on font style button
         binding.fontStyleId.setOnClickListener(view -> fontFamilyDialog());
-        //when user clicked bold text
-        binding.boldTextId.setOnClickListener(view -> binding.NoteNotesId.setBold());
+
 
     }
 
