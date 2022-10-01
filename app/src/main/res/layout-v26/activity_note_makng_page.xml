@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    android:id="@+id/noteMakingPage"
     xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/noteMakingPage"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@color/white"
@@ -45,7 +45,7 @@
                 android:contentDescription="@string/done_btn"
                 android:padding="@dimen/_30sdp"
                 android:src="@drawable/done_icon_32"
-                android:visibility="gone" />
+                android:visibility="visible" />
         </RelativeLayout>
 
         <EditText
@@ -65,6 +65,19 @@
             android:textSize="@dimen/_20sdp"
             android:textStyle="normal" />
 
+        <TextView
+            android:id="@+id/HintNote"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/NoteTitleId"
+            android:layout_marginStart="@dimen/_15sdp"
+            android:layout_marginEnd="@dimen/_10sdp"
+            android:layout_marginTop="@dimen/_1sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:alpha="1"
+            android:hint="@string/write_note"
+            android:textSize="@dimen/_18sdp"
+            android:visibility="visible" />
 
         <jp.wasabeef.richeditor.RichEditor
             android:id="@+id/NoteNotesId"
@@ -74,7 +87,11 @@
             android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_13sdp"
+            android:alpha="0.7"
+            android:padding="@dimen/_5sdp"
+            android:paddingStart="@dimen/_5sdp"
             android:tooltipText="Enter the note"
+            tools:ignore="RtlSymmetry"
             tools:targetApi="o" />
 
 
@@ -187,15 +204,7 @@
         </HorizontalScrollView>
 
 
-
-
     </RelativeLayout>
-
-
-
-
-
-
 
 
 </LinearLayout>

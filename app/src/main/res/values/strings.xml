@@ -37,6 +37,7 @@
     <string name="title_note_making_page">This is a Test Title.</string>
     <string name="date">March 10</string>
     <string name="delete_btn">delete Btn</string>
+    <string name="write_note">Write Note</string>
 
 
 </resources>

@@ -19,6 +19,8 @@ import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
+import jp.wasabeef.richeditor.RichEditor;
+
 public class note_makng_page extends AppCompatActivity {
     static String note_data = "";
     ActivityNoteMakngPageBinding binding;
@@ -64,6 +66,7 @@ public class note_makng_page extends AppCompatActivity {
 
         binding.NoteNotesId.setOnTextChangeListener(text -> {
             binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+            binding.HintNote.setVisibility(View.GONE);
             note_data = text;
         });
 
@@ -82,13 +85,18 @@ public class note_makng_page extends AppCompatActivity {
             @Override
             public void onTextChanged(CharSequence charSequence, int i, int i1, int i2) {
                 binding.noteSaveBtnId.setVisibility(View.GONE);
+
             }
 
             @Override
             public void afterTextChanged(Editable editable) {
                 binding.noteSaveBtnId.setVisibility(View.VISIBLE);
+
             }
         });
+
+        //When text changed on note making page
+
 
 
     }
