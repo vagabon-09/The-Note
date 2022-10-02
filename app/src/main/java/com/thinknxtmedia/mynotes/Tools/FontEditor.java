@@ -15,5 +15,7 @@ public class FontEditor {
         binding.alignLeftId.setOnClickListener(view -> binding.NoteNotesId.setAlignLeft());
         //Align Right
         binding.alignRightId.setOnClickListener(view -> binding.NoteNotesId.setAlignRight());
+        //H2 Text
+        binding.h2Id.setOnClickListener(view -> binding.NoteNotesId.setHeading(1));
     }
 }

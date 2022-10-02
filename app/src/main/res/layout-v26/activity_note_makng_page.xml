@@ -45,7 +45,7 @@
                 android:contentDescription="@string/done_btn"
                 android:padding="@dimen/_30sdp"
                 android:src="@drawable/done_icon_32"
-                android:visibility="visible" />
+                android:visibility="gone" />
         </RelativeLayout>
 
         <EditText
@@ -72,12 +72,10 @@
             android:layout_below="@+id/NoteTitleId"
             android:layout_marginStart="@dimen/_15sdp"
             android:layout_marginEnd="@dimen/_10sdp"
-            android:layout_marginTop="@dimen/_1sdp"
             android:layout_marginBottom="@dimen/_10sdp"
             android:alpha="1"
             android:hint="@string/write_note"
-            android:textSize="@dimen/_18sdp"
-            android:visibility="visible" />
+            android:textSize="@dimen/_18sdp" />
 
         <jp.wasabeef.richeditor.RichEditor
             android:id="@+id/NoteNotesId"
@@ -87,11 +85,9 @@
             android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_7sdp"
             android:layout_marginEnd="@dimen/_13sdp"
-            android:alpha="0.7"
+            android:alpha="0.5"
             android:padding="@dimen/_5sdp"
-            android:paddingStart="@dimen/_5sdp"
             android:tooltipText="Enter the note"
-            tools:ignore="RtlSymmetry"
             tools:targetApi="o" />
 
 
@@ -196,6 +192,16 @@
                     android:layout_marginStart="@dimen/_10sdp"
                     android:contentDescription="@string/bold_button"
                     android:src="@drawable/bold_text" />
+
+
+                <ImageView
+                    android:id="@+id/h2Id"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/h1_name"
+                    android:src="@drawable/h2_icon_black" />
 
 
             </LinearLayout>
