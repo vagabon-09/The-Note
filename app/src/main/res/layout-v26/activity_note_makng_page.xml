@@ -195,13 +195,34 @@
 
 
                 <ImageView
+                    android:id="@+id/hId"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/h1_name"
+                    android:scaleType="center"
+                    android:src="@drawable/h1" />
+
+                <ImageView
                     android:id="@+id/h2Id"
                     android:layout_width="@dimen/_20sdp"
                     android:layout_height="@dimen/_20sdp"
                     android:layout_margin="@dimen/_10sdp"
                     android:layout_marginStart="@dimen/_10sdp"
                     android:contentDescription="@string/h1_name"
+                    android:scaleType="center"
                     android:src="@drawable/h2_icon_black" />
+
+                <ImageView
+                    android:id="@+id/h3Id"
+                    android:layout_width="@dimen/_20sdp"
+                    android:layout_height="@dimen/_20sdp"
+                    android:layout_margin="@dimen/_10sdp"
+                    android:layout_marginStart="@dimen/_10sdp"
+                    android:contentDescription="@string/h1_name"
+                    android:scaleType="center"
+                    android:src="@drawable/h3" />
 
 
             </LinearLayout>
