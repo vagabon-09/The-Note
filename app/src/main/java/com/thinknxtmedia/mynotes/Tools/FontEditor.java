@@ -1,9 +1,5 @@
 package com.thinknxtmedia.mynotes.Tools;
 
-import android.graphics.Color;
-import android.graphics.drawable.ColorDrawable;
-
-import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
 public class FontEditor {
