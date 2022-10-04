@@ -19,8 +19,6 @@ import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
-import jp.wasabeef.richeditor.RichEditor;
-
 public class note_makng_page extends AppCompatActivity {
     static String note_data = "";
     ActivityNoteMakngPageBinding binding;
@@ -51,6 +49,8 @@ public class note_makng_page extends AppCompatActivity {
         sendDataToDataBase();
         //Giving font style
         fontEditor = new FontEditor(binding);
+        //Sending data in note making page
+
 
     }
 
@@ -98,7 +98,6 @@ public class note_makng_page extends AppCompatActivity {
         //When text changed on note making page
 
 
-
     }
 
     private void ButtonFunction() {
@@ -123,7 +122,7 @@ public class note_makng_page extends AppCompatActivity {
     }
 
     private void bottomSheet() {
-        dialogBox.show(this, R.layout.bottom_sheet);
+        dialogBox.show(this, R.layout.color_plate);
     }
 
 }

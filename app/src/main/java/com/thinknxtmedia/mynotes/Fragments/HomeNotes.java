@@ -33,15 +33,23 @@ public class HomeNotes extends Fragment {
     RecyclerView recView;
     NoteAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
+    NoteDao noteDao;
+    String title;
+    String text;
+
     // TODO: Rename and change types of parameters
     private String mParam1;
     private String mParam2;
-    NoteDao noteDao;
 
+    public HomeNotes(String title, String text) {
+        this.title = title;
+        this.text = text;
+    }
 
     public HomeNotes() {
         // Required empty public constructor
     }
+
 
     public static HomeNotes newInstance(String param1, String param2) {
         HomeNotes fragment = new HomeNotes();

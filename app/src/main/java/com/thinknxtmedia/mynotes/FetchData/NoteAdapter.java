@@ -1,18 +1,19 @@
 package com.thinknxtmedia.mynotes.FetchData;
 
-import android.util.Log;
+
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
 import android.widget.TextView;
-import android.widget.Toast;
+
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
+import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.R;
 
 import java.util.List;
@@ -35,7 +36,10 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     public void onBindViewHolder(@NonNull NoteAdapter.MyViewHolder holder, int position) {
     holder.s_title.setText(noteEntities.get(position).getTitle());
 //    holder.s_date.setText(noteEntities.get(position).getTime());
-        holder.cardView.setOnClickListener(view -> Log.d("CLicked", "onBindViewHolder: " +position));
+        holder.cardView.setOnClickListener(view -> {
+            HomeNotes homeNotes = new HomeNotes(noteEntities.get(position).getTitle(),noteEntities.get(position).getNote());
+
+        });
     }
 
     @Override
