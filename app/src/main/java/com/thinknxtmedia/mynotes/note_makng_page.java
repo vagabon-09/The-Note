@@ -19,8 +19,6 @@ import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
-import jp.wasabeef.richeditor.RichEditor;
-
 public class note_makng_page extends AppCompatActivity {
     static String note_data = "";
     ActivityNoteMakngPageBinding binding;
