@@ -29,7 +29,7 @@ public class InsertData {
             binding.NoteNotesId.loadUrl("about:blank");
             Toast.makeText(applicationContext, "Successfully created your note.", Toast.LENGTH_SHORT).show();
             List<NoteEntity> noteEntities = noteDao.getAllData();
-            NoteAdapter adapter = new NoteAdapter(noteEntities);
+            NoteAdapter adapter = new NoteAdapter(noteEntities,applicationContext);
         }
 
     }

@@ -91,7 +91,7 @@ public class HomeNotes extends Fragment {
             swipDone();
         });
         List<NoteEntity> noteEntities = noteDao.getAllData();
-        NoteAdapter adapter = new NoteAdapter(noteEntities);
+        NoteAdapter adapter = new NoteAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
 
 
@@ -107,7 +107,7 @@ public class HomeNotes extends Fragment {
 
     private void swipDone() {
         List<NoteEntity> noteEntities = noteDao.getAllData();
-        NoteAdapter adapter = new NoteAdapter(noteEntities);
+        NoteAdapter adapter = new NoteAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
     }
 
