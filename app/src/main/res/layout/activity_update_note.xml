@@ -48,6 +48,7 @@
 
         <TextView
             android:id="@+id/update_NoteTitleId"
+            android:textColor="@color/black"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_below="@+id/topBarId"
@@ -76,8 +77,9 @@
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
                 android:hint="@string/write_note"
-                android:padding="@dimen/_7sdp"
-                android:textSize="@dimen/_18sdp"/>
+                android:padding="@dimen/_10sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
 
         </ScrollView>
 
