@@ -25,8 +25,5 @@ TextView note;
         note.setText(note_u);
 
 
-
-
-
     }
 }
