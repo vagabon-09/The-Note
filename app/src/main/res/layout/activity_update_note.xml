@@ -69,20 +69,20 @@
             android:layout_height="match_parent"
             android:layout_below="@+id/update_NoteTitleId">
 
-            <EditText
-                android:background="@android:color/transparent"
+            <jp.wasabeef.richeditor.RichEditor
                 android:id="@+id/Update_NoteNotesId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_10sdp"
+                android:layout_marginStart="@dimen/_17sdp"
                 android:layout_marginTop="@dimen/_5sdp"
                 android:layout_marginEnd="@dimen/_10sdp"
+                android:background="@android:color/transparent"
                 android:hint="@string/write_note"
-                android:padding="@dimen/_10sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10sdp"
+                android:importantForAutofill="no"
                 android:inputType="textImeMultiLine"
-                android:importantForAutofill="no" />
+                android:padding="@dimen/_15sdp"
+                android:textColor="@color/black"
+                android:textSize="@dimen/_10sdp" />
 
         </ScrollView>
 
