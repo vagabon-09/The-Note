@@ -1,11 +1,17 @@
 package com.thinknxtmedia.mynotes.Tools;
 
+import android.content.Context;
+import android.view.LayoutInflater;
+import android.view.View;
+
+import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
 public class FontEditor {
     public FontEditor(ActivityNoteMakngPageBinding binding) {
+
         //Italic style
-        binding.ItalicTextId.setOnClickListener(view -> binding.NoteNotesId.setItalic());
+      binding.ItalicTextId.setOnClickListener(view -> binding.NoteNotesId.setItalic());
         //Bold style
         binding.boldTextId.setOnClickListener(view -> binding.NoteNotesId.setBold());
         //Align center
