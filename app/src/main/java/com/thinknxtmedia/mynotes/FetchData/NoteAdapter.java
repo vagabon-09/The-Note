@@ -1,6 +1,7 @@
 package com.thinknxtmedia.mynotes.FetchData;
 
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
 import android.view.LayoutInflater;
@@ -10,11 +11,13 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
+import com.thinknxtmedia.mynotes.DataBase.NoteDao;
+import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.Update_Note;
@@ -37,11 +40,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         return new MyViewHolder(view);
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.MyViewHolder holder, int position) {
         holder.s_title.setText(noteEntities.get(position).getTitle());
 //    holder.s_date.setText(noteEntities.get(position).getTime());
-        holder.s_title.setOnClickListener(view -> {
+        holder.cardView.setOnClickListener(view -> {
 //            Update_Note update_note = new Update_Note(noteEntities.get(position).getTitle(),noteEntities.get(position).getNote());
             Intent intent = new Intent(context, Update_Note.class);
             intent.putExtra("title", noteEntities.get(position).getTitle());
@@ -66,8 +70,14 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             holder.delete.setVisibility(View.VISIBLE);
             return false;
         });
-        holder.deleteBtn.setOnClickListener(view ->
-                Toast.makeText(context, "This item is deleted", Toast.LENGTH_SHORT).show()
+        holder.deleteBtn.setOnClickListener(view -> {
+                    NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
+                    NoteDao dao = db.noteDao();
+                    dao.DeleteNote(noteEntities.get(position).getId());
+                    noteEntities.remove(position);
+                    notifyDataSetChanged();
+
+                }
         );
 
     }
