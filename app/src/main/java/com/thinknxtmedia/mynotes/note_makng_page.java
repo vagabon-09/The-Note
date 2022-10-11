@@ -71,7 +71,6 @@ public class note_makng_page extends AppCompatActivity {
         });
 
         binding.noteSaveBtnId.setOnClickListener(view -> insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding));
-
     }
 
 
@@ -125,4 +124,15 @@ public class note_makng_page extends AppCompatActivity {
         dialogBox.show(this, R.layout.color_plate);
     }
 
+    @Override
+    public void onBackPressed() {
+        if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
+
+            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding);
+            note_data = "";
+        }
+        super.onBackPressed();
+
+
+    }
 }

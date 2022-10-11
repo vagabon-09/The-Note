@@ -39,6 +39,7 @@
     <string name="delete_btn">delete Btn</string>
     <string name="write_note">Write Note</string>
     <string name="h1_name">h1 name</string>
+    <string name="delete_button">delete Button</string>
 
 
 </resources>

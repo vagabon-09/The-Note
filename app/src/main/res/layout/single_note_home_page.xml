@@ -1,26 +1,31 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:layout_margin="@dimen/_10sdp"
     android:id="@+id/cardViewBtn"
     android:layout_width="wrap_content"
-    android:layout_weight="1"
     android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_10sdp"
+    android:layout_weight="1"
     app:cardBackgroundColor="@color/ash"
     app:cardCornerRadius="@dimen/_10sdp"
     app:cardPreventCornerOverlap="false">
 
+
     <RelativeLayout
+        android:id="@+id/NoteBtnId"
         android:layout_width="@dimen/_130sdp"
         android:layout_height="wrap_content"
         android:layout_margin="@dimen/_5sdp"
         android:layout_marginEnd="@dimen/_10sdp">
 
 
+
         <LinearLayout
+            android:id="@+id/NoteBtn"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:orientation="vertical">
+
 
             <TextView
                 android:id="@+id/s_note_title"
@@ -45,21 +50,24 @@
 
         </LinearLayout>
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
+        <RelativeLayout
+            android:id="@+id/s_deleteBtn"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
             android:layout_centerInParent="true"
-            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:background="@android:color/transparent"
+            android:gravity="center"
             android:visibility="gone">
 
             <ImageView
-                android:id="@+id/s_deleteBtn"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@drawable/delete"
-                android:contentDescription="@string/delete_btn" />
+                android:id="@+id/s_delete"
+                android:layout_width="@dimen/_20sdp"
+                android:layout_height="@dimen/_20sdp"
+                android:contentDescription="@string/delete_button"
+                android:src="@drawable/delete" />
 
-        </LinearLayout>
+        </RelativeLayout>
     </RelativeLayout>
 
 

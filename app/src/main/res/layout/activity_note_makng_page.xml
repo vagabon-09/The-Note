@@ -52,7 +52,7 @@
             android:id="@+id/NoteTitleId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/topBarId"
+            android:layout_below="@+id/noteEditorId"
             android:layout_marginStart="@dimen/_10sdp"
             android:layout_marginTop="@dimen/_5sdp"
             android:layout_marginEnd="@dimen/_10sdp"
@@ -84,7 +84,7 @@
             android:layout_below="@+id/NoteTitleId"
             android:layout_marginStart="@dimen/_13sdp"
             android:layout_marginTop="@dimen/_7sdp"
-            android:layout_marginEnd="@dimen/_13sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
             android:alpha="0.5"
             android:padding="@dimen/_5sdp"
             android:tooltipText="Enter the note"
@@ -92,10 +92,10 @@
 
 
         <HorizontalScrollView
-            android:id="@+id/buttomBar"
+            android:id="@+id/noteEditorId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true">
+            android:layout_below="@+id/topBarId">
 
             <LinearLayout
 

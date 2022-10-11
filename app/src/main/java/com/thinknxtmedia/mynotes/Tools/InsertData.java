@@ -16,10 +16,8 @@ import java.util.List;
 public class InsertData {
     public InsertData(Context applicationContext, String title, String notes, String tag, ActivityNoteMakngPageBinding binding) {
 
-        if (title.isEmpty()){
+        if (title.isEmpty() && notes.isEmpty()){
             Toast.makeText(applicationContext, "Please Enter Title First.", Toast.LENGTH_SHORT).show();
-        }else if (notes.isEmpty()){
-            Toast.makeText(applicationContext, "Please Make Note First.", Toast.LENGTH_SHORT).show();
         }else{
             NoteDataBase dataBase = Room.databaseBuilder(applicationContext,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
             NoteDao noteDao = dataBase.noteDao();

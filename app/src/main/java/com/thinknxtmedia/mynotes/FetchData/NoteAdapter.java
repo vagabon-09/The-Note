@@ -7,12 +7,14 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
+import android.widget.RelativeLayout;
 import android.widget.TextView;
-
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
-import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.Update_Note;
@@ -31,22 +33,34 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     @NonNull
     @Override
     public NoteAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_note_home_page,parent,false);
+        View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.single_note_home_page, parent, false);
         return new MyViewHolder(view);
     }
 
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.MyViewHolder holder, int position) {
-    holder.s_title.setText(noteEntities.get(position).getTitle());
+        holder.s_title.setText(noteEntities.get(position).getTitle());
 //    holder.s_date.setText(noteEntities.get(position).getTime());
-        holder.cardView.setOnClickListener(view -> {
+        holder.s_title.setOnClickListener(view -> {
 //            Update_Note update_note = new Update_Note(noteEntities.get(position).getTitle(),noteEntities.get(position).getNote());
-            Intent intent = new Intent(context,Update_Note.class);
-            intent.putExtra("title",noteEntities.get(position).getTitle());
-            intent.putExtra("note",noteEntities.get(position).getNote());
+            Intent intent = new Intent(context, Update_Note.class);
+            intent.putExtra("title", noteEntities.get(position).getTitle());
+            intent.putExtra("note", noteEntities.get(position).getNote());
             context.startActivity(intent);
-
         });
+        holder.cardView.setOnLongClickListener(view -> {
+            holder.delete.setAlpha(1f);
+            holder.s_title.setAlpha(0.3f);
+            holder.s_title.setClickable(false);
+            holder.s_title.setEnabled(false);
+            holder.NoteBtn.setClickable(false);
+            holder.delete.setVisibility(View.VISIBLE);
+            return false;
+        });
+        holder.deleteBtn.setOnClickListener(view ->
+                Toast.makeText(context, "This item is deleted", Toast.LENGTH_SHORT).show()
+        );
+
     }
 
     @Override
@@ -56,18 +70,17 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView s_title;
-        ImageView delete;
-        CardView cardView;
+        RelativeLayout delete, cardView;
+        ImageView deleteBtn;
+        LinearLayout NoteBtn;
+
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             s_title = itemView.findViewById(R.id.s_note_title);
             delete = itemView.findViewById(R.id.s_deleteBtn);
-            cardView = itemView.findViewById(R.id.cardViewBtn);
-            cardView.setOnLongClickListener(view -> {
-                delete.setVisibility(View.VISIBLE);
-
-                return false;
-            });
+            cardView = itemView.findViewById(R.id.NoteBtnId);
+            deleteBtn = itemView.findViewById(R.id.s_delete);
+            NoteBtn = itemView.findViewById(R.id.NoteBtn);
         }
     }
 }
