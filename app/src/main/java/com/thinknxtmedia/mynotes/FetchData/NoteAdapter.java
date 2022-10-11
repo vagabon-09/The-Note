@@ -48,6 +48,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             context.startActivity(intent);
         });
+        holder.s_title.setOnLongClickListener(view -> {
+            holder.delete.setAlpha(1f);
+            holder.s_title.setAlpha(0.3f);
+            holder.s_title.setClickable(false);
+            holder.s_title.setEnabled(false);
+            holder.NoteBtn.setClickable(false);
+            holder.delete.setVisibility(View.VISIBLE);
+            return false;
+        });
         holder.cardView.setOnLongClickListener(view -> {
             holder.delete.setAlpha(1f);
             holder.s_title.setAlpha(0.3f);
