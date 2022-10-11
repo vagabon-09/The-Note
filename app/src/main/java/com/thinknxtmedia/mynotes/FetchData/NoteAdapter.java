@@ -53,6 +53,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             context.startActivity(intent);
         });
+        holder.s_title.setOnClickListener(view -> {
+//            Update_Note update_note = new Update_Note(noteEntities.get(position).getTitle(),noteEntities.get(position).getNote());
+            Intent intent = new Intent(context, Update_Note.class);
+            intent.putExtra("title", noteEntities.get(position).getTitle());
+            intent.putExtra("note", noteEntities.get(position).getNote());
+            context.startActivity(intent);
+        });
         holder.s_title.setOnLongClickListener(view -> {
             holder.delete.setAlpha(1f);
             holder.s_title.setAlpha(0.3f);
@@ -77,7 +84,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                     dao.DeleteNote(noteEntities.get(position).getId());
                     noteEntities.remove(position);
                     notifyDataSetChanged();
-            Toast.makeText(context, "Successfully Note Deleted", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(context, "Successfully Note Deleted", Toast.LENGTH_SHORT).show();
                 }
         );
 
