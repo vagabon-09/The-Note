@@ -29,7 +29,12 @@ RichEditor note;
         getView();
         //Setting data to views
         setContent();
+        //onBackBtn Pressed
+        backBtnPressed();
+    }
 
+    private void backBtnPressed() {
+        binding.UpdateBackBtnId.setOnClickListener(view-> onBackPressed());
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -44,4 +49,5 @@ RichEditor note;
         title = findViewById(R.id.update_NoteTitleId);
         note = findViewById(R.id.Update_NoteNotesId);
     }
+
 }
