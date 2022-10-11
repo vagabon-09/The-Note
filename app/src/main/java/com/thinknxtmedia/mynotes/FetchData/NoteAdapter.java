@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
@@ -76,7 +77,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                     dao.DeleteNote(noteEntities.get(position).getId());
                     noteEntities.remove(position);
                     notifyDataSetChanged();
-
+            Toast.makeText(context, "Successfully Note Deleted", Toast.LENGTH_SHORT).show();
                 }
         );
 
