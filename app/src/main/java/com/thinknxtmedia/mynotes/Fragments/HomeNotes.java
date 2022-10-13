@@ -1,5 +1,4 @@
 package com.thinknxtmedia.mynotes.Fragments;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
@@ -67,6 +66,7 @@ public class HomeNotes extends Fragment {
             mParam1 = getArguments().getString(ARG_PARAM1);
             mParam2 = getArguments().getString(ARG_PARAM2);
         }
+
     }
 
     @Override
@@ -91,8 +91,12 @@ public class HomeNotes extends Fragment {
             swipeRefreshLayout.setRefreshing(false);
             swipDone();
         });
+
+
+
+
         List<NoteEntity> noteEntities = noteDao.getAllData();
-        NoteAdapter adapter = new NoteAdapter(noteEntities,getContext());
+        NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
 
 
@@ -102,15 +106,21 @@ public class HomeNotes extends Fragment {
             Intent intent = new Intent(getActivity(), note_makng_page.class);
             startActivity(intent);
         });
+
+
         return v;
 
     }
 
     private void swipDone() {
         List<NoteEntity> noteEntities = noteDao.getAllData();
-        NoteAdapter adapter = new NoteAdapter(noteEntities,getContext());
+        NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
     }
 
-
+    @Override
+    public void onResume() {
+        super.onResume();
+       swipDone();
+    }
 }
