@@ -70,7 +70,7 @@ public class note_makng_page extends AppCompatActivity {
             note_data = text;
         });
 
-        binding.noteSaveBtnId.setOnClickListener(view -> insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding));
+        binding.noteSaveBtnId.setOnClickListener(view -> onBackPressed());
     }
 
 
@@ -127,12 +127,10 @@ public class note_makng_page extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
-
             insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding);
             note_data = "";
         }
         super.onBackPressed();
-
 
     }
 }
