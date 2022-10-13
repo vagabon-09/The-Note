@@ -1,7 +1,6 @@
 package com.thinknxtmedia.mynotes;
 
 import android.annotation.SuppressLint;
-import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -15,7 +14,6 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
-import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
