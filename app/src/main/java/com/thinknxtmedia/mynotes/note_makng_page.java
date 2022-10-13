@@ -1,6 +1,7 @@
 package com.thinknxtmedia.mynotes;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -14,6 +15,7 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
+import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
@@ -94,7 +96,7 @@ public class note_makng_page extends AppCompatActivity {
             }
         });
 
-        //When text changed on note making page
+
 
 
     }
@@ -130,6 +132,7 @@ public class note_makng_page extends AppCompatActivity {
             insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding);
             note_data = "";
         }
+
         super.onBackPressed();
 
     }

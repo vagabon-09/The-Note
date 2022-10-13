@@ -3,11 +3,13 @@ package com.thinknxtmedia.mynotes;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.annotation.SuppressLint;
+import android.content.Intent;
 import android.os.Bundle;
 import android.text.Html;
 import android.text.Spanned;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
@@ -31,6 +33,8 @@ RichEditor note;
         setContent();
         //onBackBtn Pressed
         backBtnPressed();
+
+
     }
 
     private void backBtnPressed() {
@@ -49,5 +53,6 @@ RichEditor note;
         title = findViewById(R.id.update_NoteTitleId);
         note = findViewById(R.id.Update_NoteNotesId);
     }
+
 
 }
