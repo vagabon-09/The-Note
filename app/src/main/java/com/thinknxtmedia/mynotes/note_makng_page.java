@@ -15,6 +15,7 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
 import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
@@ -120,12 +121,23 @@ public class note_makng_page extends AppCompatActivity {
     }
 
     private void TagDialogBox() {
-        dialogBox.show(this, R.layout.note_tag);
+        final BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.note_tag);
+        Button tag = bottomSheetDialog.findViewById(R.id.addTagButton);
+        assert tag != null;
+        tag.setOnClickListener(view -> {
+            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
+        bottomSheetDialog.show();
+
     }
 
     private void bottomSheet() {
         dialogBox.show(this, R.layout.color_plate);
     }
+    
+
 
     @Override
     public void onBackPressed() {
