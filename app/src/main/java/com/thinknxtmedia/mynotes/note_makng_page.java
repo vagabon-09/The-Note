@@ -10,7 +10,10 @@ import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.Toast;
+
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.Tools.FontEditor;
@@ -93,8 +96,6 @@ public class note_makng_page extends AppCompatActivity {
         });
 
 
-
-
     }
 
     private void ButtonFunction() {
@@ -115,7 +116,18 @@ public class note_makng_page extends AppCompatActivity {
     }
 
     private void TagDialogBox() {
-        dialogBox.show(this, R.layout.note_tag);
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.note_tag);
+        Button savedTag = bottomSheetDialog.findViewById(R.id.addTagButton);
+        assert savedTag != null;
+        savedTag.setOnClickListener(view -> {
+            EditText tag_text = bottomSheetDialog.findViewById(R.id.NoteTagId);
+            assert tag_text != null;
+            tag = tag_text.getText().toString();
+//            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
+        bottomSheetDialog.show();
     }
 
     private void bottomSheet() {
@@ -124,11 +136,13 @@ public class note_makng_page extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        if (tag == null) {
+            tag = "";
+        }
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
             insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding);
             note_data = "";
         }
-
         super.onBackPressed();
 
     }
