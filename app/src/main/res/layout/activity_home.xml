@@ -11,6 +11,8 @@
 
     <include layout="@layout/toolbar" />
 
+
+
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/home_navigation_id"
         android:layout_width="wrap_content"
@@ -19,5 +21,6 @@
         android:fitsSystemWindows="true"
         app:headerLayout="@layout/header_layout_drawer"
         app:menu="@menu/drawer_menu" />
+
 
 </androidx.drawerlayout.widget.DrawerLayout>

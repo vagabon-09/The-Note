@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/_5sdp"
+    android:backgroundTint="@color/ash_white"
+    android:orientation="horizontal"
+    app:cardCornerRadius="@dimen/_5sdp">
+
+    <TextView
+        android:id="@+id/tagId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="@dimen/_5sdp"
+        android:text="@string/tag_text"
+        android:textColor="@color/black" />
+</androidx.cardview.widget.CardView>
+

@@ -58,6 +58,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
+            <include layout="@layout/tag_list"/>
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipeRefreshId"
@@ -69,7 +70,6 @@
                     android:id="@+id/recViewHomeId"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-
                     android:layout_marginBottom="@dimen/_5sdp" />
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 

@@ -8,6 +8,7 @@ import android.view.ViewGroup;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -16,6 +17,7 @@ import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
+import com.thinknxtmedia.mynotes.FetchData.TagAdapter;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.note_makng_page;
@@ -29,7 +31,7 @@ public class HomeNotes extends Fragment {
     // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    RecyclerView recView;
+    RecyclerView recView,tagRecyclerView;
     NoteAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
     NoteDao noteDao;
@@ -84,6 +86,9 @@ public class HomeNotes extends Fragment {
         //Finding through id
         recView = v.findViewById(R.id.recViewHomeId);
         recView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2));
+            //Tag adapter
+        tagRecyclerView = v.findViewById(R.id.tag_list_id);
+        tagRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
 
         //setting swipe refresh layout
         swipeRefreshLayout = v.findViewById(R.id.swipeRefreshId);
@@ -97,7 +102,9 @@ public class HomeNotes extends Fragment {
 
         List<NoteEntity> noteEntities = noteDao.getAllData();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
+        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
+        tagRecyclerView.setAdapter(adapter1);
 
 
         ReplaceFreagment replaceFreagment = new ReplaceFreagment();
@@ -115,6 +122,8 @@ public class HomeNotes extends Fragment {
     private void swipDone() {
         List<NoteEntity> noteEntities = noteDao.getAllData();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
+        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
+        tagRecyclerView.setAdapter(adapter1);
         recView.setAdapter(adapter);
     }
 
