@@ -19,10 +19,10 @@ import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
 import com.thinknxtmedia.mynotes.FetchData.TagAdapter;
 import com.thinknxtmedia.mynotes.R;
-import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.note_makng_page;
 
 import java.util.List;
+
 
 
 public class HomeNotes extends Fragment {
@@ -32,15 +32,10 @@ public class HomeNotes extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
     RecyclerView recView,tagRecyclerView;
-    NoteAdapter adapter;
     SwipeRefreshLayout swipeRefreshLayout;
     NoteDao noteDao;
     String title;
     String text;
-
-    // TODO: Rename and change types of parameters
-    private String mParam1;
-    private String mParam2;
 
     public HomeNotes(String title, String text) {
         this.title = title;
@@ -65,8 +60,9 @@ public class HomeNotes extends Fragment {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         if (getArguments() != null) {
-            mParam1 = getArguments().getString(ARG_PARAM1);
-            mParam2 = getArguments().getString(ARG_PARAM2);
+            // TODO: Rename and change types of parameters
+            String mParam1 = getArguments().getString(ARG_PARAM1);
+            String mParam2 = getArguments().getString(ARG_PARAM2);
         }
 
     }
@@ -80,12 +76,12 @@ public class HomeNotes extends Fragment {
         CardView addBtn = v.findViewById(R.id.makeNoteBtnHome);
 
         //Calling InsertData
-        NoteDataBase dataBase = Room.databaseBuilder(getContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
+        NoteDataBase dataBase = Room.databaseBuilder(requireContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         noteDao = dataBase.noteDao();
 
         //Finding through id
         recView = v.findViewById(R.id.recViewHomeId);
-        recView.setLayoutManager(new GridLayoutManager(getActivity().getApplicationContext(), 2));
+        recView.setLayoutManager(new GridLayoutManager(requireActivity().getApplicationContext(), 2));
             //Tag adapter
         tagRecyclerView = v.findViewById(R.id.tag_list_id);
         tagRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
@@ -107,7 +103,7 @@ public class HomeNotes extends Fragment {
         tagRecyclerView.setAdapter(adapter1);
 
 
-        ReplaceFreagment replaceFreagment = new ReplaceFreagment();
+
         //Setting Action when clicking on add notes button
         addBtn.setOnClickListener(view -> {
             Intent intent = new Intent(getActivity(), note_makng_page.class);
