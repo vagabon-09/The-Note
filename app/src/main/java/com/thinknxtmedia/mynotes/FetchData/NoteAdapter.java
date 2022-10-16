@@ -95,7 +95,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         NoteDao dao = db.noteDao();
 //        dao.DeleteNote(noteEntities.get(position).getId());
-        dao.editTrash(noteEntities.get(position).setTrash("trash"));
+        dao.editTrash(noteEntities.get(position).setTrash("trash"),noteEntities.get(position).getId());
         noteEntities.remove(position);
         notifyDataSetChanged();
         Toast.makeText(context, "Successfully Note Deleted", Toast.LENGTH_SHORT).show();

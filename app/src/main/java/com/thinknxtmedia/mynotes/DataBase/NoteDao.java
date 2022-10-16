@@ -37,8 +37,8 @@ public interface NoteDao {
     void NoteNote(String uNoteDetails);
 
     //Update tag
-    @Query("UPDATE noteentity SET trash = :editTrash")
-    void editTrash(String editTrash);
+    @Query("UPDATE noteentity SET trash = :editTrash WHERE id=:uId")
+    void editTrash(String editTrash, int uId);
 
     //Checking data is available or not
     @Query("SELECT EXISTS(SELECT * FROM noteentity)")

@@ -2,11 +2,13 @@ package com.thinknxtmedia.mynotes.FetchData;
 
 import android.annotation.SuppressLint;
 import android.content.Context;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
@@ -42,14 +44,16 @@ public class trashAdapter extends RecyclerView.Adapter<trashAdapter.MyViewHolder
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.trash_title.setText(noteEntities.get(position).getTitle());
         holder.trash_layout.setOnLongClickListener(view -> {
-            deleteTrash(position);
+
+            int id =noteEntities.get(position).getId();
+            deleteTrash(id,position);
             return false;
         });
 
     }
 
     @SuppressLint("NotifyDataSetChanged")
-    private void deleteTrash(int position) {
+    private void deleteTrash(int id,int position) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.trash_recover);
         Button delete_trash = bottomSheetDialog.findViewById(R.id.trashDelete);
@@ -58,7 +62,7 @@ public class trashAdapter extends RecyclerView.Adapter<trashAdapter.MyViewHolder
         delete_trash.setOnClickListener(v -> {
             NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
             NoteDao dao = db.noteDao();
-            dao.DeleteNote(noteEntities.get(position).getId());
+            dao.DeleteNote(id);
             noteEntities.remove(position);
             notifyDataSetChanged();
             bottomSheetDialog.dismiss();
@@ -68,10 +72,11 @@ public class trashAdapter extends RecyclerView.Adapter<trashAdapter.MyViewHolder
         recover_trash.setOnClickListener(view -> {
             NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
             NoteDao dao = db.noteDao();
-            dao.editTrash(noteEntities.get(position).setTrash("all"));
+            dao.editTrash(noteEntities.get(position).setTrash("all"),id);
             noteEntities.remove(position);
             notifyDataSetChanged();
             bottomSheetDialog.dismiss();
+
         });
         bottomSheetDialog.show();
     }
