@@ -41,6 +41,10 @@
     <string name="h1_name">h1 name</string>
     <string name="delete_button">delete Button</string>
     <string name="tag_text">Random 1</string>
+    <string name="delete">Delete</string>
+    <string name="pin">pin</string>
+    <string name="trash_title">This is title</string>
+    <string name="recover">Recover</string>
 
 
 </resources>

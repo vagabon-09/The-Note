@@ -12,13 +12,22 @@ public class NoteEntity {
     public String title;
     @ColumnInfo(name = "NoteDetails")
     public String note;
+    @ColumnInfo(name = "Tag")
+    public String tag;
+    @ColumnInfo(name = "trash")
+    public String trash;
 
-    public NoteEntity(int id, String title, String note, String tag) {
+
+
+    public NoteEntity(int id, String title, String note, String tag, String trash) {
         this.id = id;
         this.title = title;
         this.note = note;
         this.tag = tag;
+        this.trash = trash;
     }
+
+
 
     public int getId() {
         return id;
@@ -48,11 +57,19 @@ public class NoteEntity {
         return tag;
     }
 
-    public void setTag(String tag) {
+    public String setTag(String tag) {
         this.tag = tag;
+        return tag;
     }
 
-    @ColumnInfo(name = "Tag")
-    public String tag;
+    public String getTrash() {
+        return trash;
+    }
+
+    public String setTrash(String trash) {
+        this.trash = trash;
+        return trash;
+    }
+
 
 }

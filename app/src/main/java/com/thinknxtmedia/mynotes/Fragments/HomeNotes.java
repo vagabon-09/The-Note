@@ -96,7 +96,7 @@ public class HomeNotes extends Fragment {
 
 
 
-        List<NoteEntity> noteEntities = noteDao.getAllData();
+        List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
         TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
@@ -116,7 +116,7 @@ public class HomeNotes extends Fragment {
     }
 
     private void swipDone() {
-        List<NoteEntity> noteEntities = noteDao.getAllData();
+        List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
         TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
         tagRecyclerView.setAdapter(adapter1);

@@ -12,13 +12,10 @@
         android:orientation="vertical"
         tools:ignore="UselessParent">
 
-        <TextView
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:gravity="center"
-            android:textColor="@color/black"
-            android:text="Trash"
-            tools:ignore="HardcodedText" />
+       <androidx.recyclerview.widget.RecyclerView
+           android:layout_width="match_parent"
+           android:layout_height="match_parent"
+           android:id="@+id/recTrashView"/>
 
     </LinearLayout>
 
