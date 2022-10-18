@@ -57,6 +57,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             Intent intent = new Intent(context, Update_Note.class);
             intent.putExtra("title", noteEntities.get(position).getTitle());
             intent.putExtra("note", noteEntities.get(position).getNote());
+            intent.putExtra("color",noteEntities.get(position).getColor());
             context.startActivity(intent);
         });
         holder.s_title.setOnClickListener(view -> {

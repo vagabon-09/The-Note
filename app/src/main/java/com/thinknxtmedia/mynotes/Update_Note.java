@@ -17,11 +17,13 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.Tools.updateData;
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
+import java.util.Objects;
+
 public class Update_Note extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
     EditText title, note;
     updateData updateData;
-    private String  ColorName ;
+    private String ColorName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -46,9 +48,7 @@ public class Update_Note extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.color_plate);
         //show color plate
-        binding.colorPanelId.setOnClickListener(view -> {
-            bottomSheetDialog.show();
-        });
+        binding.colorPanelId.setOnClickListener(view -> bottomSheetDialog.show());
 
         //Red circle
         View red_Circle = bottomSheetDialog.findViewById(R.id.red_circle);
@@ -71,7 +71,6 @@ public class Update_Note extends AppCompatActivity {
         assert orange_circle != null;
         orange_circle.setOnClickListener(view -> {
             ColorName = "#F37806";
-            Toast.makeText(this, "orange circle", Toast.LENGTH_SHORT).show();
             bottomSheetDialog.dismiss();
         });
         //White Circle
@@ -93,10 +92,29 @@ public class Update_Note extends AppCompatActivity {
         binding.UpdateBackBtnId.setOnClickListener(view -> onBackPressed());
     }
 
-    @SuppressLint("SetJavaScriptEnabled")
+    @SuppressLint({"SetJavaScriptEnabled", "UseCompatLoadingForDrawables"})
     private void setContent() {
         Spanned title_u = Html.fromHtml(getIntent().getStringExtra("title"));
         Spanned note_u = Html.fromHtml(getIntent().getStringExtra("note"));
+        String note_color = getIntent().getStringExtra("color");
+        //Red color
+        if (Objects.equals(note_color, "#EC0D0D")) {
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.red_circle));
+        }
+        //Green color
+        else if (Objects.equals(note_color, "#2FFF00")) {
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.green_circle));
+        }
+        //Orange color
+        else if (Objects.equals(note_color, "#F37806")) {
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.orange_circle));
+        }
+        //White color
+        else if (Objects.equals(note_color, "#D9D9D9")) {
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.white_circle));
+        }
+
+
         title.setText(title_u);
         binding.UpdateNoteNotesId.setText(note_u);
         binding.UpdateNoteNotesId.addTextChangedListener(new TextWatcher() {
@@ -124,7 +142,7 @@ public class Update_Note extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-         updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString());
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString());
         super.onBackPressed();
 
     }

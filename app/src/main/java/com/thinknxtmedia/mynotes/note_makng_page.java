@@ -123,7 +123,7 @@ public class note_makng_page extends AppCompatActivity {
         View green_circle = bottomSheetDialog.findViewById(R.id.green_circle);
         assert green_circle != null;
         green_circle.setOnClickListener(view -> {
-            ColorName = "#EC0D0D";
+            ColorName = "#2FFF00";
             bottomSheetDialog.dismiss();
         });
         //Orange Color
