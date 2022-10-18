@@ -29,13 +29,15 @@ public interface NoteDao {
     void DeleteNote(int uid);
 
     //Update dating note title
-    @Query("UPDATE noteentity SET Title = :uTitle")
-    void noteTitle(String uTitle);
+    @Query("UPDATE noteentity SET Title = :uTitle WHERE id =:Uid")
+    void noteTitle(String uTitle,int Uid);
 
     //Updating content
-    @Query("UPDATE noteentity SET NoteDetails = :uNoteDetails")
-    void NoteNote(String uNoteDetails);
-
+    @Query("UPDATE noteentity SET NoteDetails = :uNoteDetails WHERE id =:uid")
+    void NoteNote(String uNoteDetails,int uid);
+    //Update color
+    @Query("UPDATE noteentity SET color = :colorHex WHERE id=:id")
+            void UpdateColor(String colorHex,int id);
     //Update tag
     @Query("UPDATE noteentity SET trash = :editTrash WHERE id=:uId")
     void editTrash(String editTrash, int uId);

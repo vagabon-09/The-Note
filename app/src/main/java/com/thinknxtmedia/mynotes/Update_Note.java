@@ -24,6 +24,7 @@ public class Update_Note extends AppCompatActivity {
     EditText title, note;
     updateData updateData;
     private String ColorName;
+    private int note_id;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -97,6 +98,9 @@ public class Update_Note extends AppCompatActivity {
         Spanned title_u = Html.fromHtml(getIntent().getStringExtra("title"));
         Spanned note_u = Html.fromHtml(getIntent().getStringExtra("note"));
         String note_color = getIntent().getStringExtra("color");
+       note_id = getIntent().getIntExtra("note_id",0);
+
+
         //Red color
         if (Objects.equals(note_color, "#EC0D0D")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.red_circle));
@@ -142,7 +146,7 @@ public class Update_Note extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString());
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString(),note_id);
         super.onBackPressed();
 
     }

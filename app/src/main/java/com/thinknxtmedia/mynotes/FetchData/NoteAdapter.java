@@ -57,7 +57,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             Intent intent = new Intent(context, Update_Note.class);
             intent.putExtra("title", noteEntities.get(position).getTitle());
             intent.putExtra("note", noteEntities.get(position).getNote());
-            intent.putExtra("color",noteEntities.get(position).getColor());
+            intent.putExtra("color", noteEntities.get(position).getColor());
+            intent.putExtra("note_id", noteEntities.get(position).getId());
             context.startActivity(intent);
         });
         holder.s_title.setOnClickListener(view -> {
@@ -65,6 +66,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             Intent intent = new Intent(context, Update_Note.class);
             intent.putExtra("title", noteEntities.get(position).getTitle());
             intent.putExtra("note", noteEntities.get(position).getNote());
+            intent.putExtra("color", noteEntities.get(position).getColor());
+            intent.putExtra("note_id", noteEntities.get(position).getId());
             context.startActivity(intent);
         });
         holder.s_title.setOnLongClickListener(view -> {
@@ -93,7 +96,6 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         });
 
 
-
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -101,7 +103,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         NoteDao dao = db.noteDao();
 //        dao.DeleteNote(noteEntities.get(position).getId());
-        dao.editTrash(noteEntities.get(position).setTrash("trash"),noteEntities.get(position).getId());
+        dao.editTrash(noteEntities.get(position).setTrash("trash"), noteEntities.get(position).getId());
         noteEntities.remove(position);
         notifyDataSetChanged();
         Toast.makeText(context, "Successfully Note Deleted", Toast.LENGTH_SHORT).show();
