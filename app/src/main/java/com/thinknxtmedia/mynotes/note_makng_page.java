@@ -14,11 +14,11 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.thinknxtmedia.mynotes.DialogBox.ShowDialogBox;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
+
 
 public class note_makng_page extends AppCompatActivity {
     static String note_data = "";
@@ -135,6 +135,7 @@ public class note_makng_page extends AppCompatActivity {
         });
         //White Circle
         View white_circle = bottomSheetDialog.findViewById(R.id.white_circle);
+        assert white_circle != null;
         white_circle.setOnClickListener(view-> {
             ColorName = "#FFFFFF";
             bottomSheetDialog.dismiss();
@@ -158,14 +159,14 @@ public class note_makng_page extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
-    private void bottomSheet() {
-
-    }
 
     @Override
     public void onBackPressed() {
         if (tag == null) {
             tag = "";
+        }
+        if(ColorName==null){
+            ColorName="#C0CCC3";
         }
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
             insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding,ColorName);

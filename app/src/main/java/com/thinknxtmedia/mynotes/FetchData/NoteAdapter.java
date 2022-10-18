@@ -49,7 +49,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.MyViewHolder holder, int position) {
         holder.s_title.setText(noteEntities.get(position).getTitle());
-        holder.colorCard.setBackgroundColor(Color.parseColor(noteEntities.get(position).getColor()));
+        holder.cardView.setBackgroundColor(Color.parseColor(noteEntities.get(position).getColor()));
 
 //    holder.s_date.setText(noteEntities.get(position).getTime());
         holder.cardView.setOnClickListener(view -> {
