@@ -23,13 +23,13 @@ import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 public class note_makng_page extends AppCompatActivity {
     static String note_data = "";
     ActivityNoteMakngPageBinding binding;
-    ShowDialogBox dialogBox;
     InsertData insertData;
     String tag;
     Button tagSave;
     EditText EditTag;
     ReplaceFreagment replaceFreagment;
     FontEditor fontEditor;
+    String ColorName;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -40,8 +40,6 @@ public class note_makng_page extends AppCompatActivity {
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         //Fragment class object creating here
         replaceFreagment = new ReplaceFreagment();
-        //Creating objects for use
-        dialogBox = new ShowDialogBox();
         //Setting bottom
         ButtonFunction();
         //Note Function
@@ -102,18 +100,48 @@ public class note_makng_page extends AppCompatActivity {
         //When users pressed back button
         binding.backBtnId.setOnClickListener(view -> onBackPressed());
         //When user click on color panel button
-        binding.colorPanelId.setOnClickListener(view -> bottomSheet());
+        binding.colorPanelId.setOnClickListener(view -> colorPlate());
         //When user clicked add Tag button
         binding.noteTagId.setOnClickListener(view -> TagDialogBox());
         //When user clicked on font style button
-        binding.fontStyleId.setOnClickListener(view -> fontFamilyDialog());
+
 
 
     }
 
-    private void fontFamilyDialog() {
-        dialogBox.show(this, R.layout.font_family_panel);
+    private void colorPlate() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.color_plate);
+        View red_circle = bottomSheetDialog.findViewById(R.id.red_circle);
+        //Red circle
+        assert red_circle != null;
+        red_circle.setOnClickListener(view -> {
+            ColorName = "#EC0D0D";
+            bottomSheetDialog.dismiss();
+        });
+        //Green Circle
+        View green_circle = bottomSheetDialog.findViewById(R.id.green_circle);
+        assert green_circle != null;
+        green_circle.setOnClickListener(view -> {
+            ColorName = "#EC0D0D";
+            bottomSheetDialog.dismiss();
+        });
+        //Orange Color
+        View orange_color = bottomSheetDialog.findViewById(R.id.orange_circle);
+        assert orange_color != null;
+        orange_color.setOnClickListener(view -> {
+            ColorName = "#F37806";
+            bottomSheetDialog.dismiss();
+        });
+        //White Circle
+        View white_circle = bottomSheetDialog.findViewById(R.id.white_circle);
+        white_circle.setOnClickListener(view-> {
+            ColorName = "#FFFFFF";
+            bottomSheetDialog.dismiss();
+        });
+        bottomSheetDialog.show();
     }
+
 
     private void TagDialogBox() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
@@ -131,7 +159,7 @@ public class note_makng_page extends AppCompatActivity {
     }
 
     private void bottomSheet() {
-        dialogBox.show(this, R.layout.color_plate);
+
     }
 
     @Override
@@ -140,7 +168,7 @@ public class note_makng_page extends AppCompatActivity {
             tag = "";
         }
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
-            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding);
+            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding,ColorName);
             note_data = "";
         }
         super.onBackPressed();

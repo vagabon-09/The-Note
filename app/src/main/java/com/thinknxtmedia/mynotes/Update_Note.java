@@ -9,15 +9,19 @@ import android.text.TextWatcher;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.Tools.updateData;
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
 public class Update_Note extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
     EditText title, note;
+    updateData updateData;
+    private String  ColorName ;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -39,8 +43,45 @@ public class Update_Note extends AppCompatActivity {
     }
 
     private void textEditor() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.color_plate);
+        //show color plate
+        binding.colorPanelId.setOnClickListener(view -> {
+            bottomSheetDialog.show();
+        });
 
-
+        //Red circle
+        View red_Circle = bottomSheetDialog.findViewById(R.id.red_circle);
+        assert red_Circle != null;
+        red_Circle.setOnClickListener(view -> {
+            ColorName = "#EC0D0D";
+            Toast.makeText(this, "Red Circle..", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
+        //Green circle
+        View green_circle = bottomSheetDialog.findViewById(R.id.green_circle);
+        assert green_circle != null;
+        green_circle.setOnClickListener(view -> {
+            ColorName = "#2FFF00";
+            Toast.makeText(this, "green circle", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
+        //Orange circle
+        View orange_circle = bottomSheetDialog.findViewById(R.id.orange_circle);
+        assert orange_circle != null;
+        orange_circle.setOnClickListener(view -> {
+            ColorName = "#F37806";
+            Toast.makeText(this, "orange circle", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
+        //White Circle
+        View white_circle = bottomSheetDialog.findViewById(R.id.white_circle);
+        assert white_circle != null;
+        white_circle.setOnClickListener(view -> {
+            ColorName = "#FFFFFFFF";
+            Toast.makeText(this, "White Circle", Toast.LENGTH_SHORT).show();
+            bottomSheetDialog.dismiss();
+        });
 
     }
 
@@ -83,7 +124,7 @@ public class Update_Note extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
-        updateData updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString(), binding);
+         updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString());
         super.onBackPressed();
 
     }

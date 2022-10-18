@@ -4,6 +4,7 @@ package com.thinknxtmedia.mynotes.FetchData;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -15,6 +16,7 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 
@@ -47,6 +49,8 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     @Override
     public void onBindViewHolder(@NonNull NoteAdapter.MyViewHolder holder, int position) {
         holder.s_title.setText(noteEntities.get(position).getTitle());
+        holder.colorCard.setBackgroundColor(Color.parseColor(noteEntities.get(position).getColor()));
+
 //    holder.s_date.setText(noteEntities.get(position).getTime());
         holder.cardView.setOnClickListener(view -> {
 //            Update_Note update_note = new Update_Note(noteEntities.get(position).getTitle(),noteEntities.get(position).getNote());
@@ -88,6 +92,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         });
 
 
+
     }
 
     @SuppressLint("NotifyDataSetChanged")
@@ -107,6 +112,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
+        CardView colorCard;
         TextView s_title;
         RelativeLayout delete, cardView;
         ImageView deleteBtn;
@@ -119,6 +125,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             cardView = itemView.findViewById(R.id.NoteBtnId);
             deleteBtn = itemView.findViewById(R.id.s_delete);
             NoteBtn = itemView.findViewById(R.id.NoteBtn);
+            colorCard = itemView.findViewById(R.id.cardViewBtn);
         }
     }
 }

@@ -16,15 +16,16 @@ public class NoteEntity {
     public String tag;
     @ColumnInfo(name = "trash")
     public String trash;
+    @ColumnInfo(name = "color")
+    public String color;
 
-
-
-    public NoteEntity(int id, String title, String note, String tag, String trash) {
+    public NoteEntity(int id, String title, String note, String tag, String trash, String color) {
         this.id = id;
         this.title = title;
         this.note = note;
         this.tag = tag;
         this.trash = trash;
+        this.color = color;
     }
 
 
@@ -55,6 +56,14 @@ public class NoteEntity {
 
     public String getTag() {
         return tag;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
     }
 
     public String setTag(String tag) {

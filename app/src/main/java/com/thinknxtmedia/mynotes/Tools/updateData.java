@@ -13,10 +13,10 @@ public class updateData {
 
 
 
-    public updateData(Context applicationContext, String text, String text1, ActivityUpdateNoteBinding binding) {
+    public updateData(Context applicationContext, String update_title, String update_note) {
         NoteDataBase dataBase = Room.databaseBuilder(applicationContext, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         NoteDao noteDao = dataBase.noteDao();
-        noteDao.noteTitle(text);
-        noteDao.NoteNote(text1);
+        noteDao.noteTitle(update_title);
+        noteDao.NoteNote(update_note);
     }
 }

@@ -14,14 +14,14 @@ import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 import java.util.List;
 
 public class InsertData {
-    public InsertData(Context applicationContext, String title, String notes, String tag, ActivityNoteMakngPageBinding binding) {
+    public InsertData(Context applicationContext, String title, String notes, String tag, ActivityNoteMakngPageBinding binding,String color) {
 
         if (title.isEmpty() && notes.isEmpty()){
             Toast.makeText(applicationContext, "Please Enter Title First.", Toast.LENGTH_SHORT).show();
         }else{
             NoteDataBase dataBase = Room.databaseBuilder(applicationContext,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
             NoteDao noteDao = dataBase.noteDao();
-            NoteEntity noteEntity = new NoteEntity(0,title,notes,tag,"all");
+            NoteEntity noteEntity = new NoteEntity(0,title,notes,tag,"all",color);
             noteDao.InsertData(noteEntity);
             binding.NoteTitleId.setText("");
             binding.NoteNotesId.loadUrl("about:blank");
