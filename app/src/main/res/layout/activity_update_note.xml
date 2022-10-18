@@ -43,12 +43,12 @@
                 android:src="@drawable/done_icon_32"
                 android:visibility="gone" />
         </RelativeLayout>
+
         <HorizontalScrollView
             android:id="@+id/editorId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_below="@+id/topBarId"
-            >
+            android:layout_below="@+id/topBarId">
 
             <LinearLayout
 
@@ -66,25 +66,25 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/color_panel" />
 
-                <ImageView
-                    android:id="@+id/fontStyleId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/text_style"
-                    android:src="@drawable/font_style" />
+                <!--                <ImageView-->
+                <!--                    android:id="@+id/fontStyleId"-->
+                <!--                    android:layout_width="@dimen/_20sdp"-->
+                <!--                    android:layout_height="@dimen/_20sdp"-->
+                <!--                    android:layout_margin="@dimen/_10sdp"-->
+                <!--                    android:layout_marginStart="@dimen/_10sdp"-->
+                <!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+                <!--                    android:contentDescription="@string/text_style"-->
+                <!--                    android:src="@drawable/font_style" />-->
 
 
-                <ImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/content_align"
-                    android:src="@drawable/align_icon" />
+                <!--                <ImageView-->
+                <!--                    android:layout_width="@dimen/_20sdp"-->
+                <!--                    android:layout_height="@dimen/_20sdp"-->
+                <!--                    android:layout_margin="@dimen/_10sdp"-->
+                <!--                    android:layout_marginStart="@dimen/_10sdp"-->
+                <!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+                <!--                    android:contentDescription="@string/content_align"-->
+                <!--                    android:src="@drawable/align_icon" />-->
 
                 <ImageView
                     android:id="@+id/noteTagId"
@@ -183,6 +183,7 @@
 
 
         </HorizontalScrollView>
+
         <EditText
             android:id="@+id/update_NoteTitleId"
             android:layout_width="match_parent"
@@ -205,28 +206,38 @@
         <ScrollView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:layout_below="@+id/update_NoteTitleId">
+            android:layout_below="@+id/update_NoteTitleId"
+            android:layout_marginTop="0dp">
 
-            <jp.wasabeef.richeditor.RichEditor
+            <!--            <jp.wasabeef.richeditor.RichEditor-->
+            <!--                android:id="@+id/Update_NoteNotesId"-->
+            <!--                android:layout_width="match_parent"-->
+            <!--                android:layout_height="wrap_content"-->
+            <!--                android:layout_marginStart="@dimen/_17sdp"-->
+            <!--                android:layout_marginTop="@dimen/_5sdp"-->
+            <!--                android:layout_marginEnd="@dimen/_10sdp"-->
+
+            <!--                android:background="@android:color/transparent"-->
+            <!--                android:hint="@string/write_note"-->
+            <!--                android:importantForAutofill="no"-->
+            <!--                android:inputType="textImeMultiLine"-->
+            <!--                android:padding="@dimen/_15sdp"-->
+            <!--                android:textColor="@color/black"-->
+            <!--                android:textSize="@dimen/_10sdp" />-->
+
+            <EditText
                 android:id="@+id/Update_NoteNotesId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="@dimen/_17sdp"
-                android:layout_marginTop="@dimen/_5sdp"
-                android:layout_marginEnd="@dimen/_10sdp"
-
+                android:layout_margin="@dimen/_10sdp"
+                android:autofillHints=""
                 android:background="@android:color/transparent"
                 android:hint="@string/write_note"
-                android:importantForAutofill="no"
-                android:inputType="textImeMultiLine"
-                android:padding="@dimen/_15sdp"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_10sdp" />
+                android:inputType="textMultiLine"
+                android:padding="@dimen/_10sdp"
+                android:textSize="@dimen/_15sdp" />
 
         </ScrollView>
-
-
-
 
 
     </RelativeLayout>
