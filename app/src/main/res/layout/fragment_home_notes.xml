@@ -58,7 +58,7 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
-            <include layout="@layout/tag_list"/>
+            <include layout="@layout/tag_list_"/>
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipeRefreshId"

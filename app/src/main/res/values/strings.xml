@@ -45,6 +45,11 @@
     <string name="pin">pin</string>
     <string name="trash_title">This is title</string>
     <string name="recover">Recover</string>
+    <string name="all_tag">All</string>
+    <string name="home_tag">Home</string>
+    <string name="work_tag">Work</string>
+    <string name="personal_tag">Personal</string>
+    <string name="tag_createing_btn">Tag createing btn</string>
 
 
 </resources>

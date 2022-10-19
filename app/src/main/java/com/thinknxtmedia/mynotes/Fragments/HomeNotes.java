@@ -84,7 +84,7 @@ public class HomeNotes extends Fragment {
         recView.setLayoutManager(new GridLayoutManager(requireActivity().getApplicationContext(), 2));
             //Tag adapter
         tagRecyclerView = v.findViewById(R.id.tag_list_id);
-        tagRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+//        tagRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
 
         //setting swipe refresh layout
         swipeRefreshLayout = v.findViewById(R.id.swipeRefreshId);
@@ -98,9 +98,9 @@ public class HomeNotes extends Fragment {
 
         List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
-        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
+//        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
-        tagRecyclerView.setAdapter(adapter1);
+//        tagRecyclerView.setAdapter(adapter1);
 
 
 
@@ -118,8 +118,8 @@ public class HomeNotes extends Fragment {
     private void swipDone() {
         List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
-        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
-        tagRecyclerView.setAdapter(adapter1);
+//        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
+//        tagRecyclerView.setAdapter(adapter1);
         recView.setAdapter(adapter);
     }
 
