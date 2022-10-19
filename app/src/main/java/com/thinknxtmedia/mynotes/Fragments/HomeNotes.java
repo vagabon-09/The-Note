@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -14,7 +13,6 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
-
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
@@ -151,6 +149,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         Personal.setOnClickListener(view -> {
+            clicked="Personal";
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -164,29 +163,31 @@ public class HomeNotes extends Fragment {
 
     private void swipDone() {
         NoteAdapter adapter = null;
-        List<NoteEntity> noteEntities;
+        List<NoteEntity> noteEntities = null;
         if (Objects.equals(clicked, "all")){
            noteEntities = noteDao.getAll();
-            adapter = new NoteAdapter(noteEntities, getContext());
         }else if (Objects.equals(clicked, "home")){
-            Toast.makeText(getActivity(), "Home..", Toast.LENGTH_SHORT).show();
+            noteEntities = noteDao.getTag(clicked);
+
         }else if (Objects.equals(clicked, "work")){
-            Toast.makeText(getActivity(), "Work", Toast.LENGTH_SHORT).show();
+            noteEntities = noteDao.getTag(clicked);
+
         }else if (Objects.equals(clicked, "Personal")){
-            Toast.makeText(getActivity(), "Personal..", Toast.LENGTH_SHORT).show();
+            noteEntities = noteDao.getTag(clicked);
+
         }else{
             noteEntities = noteDao.getAll();
-            adapter = new NoteAdapter(noteEntities, getContext());
+
         }
 
 //        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
 //        tagRecyclerView.setAdapter(adapter1);
+        adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
     }
 
     @Override
     public void onResume() {
-
        swipDone();
         super.onResume();
     }

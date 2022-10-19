@@ -46,5 +46,8 @@ public interface NoteDao {
     @Query("SELECT EXISTS(SELECT * FROM noteentity)")
     boolean getRow();
 
+    //Searching tag wise
+    @Query("SELECT * FROM NoteEntity WHERE Tag =:uTag")
+    List<NoteEntity> getTag(String uTag);
 
 }
