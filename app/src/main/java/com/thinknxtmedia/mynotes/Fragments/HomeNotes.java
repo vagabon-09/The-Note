@@ -6,7 +6,6 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -23,7 +22,6 @@ import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.note_makng_page;
 
 import java.util.List;
-import java.util.Objects;
 
 
 public class HomeNotes extends Fragment {
