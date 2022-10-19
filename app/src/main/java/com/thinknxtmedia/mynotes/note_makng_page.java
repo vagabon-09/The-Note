@@ -44,7 +44,7 @@ public class note_makng_page extends AppCompatActivity {
         ButtonFunction();
         //Note Function
         checkNoteEmptyorNot();
-        //Sending data to the databse
+        //Sending data to the database
         sendDataToDataBase();
         //Giving font style
         fontEditor = new FontEditor(binding);
