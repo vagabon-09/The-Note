@@ -1,14 +1,16 @@
 package com.thinknxtmedia.mynotes.Fragments;
+import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
-import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
@@ -17,12 +19,11 @@ import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
-import com.thinknxtmedia.mynotes.FetchData.TagAdapter;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.note_makng_page;
 
 import java.util.List;
-
+import java.util.Objects;
 
 
 public class HomeNotes extends Fragment {
@@ -36,6 +37,8 @@ public class HomeNotes extends Fragment {
     NoteDao noteDao;
     String title;
     String text;
+    private String clicked;
+
 
     public HomeNotes(String title, String text) {
         this.title = title;
@@ -109,9 +112,47 @@ public class HomeNotes extends Fragment {
             Intent intent = new Intent(getActivity(), note_makng_page.class);
             startActivity(intent);
         });
-
+        workingTag(v);
 
         return v;
+
+    }
+
+    @SuppressLint("UseCompatLoadingForDrawables")
+    private void workingTag(View v) {
+        TextView all = v.findViewById(R.id.all_tag);
+        TextView home = v.findViewById(R.id.home_tag);
+        TextView work = v.findViewById(R.id.work_tag);
+        TextView Personal = v.findViewById(R.id.personal_tag);
+
+        
+        all.setOnClickListener(view -> {
+            clicked = "all";
+            all.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+        });
+        home.setOnClickListener(view -> {
+            clicked ="home";
+            home.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+        });
+        work.setOnClickListener(view -> {
+            clicked ="work";
+            work.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+        });
+        Personal.setOnClickListener(view -> {
+            Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+        });
 
     }
 
