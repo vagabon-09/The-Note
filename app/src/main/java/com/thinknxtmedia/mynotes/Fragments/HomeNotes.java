@@ -6,6 +6,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
@@ -22,6 +23,7 @@ import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.note_makng_page;
 
 import java.util.List;
+import java.util.Objects;
 
 
 public class HomeNotes extends Fragment {
@@ -130,6 +132,7 @@ public class HomeNotes extends Fragment {
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            onResume();
         });
         home.setOnClickListener(view -> {
             clicked ="home";
@@ -137,6 +140,7 @@ public class HomeNotes extends Fragment {
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            onResume();
         });
         work.setOnClickListener(view -> {
             clicked ="work";
@@ -144,19 +148,37 @@ public class HomeNotes extends Fragment {
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            onResume();
         });
         Personal.setOnClickListener(view -> {
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            onResume();
         });
+        //Running Query according to the clicked
+       
 
     }
 
     private void swipDone() {
-        List<NoteEntity> noteEntities = noteDao.getAll();
-        NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
+        NoteAdapter adapter = null;
+        List<NoteEntity> noteEntities;
+        if (Objects.equals(clicked, "all")){
+           noteEntities = noteDao.getAll();
+            adapter = new NoteAdapter(noteEntities, getContext());
+        }else if (Objects.equals(clicked, "home")){
+            Toast.makeText(getActivity(), "Home..", Toast.LENGTH_SHORT).show();
+        }else if (Objects.equals(clicked, "work")){
+            Toast.makeText(getActivity(), "Work", Toast.LENGTH_SHORT).show();
+        }else if (Objects.equals(clicked, "Personal")){
+            Toast.makeText(getActivity(), "Personal..", Toast.LENGTH_SHORT).show();
+        }else{
+            noteEntities = noteDao.getAll();
+            adapter = new NoteAdapter(noteEntities, getContext());
+        }
+
 //        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
 //        tagRecyclerView.setAdapter(adapter1);
         recView.setAdapter(adapter);
@@ -164,7 +186,10 @@ public class HomeNotes extends Fragment {
 
     @Override
     public void onResume() {
-        super.onResume();
+
        swipDone();
+        super.onResume();
     }
+    
+    
 }
