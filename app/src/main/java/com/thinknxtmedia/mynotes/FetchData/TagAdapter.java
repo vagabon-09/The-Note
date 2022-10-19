@@ -14,7 +14,6 @@ import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.R;
 
 import java.util.List;
-import java.util.zip.Inflater;
 
 public class TagAdapter extends RecyclerView.Adapter<TagAdapter.MyViewHolder> {
     List<NoteEntity> tagList;
@@ -43,7 +42,7 @@ public class TagAdapter extends RecyclerView.Adapter<TagAdapter.MyViewHolder> {
         return tagList.size();
     }
 
-    public class MyViewHolder extends RecyclerView.ViewHolder {
+    public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView h_tag;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
