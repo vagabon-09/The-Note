@@ -50,6 +50,8 @@
     <string name="work_tag">Work</string>
     <string name="personal_tag">Personal</string>
     <string name="tag_createing_btn">Tag createing btn</string>
+    <string name="color_star_icon">color star icon</string>
+    <string name="non_color">non color star icon</string>
 
 
 </resources>

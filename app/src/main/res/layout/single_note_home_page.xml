@@ -6,17 +6,16 @@
     android:layout_width="wrap_content"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
-    card_view:cardCornerRadius="4dp"
     android:layout_weight="1"
-    app:cardPreventCornerOverlap="false">
+    app:cardPreventCornerOverlap="false"
+    card_view:cardCornerRadius="4dp">
 
 
     <RelativeLayout
         android:id="@+id/NoteBtnId"
         android:layout_width="@dimen/_130sdp"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp"
-        android:layout_marginEnd="@dimen/_10sdp">
+        android:layout_margin="@dimen/_5sdp">
 
 
         <LinearLayout
@@ -48,6 +47,30 @@
                 android:textSize="@dimen/_10sdp" />
 
         </LinearLayout>
+
+        <ImageView
+            android:id="@+id/star_non_color_id"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:contentDescription="@string/non_color"
+            android:src="@drawable/star_black_icon"
+            android:visibility="gone" />
+
+
+        <ImageView
+            android:id="@+id/star_color_id"
+            android:layout_width="@dimen/_15sdp"
+            android:layout_height="@dimen/_15sdp"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:layout_margin="@dimen/_5sdp"
+            android:visibility="gone"
+            android:contentDescription="@string/color_star_icon"
+            android:src="@drawable/star_color_icon" />
+
 
         <RelativeLayout
             android:id="@+id/s_deleteBtn"
