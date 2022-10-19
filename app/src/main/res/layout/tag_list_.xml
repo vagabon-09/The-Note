@@ -19,6 +19,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
                 android:background="@drawable/tag_shape"
+                android:textColor="@color/black"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_10sdp"
@@ -30,6 +31,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
+                android:textColor="@color/black"
                 android:background="@drawable/tag_shape_"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_5sdp"
@@ -39,6 +41,7 @@
 
             <TextView
                 android:id="@+id/work_tag"
+                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
@@ -50,6 +53,7 @@
                 android:text="@string/work_tag" />
 
             <TextView
+                android:textColor="@color/black"
                 android:id="@+id/personal_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -68,8 +72,8 @@
 
     <ImageView
         android:id="@+id/tag_btn"
-        android:layout_width="@dimen/_32sdp"
-        android:layout_height="@dimen/_32sdp"
+        android:layout_width="@dimen/_30sdp"
+        android:layout_height="@dimen/_30sdp"
         android:layout_alignParentEnd="true"
         android:contentDescription="@string/tag_createing_btn"
         android:src="@drawable/add_tag" />
