@@ -73,6 +73,7 @@ public class Home extends AppCompatActivity {
 
     @Override
     public void onBackPressed() {
+        replaceFragment();
         if (bind.drawerId.isDrawerOpen(GravityCompat.START)) {
             bind.drawerId.closeDrawer(GravityCompat.START);
         } else {
