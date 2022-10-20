@@ -52,6 +52,7 @@
     <string name="tag_createing_btn">Tag createing btn</string>
     <string name="color_star_icon">color star icon</string>
     <string name="non_color">non color star icon</string>
+    <string name="starred">Starred</string>
 
 
 </resources>
