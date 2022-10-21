@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/blue_circle.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/bottom_sheet_shape.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/buttom_sheet.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/card_back.xml" value="0.2155" />
@@ -14,12 +15,14 @@
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/menue.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/orange_circle.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/red_circle.xml" value="0.2155" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/starred_card_border.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/tag_shape.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/tag_shape_.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/white_circle.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/yellow.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/font/font.xml" value="0.2604166666666667" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout-v26/activity_note_makng_page.xml" value="0.17265625" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout-v28/single_starred.xml" value="0.22916666666666666" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_home.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_main.xml" value="0.17265625" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_note_makng_page.xml" value="0.1" />
@@ -42,6 +45,7 @@
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/s_format_text_layout.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/s_starred.xml" value="0.18896964514749892" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/single_note_home_page.xml" value="0.264" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/single_starred.xml" value="0.264" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/single_tag.xml" value="0.17265625" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/single_tag_style.xml" value="0.22916666666666666" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/single_trash_view.xml" value="0.17265625" />

@@ -18,6 +18,14 @@
     <color name="dodger_blue">#1e90ff</color>
     <color name="light_blue">#87cefa</color>
     <color name="gradiant_starred">#D58220</color>
+    <color name="starred_bar_color">#3D1EF9</color>
+    <color name="starred_date_color">#F9DC1E</color>
+    <color name="starred_border_color">#6DA8FF</color>
+    <color name="trash_border_color">#F96D1E</color>
+    <color name="trash_date">#6DA8FF</color>
+    <color name="title_color">#9C8F8F</color>
+
+
 
 
 </resources>

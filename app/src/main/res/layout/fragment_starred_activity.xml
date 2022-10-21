@@ -5,11 +5,59 @@
     android:layout_height="match_parent"
     tools:context=".Fragments.Starred_activity">
 
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/starred_Id"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_margin="@dimen/_5sdp" />
+        android:orientation="vertical"
+        tools:ignore="UselessParent">
+
+        <LinearLayout
+
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+           android:layout_marginTop="@dimen/_10sdp"
+            android:layout_marginBottom="@dimen/_10sdp"
+            android:orientation="horizontal">
+
+            <LinearLayout
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <View
+                    android:layout_width="@dimen/_15sdp"
+                    android:layout_height="@dimen/_15sdp"
+                    android:background="@drawable/blue_circle" />
+
+                <View
+                    android:layout_width="@dimen/_100sdp"
+                    android:layout_height="@dimen/_3sdp"
+                    android:layout_marginStart="-5sp"
+                    android:background="@color/starred_bar_color" />
+            </LinearLayout>
+
+            <TextView
+                android:gravity="center"
+                android:textStyle="bold"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/starred"
+                android:textColor="@color/starred_bar_color"
+                android:textSize="@dimen/_15sdp"/>
+        </LinearLayout>
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/starred_Id"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_margin="@dimen/_5sdp" />
+
+
+    </LinearLayout>
+
 
 </FrameLayout>
