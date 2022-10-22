@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -56,8 +57,8 @@ public class trashAdapter extends RecyclerView.Adapter<trashAdapter.MyViewHolder
     private void deleteTrash(int id,int position) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.trash_recover);
-        Button delete_trash = bottomSheetDialog.findViewById(R.id.trashDelete);
-        Button recover_trash = bottomSheetDialog.findViewById(R.id.trashRecoverBtnId);
+        LinearLayout delete_trash = bottomSheetDialog.findViewById(R.id.trashDelete);
+        LinearLayout recover_trash = bottomSheetDialog.findViewById(R.id.trashRecoverBtnId);
         assert delete_trash != null;
         delete_trash.setOnClickListener(v -> {
             NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();

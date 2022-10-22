@@ -18,7 +18,7 @@ app:cardCornerRadius="@dimen/_10sdp"
         <TextView
             android:layout_marginEnd="@dimen/_5sdp"
             android:gravity="center"
-            android:id="@+id/starred_id"
+            android:id="@+id/s_starred_title_id"
             android:layout_width="0dp"
             android:layout_height="match_parent"
             android:layout_weight="1"
@@ -35,7 +35,7 @@ app:cardCornerRadius="@dimen/_10sdp"
             tools:ignore="UseCompoundDrawables">
 
             <ImageView
-                android:id="@+id/starred_star_id"
+                android:id="@+id/s_starred_star_id"
                 android:layout_width="@dimen/_20sdp"
                 android:layout_height="@dimen/_20sdp"
                 android:layout_weight="1"
@@ -53,6 +53,7 @@ app:cardCornerRadius="@dimen/_10sdp"
                 android:src="@drawable/star_black_icon" />
 
             <TextView
+                android:id="@+id/s_starred_date_id"
                 android:layout_marginTop="@dimen/_10sdp"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"

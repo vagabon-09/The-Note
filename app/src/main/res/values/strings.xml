@@ -57,6 +57,8 @@
     <string name="color_star">Starred</string>
     <string name="starred_text">This is new title , fo android studio faff add dfa diseased adds distaff</string>
     <string name="sta_icon">sta icon</string>
+    <string name="delete_icon">delete icon</string>
+    <string name="recover_icon">recover icon</string>
 
 
 </resources>

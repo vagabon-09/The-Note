@@ -18,17 +18,18 @@ public class NoteEntity {
     public String trash;
     @ColumnInfo(name = "color")
     public String color;
+    @ColumnInfo(name = "starred")
+    public String starred;
 
-    public NoteEntity(int id, String title, String note, String tag, String trash, String color) {
+    public NoteEntity(int id, String title, String note, String tag, String trash, String color, String starred) {
         this.id = id;
         this.title = title;
         this.note = note;
         this.tag = tag;
         this.trash = trash;
         this.color = color;
+        this.starred = starred;
     }
-
-
 
     public int getId() {
         return id;
@@ -58,14 +59,6 @@ public class NoteEntity {
         return tag;
     }
 
-    public String getColor() {
-        return color;
-    }
-
-    public void setColor(String color) {
-        this.color = color;
-    }
-
     public String setTag(String tag) {
         this.tag = tag;
         return tag;
@@ -80,5 +73,19 @@ public class NoteEntity {
         return trash;
     }
 
+    public String getColor() {
+        return color;
+    }
 
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public String getStarred() {
+        return starred;
+    }
+
+    public void setStarred(String starred) {
+        this.starred = starred;
+    }
 }

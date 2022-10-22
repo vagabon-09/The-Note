@@ -74,7 +74,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
             bottomSheetDialog.show();
-            Button delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
+            LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);
@@ -85,7 +85,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         holder.cardView.setOnLongClickListener(view -> {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
-            Button delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
+            LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);

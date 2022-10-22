@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="@dimen/_100sdp"
+    xmlns:tools="http://schemas.android.com/tools"
     android:orientation="vertical"
     android:background="@drawable/bottom_sheet_shape"
     android:padding="@dimen/_10sdp">
@@ -14,13 +15,34 @@
 <!--        android:textColor="@color/white"-->
 <!--        android:text="@string/pin" />-->
 
-    <Button
+    <LinearLayout
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginStart="@dimen/_10sdp"
         android:id="@+id/btm_deleteBtn_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:backgroundTint="@color/red"
-        android:textColor="@color/white"
-        android:text="@string/delete" />
+        android:orientation="horizontal"
+        tools:ignore="UseCompoundDrawables,UselessParent">
+
+        <ImageView
+            android:layout_width="@dimen/_20sdp"
+            android:layout_height="@dimen/_20sdp"
+            android:layout_margin="@dimen/_10sdp"
+            android:src="@drawable/delete_black"
+            android:contentDescription="@string/delete_icon" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:text="@string/delete"
+            android:textSize="@dimen/_15sdp" />
+
+
+    </LinearLayout>
+
+
+
 
 
 </LinearLayout>

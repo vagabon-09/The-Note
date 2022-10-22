@@ -50,4 +50,8 @@ public interface NoteDao {
     @Query("SELECT * FROM NoteEntity WHERE Tag =:uTag")
     List<NoteEntity> getTag(String uTag);
 
+    //Starred Page
+    @Query("SELECT * FROM noteentity WHERE starred ='1'")
+    List<NoteEntity> getStarred();
+
 }

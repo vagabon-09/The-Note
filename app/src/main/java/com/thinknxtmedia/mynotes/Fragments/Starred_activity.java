@@ -1,14 +1,23 @@
 package com.thinknxtmedia.mynotes.Fragments;
 
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
+import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
+
+import com.thinknxtmedia.mynotes.DataBase.NoteDao;
+import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
+import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
+import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
+import com.thinknxtmedia.mynotes.FetchData.starredAdapter;
 import com.thinknxtmedia.mynotes.R;
+
+import java.util.List;
 
 public class Starred_activity extends Fragment {
 
@@ -18,6 +27,8 @@ public class Starred_activity extends Fragment {
 
     private String mParam1;
     private String mParam2;
+    private RecyclerView recyclerView;
+    private starredAdapter starredAdapter;
 
     public Starred_activity() {
         // Required empty public constructor
@@ -46,6 +57,14 @@ public class Starred_activity extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_starred_activity, container, false);
+        View v = inflater.inflate(R.layout.fragment_starred_activity, container, false);
+        recyclerView = v.findViewById(R.id.starred_Id);
+        recyclerView.setLayoutManager(new LinearLayoutManager(getContext()));
+        NoteDataBase dataBase = Room.databaseBuilder(requireContext(), NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
+        NoteDao noteDao = dataBase.noteDao();
+        List<NoteEntity> noteEntities = noteDao.getStarred();
+        starredAdapter = new starredAdapter(noteEntities,getContext());
+        recyclerView.setAdapter(starredAdapter);
+        return v;
     }
 }
