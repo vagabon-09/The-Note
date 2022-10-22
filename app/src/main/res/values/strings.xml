@@ -59,6 +59,7 @@
     <string name="sta_icon">sta icon</string>
     <string name="delete_icon">delete icon</string>
     <string name="recover_icon">recover icon</string>
+    <string name="favourite">Favourite</string>
 
 
 </resources>
