@@ -1,26 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:orientation="vertical"
     android:background="@drawable/bottom_sheet_shape"
+    android:orientation="vertical"
     android:padding="@dimen/_10sdp">
 
-<!--    <Button-->
-<!--        android:id="@+id/btm_pinBtn_id"-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="wrap_content"-->
-<!--        android:backgroundTint="@color/purple_700"-->
-<!--        android:textColor="@color/white"-->
-<!--        android:text="@string/pin" />-->
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_10sdp"
         android:id="@+id/btm_deleteBtn_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
         android:orientation="horizontal"
         tools:ignore="UseCompoundDrawables,UselessParent">
 
@@ -28,8 +21,8 @@
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/delete_black"
-            android:contentDescription="@string/delete_icon" />
+            android:contentDescription="@string/delete_icon"
+            android:src="@drawable/delete_black" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -42,12 +35,12 @@
     </LinearLayout>
 
     <LinearLayout
-        android:layout_marginTop="@dimen/_10sdp"
-        android:layout_marginStart="@dimen/_10sdp"
         android:id="@+id/recoverBtn_id"
-        android:layout_marginBottom="@dimen/_20sdp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_10sdp"
+        android:layout_marginTop="@dimen/_10sdp"
+        android:layout_marginBottom="@dimen/_20sdp"
         android:orientation="horizontal"
         tools:ignore="UseCompoundDrawables,UselessParent">
 
@@ -55,8 +48,8 @@
             android:layout_width="@dimen/_20sdp"
             android:layout_height="@dimen/_20sdp"
             android:layout_margin="@dimen/_10sdp"
-            android:src="@drawable/star_black_icon"
-            android:contentDescription="@string/starred" />
+            android:contentDescription="@string/starred"
+            android:src="@drawable/star_black_icon" />
 
         <TextView
             android:layout_width="wrap_content"
@@ -67,9 +60,6 @@
 
 
     </LinearLayout>
-
-
-
 
 
 </LinearLayout>
