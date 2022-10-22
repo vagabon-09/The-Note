@@ -38,12 +38,12 @@
                 android:textSize="@dimen/_15sdp" />
 
             <TextView
-                android:gravity="center|bottom"
                 android:id="@+id/s_data_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:layout_margin="@dimen/_5sdp"
+                android:gravity="center|bottom"
                 android:text="@string/date"
                 android:textSize="@dimen/_10sdp" />
 
