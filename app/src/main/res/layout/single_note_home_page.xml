@@ -38,6 +38,7 @@
                 android:textSize="@dimen/_15sdp" />
 
             <TextView
+                android:gravity="center|bottom"
                 android:id="@+id/s_data_id"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -54,7 +55,10 @@
             android:layout_height="@dimen/_15sdp"
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/_5sdp"
+            android:layout_marginStart="@dimen/_5sdp"
+            android:layout_marginTop="@dimen/_5sdp"
+            android:layout_marginEnd="@dimen/_5sdp"
+            android:layout_marginBottom="@dimen/_5sdp"
             android:contentDescription="@string/non_color"
             android:src="@drawable/star_black_icon"
             android:visibility="gone" />
