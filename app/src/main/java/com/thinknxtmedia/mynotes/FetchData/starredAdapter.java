@@ -27,7 +27,7 @@ public class starredAdapter extends RecyclerView.Adapter<starredAdapter.MyViewHo
     @NonNull
     @Override
     public starredAdapter.MyViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
-        View v = LayoutInflater.from(context).inflate(R.layout.s_starred,parent,false);
+        View v = LayoutInflater.from(context).inflate(R.layout.single_starred,parent,false);
         return new MyViewHolder(v);
 
     }
@@ -47,7 +47,7 @@ public class starredAdapter extends RecyclerView.Adapter<starredAdapter.MyViewHo
         ImageView s_color_star, s_non_color_star;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
-            s_title = itemView.findViewById(R.id.s_starred_title);
+            s_title = itemView.findViewById(R.id.s_starred_title_id);
             s_date = itemView.findViewById(R.id.s_starred_date_id);
             s_color_star = itemView.findViewById(R.id.star_color_id);
             s_non_color_star = itemView.findViewById(R.id.star_non_color_id);

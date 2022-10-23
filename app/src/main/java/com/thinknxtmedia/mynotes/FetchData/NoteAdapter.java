@@ -91,6 +91,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                 deleteF(position);
                 bottomSheetDialog.dismiss();
             });
+
             bottomSheetDialog.show();
             return false;
         });
