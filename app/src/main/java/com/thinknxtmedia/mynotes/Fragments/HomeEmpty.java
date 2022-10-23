@@ -9,7 +9,10 @@ import android.view.ViewGroup;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentManager;
+import androidx.room.Room;
 
+import com.thinknxtmedia.mynotes.DataBase.NoteDao;
+import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.note_makng_page;
@@ -56,9 +59,28 @@ public class HomeEmpty extends Fragment {
         View v = inflater.inflate(R.layout.fragment_home_empty, container, false);
         cardBtn = v.findViewById(R.id.addNote_Btn);
         cardBtn.setOnClickListener(view -> {
-          Intent intent = new Intent(getContext(), note_makng_page.class);
-          startActivity(intent);
+            Intent intent = new Intent(getContext(), note_makng_page.class);
+            startActivity(intent);
         });
         return v;
     }
+
+    private void replaceFragment() {
+        NoteDataBase db = Room.databaseBuilder(requireContext(),NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+        NoteDao noteDao = db.noteDao();
+        if (noteDao.getRow()){
+            FragmentManager fm = getFragmentManager();
+            ReplaceFreagment replaceFreagment = new ReplaceFreagment();
+            assert fm != null;
+            replaceFreagment.setItemClickable(R.id.main_container_id,new HomeNotes(),fm);
+        }
+    }
+
+    @Override
+    public void onResume() {
+        replaceFragment();
+        super.onResume();
+    }
+
+
 }

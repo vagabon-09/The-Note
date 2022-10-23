@@ -1,4 +1,5 @@
 package com.thinknxtmedia.mynotes.Fragments;
+
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
@@ -15,10 +16,11 @@ import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
+
+import com.thinknxtmedia.mynotes.Adapter.NoteAdapter;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
-import com.thinknxtmedia.mynotes.Adapter.NoteAdapter;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.note_makng_page;
 
@@ -29,7 +31,7 @@ import java.util.Objects;
 public class HomeNotes extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    RecyclerView recView,tagRecyclerView;
+    RecyclerView recView, tagRecyclerView;
     SwipeRefreshLayout swipeRefreshLayout;
     NoteDao noteDao;
     String title;
@@ -82,9 +84,8 @@ public class HomeNotes extends Fragment {
         //Finding through id
         recView = v.findViewById(R.id.recViewHomeId);
         recView.setLayoutManager(new GridLayoutManager(requireActivity().getApplicationContext(), 2));
-            //Tag adapter
+        //Tag adapter
         tagRecyclerView = v.findViewById(R.id.tag_list_id);
-//        tagRecyclerView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
 
         //setting swipe refresh layout
         swipeRefreshLayout = v.findViewById(R.id.swipeRefreshId);
@@ -94,14 +95,9 @@ public class HomeNotes extends Fragment {
         });
 
 
-
-
         List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
-//        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
         recView.setAdapter(adapter);
-//        tagRecyclerView.setAdapter(adapter1);
-
 
 
         //Setting Action when clicking on add notes button
@@ -123,7 +119,7 @@ public class HomeNotes extends Fragment {
         TextView Personal = v.findViewById(R.id.personal_tag);
         ImageView tagBtn = v.findViewById(R.id.tag_btn);
 
-        
+
         all.setOnClickListener(view -> {
             clicked = "all";
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape));
@@ -133,7 +129,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         home.setOnClickListener(view -> {
-            clicked ="home";
+            clicked = "home";
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -141,7 +137,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         work.setOnClickListener(view -> {
-            clicked ="work";
+            clicked = "work";
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -149,7 +145,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         Personal.setOnClickListener(view -> {
-            clicked="Personal";
+            clicked = "Personal";
             Personal.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -157,41 +153,39 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         //When tag button clicked 
-        
-       tagBtn.setOnClickListener(view -> Toast.makeText(getActivity(), "Coming Soon...", Toast.LENGTH_SHORT).show());
+
+        tagBtn.setOnClickListener(view -> Toast.makeText(getActivity(), "Coming Soon...", Toast.LENGTH_SHORT).show());
 
     }
 
     private void swipDone() {
         NoteAdapter adapter;
         List<NoteEntity> noteEntities;
-        if (Objects.equals(clicked, "all")){
-           noteEntities = noteDao.getAll();
-        }else if (Objects.equals(clicked, "home")){
+        if (Objects.equals(clicked, "all")) {
+            noteEntities = noteDao.getAll();
+        } else if (Objects.equals(clicked, "home")) {
             noteEntities = noteDao.getTag(clicked);
 
-        }else if (Objects.equals(clicked, "work")){
+        } else if (Objects.equals(clicked, "work")) {
             noteEntities = noteDao.getTag(clicked);
 
-        }else if (Objects.equals(clicked, "Personal")){
+        } else if (Objects.equals(clicked, "Personal")) {
             noteEntities = noteDao.getTag(clicked);
 
-        }else{
+        } else {
             noteEntities = noteDao.getAll();
 
         }
 
-//        TagAdapter adapter1 = new TagAdapter(noteEntities,getContext());
-//        tagRecyclerView.setAdapter(adapter1);
         adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
     }
 
     @Override
     public void onResume() {
-       swipDone();
+        swipDone();
         super.onResume();
     }
-    
-    
+
+
 }
