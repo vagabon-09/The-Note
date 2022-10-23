@@ -49,10 +49,10 @@
     <string name="home_tag">Home</string>
     <string name="work_tag">Work</string>
     <string name="personal_tag">Personal</string>
-    <string name="tag_createing_btn">Tag createing btn</string>
+    <string name="tag_createing_btn">Tag creating btn</string>
     <string name="color_star_icon">color star icon</string>
     <string name="non_color">non color star icon</string>
-    <string name="starred">Starred</string>
+    <string name="starred">Favourite</string>
     <string name="s_starredLayout">This is starred layout diff deaf fossa dff staff</string>
     <string name="color_star">Starred</string>
     <string name="starred_text">This is new title , fo android studio faff add dfa diseased adds distaff</string>
