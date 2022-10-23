@@ -60,4 +60,7 @@ public interface NoteDao {
     @Query("UPDATE noteentity SET starred ='0' WHERE id =:uId")
     void updateStarred(int uId);
 
+    //Update starred page to one
+    @Query("UPDATE noteentity SET starred ='1' WHERE id =:uId")
+    void updateStarredOne(int uId);
 }

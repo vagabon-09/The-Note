@@ -21,7 +21,7 @@ public class InsertData {
         }else{
             NoteDataBase dataBase = Room.databaseBuilder(applicationContext,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
             NoteDao noteDao = dataBase.noteDao();
-            NoteEntity noteEntity = new NoteEntity(0,title,notes,tag,"all",color,"1");
+            NoteEntity noteEntity = new NoteEntity(0,title,notes,tag,"all",color,"0");
             noteDao.InsertData(noteEntity);
             binding.NoteTitleId.setText("");
             binding.NoteNotesId.loadUrl("about:blank");

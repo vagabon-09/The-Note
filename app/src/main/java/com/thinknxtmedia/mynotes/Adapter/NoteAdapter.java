@@ -74,11 +74,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
             bottomSheetDialog.show();
             LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
+            LinearLayout favourite = bottomSheetDialog.findViewById(R.id.FavouriteBtn);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);
                 bottomSheetDialog.dismiss();
             });
+            assert favourite != null;
+            favourite.setOnClickListener(view1 -> {
+                favouriteOperation(position);
+                bottomSheetDialog.dismiss();
+            });
+
             return false;
         });
         holder.cardView.setOnLongClickListener(view -> {
@@ -93,7 +100,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             });
             assert favourite != null;
             favourite.setOnClickListener(view1 -> {
-                Toast.makeText(context, "Yes working...", Toast.LENGTH_SHORT).show();
+               favouriteOperation(position);
                 bottomSheetDialog.dismiss();
             });
 
@@ -103,6 +110,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         });
 
 
+    }
+
+    private void favouriteOperation(int position) {
+        NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+        NoteDao dao = db.noteDao();
+        dao.updateStarredOne(noteEntities.get(position).getId());
     }
 
     @SuppressLint("NotifyDataSetChanged")
