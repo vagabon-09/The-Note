@@ -50,136 +50,136 @@
             android:layout_height="wrap_content"
             android:layout_below="@+id/topBarId">
 
-            <LinearLayout
+<!--            <LinearLayout-->
 
-                android:layout_width="wrap_content"
-                android:layout_height="match_parent"
-                android:gravity="center"
-                android:orientation="horizontal">
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="match_parent"-->
+<!--                android:gravity="center"-->
+<!--                android:orientation="horizontal">-->
 
-                <View
-                    android:id="@+id/colorPanelId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:background="@drawable/color_panel" />
+<!--                <View-->
+<!--                    android:id="@+id/colorPanelId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:background="@drawable/color_panel" />-->
 
-                <!--                <ImageView-->
-                <!--                    android:id="@+id/fontStyleId"-->
-                <!--                    android:layout_width="@dimen/_20sdp"-->
-                <!--                    android:layout_height="@dimen/_20sdp"-->
-                <!--                    android:layout_margin="@dimen/_10sdp"-->
-                <!--                    android:layout_marginStart="@dimen/_10sdp"-->
-                <!--                    android:layout_marginEnd="@dimen/_10sdp"-->
-                <!--                    android:contentDescription="@string/text_style"-->
-                <!--                    android:src="@drawable/font_style" />-->
-
-
-                <!--                <ImageView-->
-                <!--                    android:layout_width="@dimen/_20sdp"-->
-                <!--                    android:layout_height="@dimen/_20sdp"-->
-                <!--                    android:layout_margin="@dimen/_10sdp"-->
-                <!--                    android:layout_marginStart="@dimen/_10sdp"-->
-                <!--                    android:layout_marginEnd="@dimen/_10sdp"-->
-                <!--                    android:contentDescription="@string/content_align"-->
-                <!--                    android:src="@drawable/align_icon" />-->
-
-                <ImageView
-                    android:id="@+id/noteTagId"
-
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/tag_button"
-                    android:src="@drawable/tag_black" />
-
-                <ImageView
-                    android:id="@+id/alignLeftId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_17sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/align_left_btn"
-                    android:src="@drawable/align_left" />
+<!--                &lt;!&ndash;                <ImageView&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:id="@+id/fontStyleId"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_margin="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_marginStart="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_marginEnd="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:contentDescription="@string/text_style"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:src="@drawable/font_style" />&ndash;&gt;-->
 
 
-                <ImageView
-                    android:id="@+id/alignRightId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/align_right_botton"
-                    android:src="@drawable/align_right" />
+<!--                &lt;!&ndash;                <ImageView&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_width="@dimen/_20sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_height="@dimen/_20sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_margin="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_marginStart="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:layout_marginEnd="@dimen/_10sdp"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:contentDescription="@string/content_align"&ndash;&gt;-->
+<!--                &lt;!&ndash;                    android:src="@drawable/align_icon" />&ndash;&gt;-->
 
-                <ImageView
-                    android:id="@+id/alignCenterId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/alignCenter"
-                    android:src="@drawable/align_center" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/noteTagId"-->
 
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/tag_button"-->
+<!--                    android:src="@drawable/tag_black" />-->
 
-                <ImageView
-                    android:id="@+id/ItalicTextId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/alignCenter"
-                    android:src="@drawable/italic" />
-
-
-                <ImageView
-                    android:id="@+id/boldTextId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/bold_button"
-                    android:src="@drawable/bold_text" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/alignLeftId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_17sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/align_left_btn"-->
+<!--                    android:src="@drawable/align_left" />-->
 
 
-                <ImageView
-                    android:id="@+id/hId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/h1_name"
-                    android:scaleType="center"
-                    android:src="@drawable/h1" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/alignRightId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/align_right_botton"-->
+<!--                    android:src="@drawable/align_right" />-->
 
-                <ImageView
-                    android:id="@+id/h2Id"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/h1_name"
-                    android:scaleType="center"
-                    android:src="@drawable/h2_icon_black" />
-
-                <ImageView
-                    android:id="@+id/h3Id"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:contentDescription="@string/h1_name"
-                    android:scaleType="center"
-                    android:src="@drawable/h3" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/alignCenterId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/alignCenter"-->
+<!--                    android:src="@drawable/align_center" />-->
 
 
-            </LinearLayout>
+<!--                <ImageView-->
+<!--                    android:id="@+id/ItalicTextId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/alignCenter"-->
+<!--                    android:src="@drawable/italic" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/boldTextId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/bold_button"-->
+<!--                    android:src="@drawable/bold_text" />-->
+
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/hId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/h1_name"-->
+<!--                    android:scaleType="center"-->
+<!--                    android:src="@drawable/h1" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/h2Id"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/h1_name"-->
+<!--                    android:scaleType="center"-->
+<!--                    android:src="@drawable/h2_icon_black" />-->
+
+<!--                <ImageView-->
+<!--                    android:id="@+id/h3Id"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/h1_name"-->
+<!--                    android:scaleType="center"-->
+<!--                    android:src="@drawable/h3" />-->
+
+
+<!--            </LinearLayout>-->
 
 
         </HorizontalScrollView>

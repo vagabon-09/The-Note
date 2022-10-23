@@ -51,7 +51,7 @@ public class Update_Note extends AppCompatActivity {
         bottomSheetDialog.setContentView(R.layout.color_plate);
 
         //show color plate
-        binding.colorPanelId.setOnClickListener(view -> bottomSheetDialog.show());
+//        binding.colorPanelId.setOnClickListener(view -> bottomSheetDialog.show());
 
         //Red circle
         View red_Circle = bottomSheetDialog.findViewById(R.id.red_circle);
@@ -102,7 +102,7 @@ public class Update_Note extends AppCompatActivity {
         String note_color = getIntent().getStringExtra("color");
        note_id = getIntent().getIntExtra("note_id",0);
 
-
+/*
         //Red color
         if (Objects.equals(note_color, "#EC0D0D")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.red_circle));
@@ -119,7 +119,7 @@ public class Update_Note extends AppCompatActivity {
         else if (Objects.equals(note_color, "#D9D9D9")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.white_circle));
         }
-
+*/
 
         title.setText(title_u);
         binding.UpdateNoteNotesId.setText(note_u);
