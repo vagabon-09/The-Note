@@ -144,6 +144,7 @@ public class note_makng_page extends AppCompatActivity {
     }
 
 
+    @SuppressLint("SetTextI18n")
     private void TagDialogBox() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.note_tag);
@@ -156,6 +157,36 @@ public class note_makng_page extends AppCompatActivity {
 //            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
             bottomSheetDialog.dismiss();
         });
+        TextView allTag = bottomSheetDialog.findViewById(R.id.all_tag_add);
+        TextView homeTag = bottomSheetDialog.findViewById(R.id.home_tag_add);
+        TextView workTag = bottomSheetDialog.findViewById(R.id.work_tag_add);
+        TextView personalTag = bottomSheetDialog.findViewById(R.id.personal_tag_add);
+        @SuppressLint("CutPasteId") TextView noteTagView = bottomSheetDialog.findViewById(R.id.NoteTagId);
+        assert allTag != null;
+        //When click all btn
+        allTag.setOnClickListener(view -> {
+            assert noteTagView != null;
+            noteTagView.setText("All");
+        });
+        //When click home btn
+        assert homeTag != null;
+        homeTag.setOnClickListener(view -> {
+            assert noteTagView != null;
+            noteTagView.setText("Home");
+        });
+        //When click work btn
+        assert workTag != null;
+        workTag.setOnClickListener(view -> {
+            assert noteTagView != null;
+            noteTagView.setText("Work");
+        });
+        //When click personal btn
+        assert personalTag != null;
+        personalTag.setOnClickListener(view -> {
+            assert noteTagView != null;
+            noteTagView.setText("Personal");
+        });
+
         bottomSheetDialog.show();
     }
 
