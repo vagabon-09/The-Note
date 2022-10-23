@@ -144,7 +144,7 @@ public class note_makng_page extends AppCompatActivity {
     }
 
 
-    @SuppressLint("SetTextI18n")
+    @SuppressLint({"SetTextI18n", "UseCompatLoadingForDrawables"})
     private void TagDialogBox() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.note_tag);
@@ -167,24 +167,46 @@ public class note_makng_page extends AppCompatActivity {
         allTag.setOnClickListener(view -> {
             assert noteTagView != null;
             noteTagView.setText("All");
+            allTag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            assert homeTag != null;
+            homeTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert workTag != null;
+            workTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personalTag != null;
+            personalTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
         });
         //When click home btn
         assert homeTag != null;
         homeTag.setOnClickListener(view -> {
             assert noteTagView != null;
             noteTagView.setText("Home");
+            homeTag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            allTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert workTag != null;
+            workTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personalTag != null;
+            personalTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
         });
         //When click work btn
         assert workTag != null;
         workTag.setOnClickListener(view -> {
             assert noteTagView != null;
             noteTagView.setText("Work");
+            workTag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            homeTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            allTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personalTag != null;
+            personalTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
         });
         //When click personal btn
         assert personalTag != null;
         personalTag.setOnClickListener(view -> {
             assert noteTagView != null;
             noteTagView.setText("Personal");
+            personalTag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            workTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            homeTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            allTag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
         });
 
         bottomSheetDialog.show();
