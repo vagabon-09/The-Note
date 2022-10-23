@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -53,11 +54,12 @@ public class note_makng_page extends AppCompatActivity {
 
     }
 
+
     @SuppressLint("CutPasteId")
     private void sendDataToDataBase() {
         @SuppressLint("InflateParams") final View view1 = getLayoutInflater().inflate(R.layout.note_tag, null);
         tagSave = view1.findViewById(R.id.addTagButton);
-        EditTag = view1.findViewById(R.id.NoteTagId);
+//        EditTag = view1.findViewById(R.id.NoteTagId);
         tagSave.setOnClickListener(view -> {
             Toast.makeText(this, "Yes", Toast.LENGTH_SHORT).show();
             Log.d("LogdIS", "sendDataToDataBase: " + EditTag.toString());
@@ -103,8 +105,6 @@ public class note_makng_page extends AppCompatActivity {
         binding.colorPanelId.setOnClickListener(view -> colorPlate());
         //When user clicked add Tag button
         binding.noteTagId.setOnClickListener(view -> TagDialogBox());
-        //When user clicked on font style button
-
 
 
     }
@@ -136,7 +136,7 @@ public class note_makng_page extends AppCompatActivity {
         //White Circle
         View white_circle = bottomSheetDialog.findViewById(R.id.white_circle);
         assert white_circle != null;
-        white_circle.setOnClickListener(view-> {
+        white_circle.setOnClickListener(view -> {
             ColorName = "#FFFFFF";
             bottomSheetDialog.dismiss();
         });
@@ -150,7 +150,7 @@ public class note_makng_page extends AppCompatActivity {
         Button savedTag = bottomSheetDialog.findViewById(R.id.addTagButton);
         assert savedTag != null;
         savedTag.setOnClickListener(view -> {
-            EditText tag_text = bottomSheetDialog.findViewById(R.id.NoteTagId);
+            TextView tag_text = bottomSheetDialog.findViewById(R.id.NoteTagId);
             assert tag_text != null;
             tag = tag_text.getText().toString();
 //            Toast.makeText(this, "Clicked", Toast.LENGTH_SHORT).show();
@@ -165,11 +165,11 @@ public class note_makng_page extends AppCompatActivity {
         if (tag == null) {
             tag = "";
         }
-        if(ColorName==null){
-            ColorName="#C0CCC3";
+        if (ColorName == null) {
+            ColorName = "#C0CCC3";
         }
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
-            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding,ColorName);
+            insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding, ColorName);
             note_data = "";
         }
         super.onBackPressed();

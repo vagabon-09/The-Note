@@ -19,29 +19,28 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
                 android:background="@drawable/tag_shape"
-                android:textColor="@color/black"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="@string/all_tag" />
+                android:text="@string/all_tag"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/home_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
-                android:textColor="@color/black"
                 android:background="@drawable/tag_shape_"
                 android:paddingStart="@dimen/_10sdp"
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="@string/home_tag" />
+                android:text="@string/home_tag"
+                android:textColor="@color/black" />
 
             <TextView
                 android:id="@+id/work_tag"
-                android:textColor="@color/black"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_margin="@dimen/_5sdp"
@@ -50,10 +49,10 @@
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="@string/work_tag" />
+                android:text="@string/work_tag"
+                android:textColor="@color/black" />
 
             <TextView
-                android:textColor="@color/black"
                 android:id="@+id/personal_tag"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
@@ -63,7 +62,8 @@
                 android:paddingTop="@dimen/_5sdp"
                 android:paddingEnd="@dimen/_10sdp"
                 android:paddingBottom="@dimen/_5sdp"
-                android:text="@string/personal_tag" />
+                android:text="@string/personal_tag"
+                android:textColor="@color/black" />
 
 
         </LinearLayout>

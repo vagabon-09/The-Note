@@ -63,4 +63,8 @@ public interface NoteDao {
     //Update starred page to one
     @Query("UPDATE noteentity SET starred ='1' WHERE id =:uId")
     void updateStarredOne(int uId);
+
+    //Getting tag
+//    @Query("SELECT Tag FROM noteentity")
+//    List<NoteEntity> getAllTag();
 }
