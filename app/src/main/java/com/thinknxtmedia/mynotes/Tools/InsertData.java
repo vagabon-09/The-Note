@@ -8,7 +8,7 @@ import androidx.room.Room;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
-import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
+import com.thinknxtmedia.mynotes.Adapter.NoteAdapter;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
 
 import java.util.List;

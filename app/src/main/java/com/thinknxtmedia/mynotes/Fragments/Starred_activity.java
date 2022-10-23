@@ -13,8 +13,7 @@ import androidx.room.Room;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
-import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
-import com.thinknxtmedia.mynotes.FetchData.starredAdapter;
+import com.thinknxtmedia.mynotes.Adapter.starredAdapter;
 import com.thinknxtmedia.mynotes.R;
 
 import java.util.List;

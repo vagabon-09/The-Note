@@ -14,8 +14,7 @@ import android.view.ViewGroup;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
-import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
-import com.thinknxtmedia.mynotes.FetchData.trashAdapter;
+import com.thinknxtmedia.mynotes.Adapter.trashAdapter;
 import com.thinknxtmedia.mynotes.R;
 
 import java.util.List;

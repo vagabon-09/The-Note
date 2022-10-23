@@ -1,4 +1,4 @@
-package com.thinknxtmedia.mynotes.FetchData;
+package com.thinknxtmedia.mynotes.Adapter;
 
 
 import android.annotation.SuppressLint;
@@ -8,7 +8,6 @@ import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
@@ -86,11 +85,18 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
             LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
+            LinearLayout favourite = bottomSheetDialog.findViewById(R.id.FavouriteBtn);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);
                 bottomSheetDialog.dismiss();
             });
+            assert favourite != null;
+            favourite.setOnClickListener(view1 -> {
+                Toast.makeText(context, "Yes working...", Toast.LENGTH_SHORT).show();
+                bottomSheetDialog.dismiss();
+            });
+
 
             bottomSheetDialog.show();
             return false;

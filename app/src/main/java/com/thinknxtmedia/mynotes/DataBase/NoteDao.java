@@ -30,14 +30,16 @@ public interface NoteDao {
 
     //Update dating note title
     @Query("UPDATE noteentity SET Title = :uTitle WHERE id =:Uid")
-    void noteTitle(String uTitle,int Uid);
+    void noteTitle(String uTitle, int Uid);
 
     //Updating content
     @Query("UPDATE noteentity SET NoteDetails = :uNoteDetails WHERE id =:uid")
-    void NoteNote(String uNoteDetails,int uid);
+    void NoteNote(String uNoteDetails, int uid);
+
     //Update color
     @Query("UPDATE noteentity SET color = :colorHex WHERE id=:id")
-            void UpdateColor(String colorHex,int id);
+    void UpdateColor(String colorHex, int id);
+
     //Update tag
     @Query("UPDATE noteentity SET trash = :editTrash WHERE id=:uId")
     void editTrash(String editTrash, int uId);
@@ -51,7 +53,11 @@ public interface NoteDao {
     List<NoteEntity> getTag(String uTag);
 
     //Starred Page
-    @Query("SELECT * FROM noteentity WHERE starred ='1'")
+    @Query("SELECT * FROM noteentity WHERE starred ='1' and trash = 'all'")
     List<NoteEntity> getStarred();
+
+    //Update starred page
+    @Query("UPDATE noteentity SET starred ='0' WHERE id =:uId")
+    void updateStarred(int uId);
 
 }

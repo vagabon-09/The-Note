@@ -18,7 +18,7 @@ import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
-import com.thinknxtmedia.mynotes.FetchData.NoteAdapter;
+import com.thinknxtmedia.mynotes.Adapter.NoteAdapter;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.note_makng_page;
 

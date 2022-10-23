@@ -1,4 +1,4 @@
-package com.thinknxtmedia.mynotes.FetchData;
+package com.thinknxtmedia.mynotes.Adapter;
 
 import android.content.Context;
 import android.view.LayoutInflater;
