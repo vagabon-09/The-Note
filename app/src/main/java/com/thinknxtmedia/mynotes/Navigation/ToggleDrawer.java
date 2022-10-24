@@ -24,6 +24,7 @@ public class ToggleDrawer {
                 replaceFreagment.setItemClickable(R.id.main_container_id, new HomeNotes(), fm, "yes");
             }
             //If you want to enable trash feature un comment below 2 line
+
 /*            else if (id == R.id.drawer_menu_trash_id) {
               replaceFreagment.setItemClickable(R.id.main_container_id, new Trash(), fm, "yes");
            }
