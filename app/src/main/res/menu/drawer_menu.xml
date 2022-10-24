@@ -6,10 +6,10 @@
         android:icon="@drawable/home"
         android:title="@string/drawer_home" />
 
-    <item
-        android:id="@+id/drawer_menu_trash_id"
-        android:icon="@drawable/trash"
-        android:title="@string/drawer_trash" />
+<!--    <item-->
+<!--        android:id="@+id/drawer_menu_trash_id"-->
+<!--        android:icon="@drawable/trash"-->
+<!--        android:title="@string/drawer_trash" />-->
 
 
     <!--    <item-->

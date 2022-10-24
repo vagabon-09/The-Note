@@ -129,7 +129,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         home.setOnClickListener(view -> {
-            clicked = "home";
+            clicked = "Home";
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -137,7 +137,7 @@ public class HomeNotes extends Fragment {
             onResume();
         });
         work.setOnClickListener(view -> {
-            clicked = "work";
+            clicked = "Work";
             work.setBackground(getResources().getDrawable(R.drawable.tag_shape));
             home.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             all.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
@@ -163,10 +163,10 @@ public class HomeNotes extends Fragment {
         List<NoteEntity> noteEntities;
         if (Objects.equals(clicked, "all")) {
             noteEntities = noteDao.getAll();
-        } else if (Objects.equals(clicked, "home")) {
+        } else if (Objects.equals(clicked, "Home")) {
             noteEntities = noteDao.getTag(clicked);
 
-        } else if (Objects.equals(clicked, "work")) {
+        } else if (Objects.equals(clicked, "Work")) {
             noteEntities = noteDao.getTag(clicked);
 
         } else if (Objects.equals(clicked, "Personal")) {

@@ -49,7 +49,7 @@ public interface NoteDao {
     boolean getRow();
 
     //Searching tag wise
-    @Query("SELECT * FROM NoteEntity WHERE Tag =:uTag")
+    @Query("SELECT * FROM NoteEntity WHERE Tag =:uTag and trash ='all'")
     List<NoteEntity> getTag(String uTag);
 
     //Starred Page
@@ -64,7 +64,5 @@ public interface NoteDao {
     @Query("UPDATE noteentity SET starred ='1' WHERE id =:uId")
     void updateStarredOne(int uId);
 
-    //Getting tag
-//    @Query("SELECT Tag FROM noteentity")
-//    List<NoteEntity> getAllTag();
+
 }

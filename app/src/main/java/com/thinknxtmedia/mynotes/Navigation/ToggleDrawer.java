@@ -11,7 +11,6 @@ import androidx.fragment.app.FragmentManager;
 import com.google.android.material.navigation.NavigationView;
 import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.Fragments.Starred_activity;
-import com.thinknxtmedia.mynotes.Fragments.Trash;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 
@@ -23,9 +22,14 @@ public class ToggleDrawer {
             int id = item.getItemId();
             if (id == R.id.drawer_menu_home_id) {
                 replaceFreagment.setItemClickable(R.id.main_container_id, new HomeNotes(), fm, "yes");
-            } else if (id == R.id.drawer_menu_trash_id) {
-                replaceFreagment.setItemClickable(R.id.main_container_id, new Trash(), fm, "yes");
-            } else if (id == R.id.drawer_menu_more_id) {
+            }
+            //If you want to enable trash feature un comment below 2 line
+/*            else if (id == R.id.drawer_menu_trash_id) {
+              replaceFreagment.setItemClickable(R.id.main_container_id, new Trash(), fm, "yes");
+           }
+           */
+
+            else if (id == R.id.drawer_menu_more_id) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(
                         "https://play.google.com/store/search?q=pub%3A%20Think%20nXt%20Media&c=apps"));
