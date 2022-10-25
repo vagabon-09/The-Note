@@ -14,17 +14,17 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
-import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.Tools.updateData;
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
-import java.util.Objects;
+import jp.wasabeef.richeditor.RichEditor;
 
 public class Update_Note extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
-    EditText title, note;
+    EditText title;
+    RichEditor note;
     updateData updateData;
-    private String ColorName;
+    private String ColorName, text_data;
     private int note_id;
 
     @Override
@@ -100,7 +100,7 @@ public class Update_Note extends AppCompatActivity {
         Spanned title_u = Html.fromHtml(getIntent().getStringExtra("title"));
         Spanned note_u = Html.fromHtml(getIntent().getStringExtra("note"));
         String note_color = getIntent().getStringExtra("color");
-       note_id = getIntent().getIntExtra("note_id",0);
+        note_id = getIntent().getIntExtra("note_id", 0);
 
 /*
         //Red color
@@ -122,7 +122,10 @@ public class Update_Note extends AppCompatActivity {
 */
 
         title.setText(title_u);
+//        binding.UpdateNoteNotesId.loadData(Html.fromHtml(getIntent().getStringExtra("note"),text/html, "UTF-8"));
+
         binding.UpdateNoteNotesId.setText(note_u);
+//        Toast.makeText(this, note_u, Toast.LENGTH_SHORT).show();
         binding.UpdateNoteNotesId.addTextChangedListener(new TextWatcher() {
             @Override
             public void beforeTextChanged(CharSequence charSequence, int i, int i1, int i2) {
@@ -139,16 +142,18 @@ public class Update_Note extends AppCompatActivity {
 
             }
         });
+
     }
 
     private void getView() {
         title = findViewById(R.id.update_NoteTitleId);
-        note = findViewById(R.id.Update_NoteNotesId);
+//        note = findViewById(R.id.Update_NoteNotesId);
     }
 
     @Override
     public void onBackPressed() {
-        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), binding.UpdateNoteNotesId.getText().toString(),note_id);
+        String span_text = Html.toHtml(binding.UpdateNoteNotesId.getText());
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id);
         super.onBackPressed();
 
     }
