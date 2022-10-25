@@ -7,6 +7,8 @@
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
     android:layout_weight="1"
+    android:elevation="@dimen/_10sdp"
+    app:cardElevation="@dimen/_10sdp"
    app:cardCornerRadius="@dimen/_10sdp"
     card_view:cardCornerRadius="4dp">
 
