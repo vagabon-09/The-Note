@@ -19,12 +19,10 @@ import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
 import java.util.Objects;
 
-import jp.wasabeef.richeditor.RichEditor;
 
 public class Update_Note extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
     EditText title;
-    RichEditor note;
     updateData updateData;
     private String ColorName, text_data;
     private int note_id;
