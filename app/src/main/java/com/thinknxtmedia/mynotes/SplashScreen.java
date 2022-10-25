@@ -8,8 +8,6 @@ import android.os.Bundle;
 import android.os.Handler;
 import android.view.WindowManager;
 
-import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
-
 @SuppressLint("CustomSplashScreen")
 public class SplashScreen extends AppCompatActivity {
 private final static int SPLASH_TIME= 3000;
