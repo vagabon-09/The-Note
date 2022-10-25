@@ -64,7 +64,7 @@ public class Home extends AppCompatActivity {
     private void setToolbar() {
         /* Crating toggle drawer using custom toolbar */
         setSupportActionBar(toolbar);
-        toolbar.post(() -> toolbar.setNavigationIcon(R.drawable.hamburger_32));
+        toolbar.post(() -> toolbar.setNavigationIcon(R.drawable.hamburger_s));
         tBar.ActionToolBar(this, bind.drawerId, toolbar);
         /* Replacing Fragment on clicking drawer button */
         FragmentManager fm = getSupportFragmentManager();
