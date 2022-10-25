@@ -113,25 +113,25 @@
                     android:layout_marginEnd="@dimen/_10sdp"
                     android:background="@drawable/color_panel" />
 
-                <ImageView
-                    android:id="@+id/fontStyleId"
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/text_style"
-                    android:src="@drawable/font_style" />
+<!--                <ImageView-->
+<!--                    android:id="@+id/fontStyleId"-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/text_style"-->
+<!--                    android:src="@drawable/font_style" />-->
 
 
-                <ImageView
-                    android:layout_width="@dimen/_20sdp"
-                    android:layout_height="@dimen/_20sdp"
-                    android:layout_margin="@dimen/_10sdp"
-                    android:layout_marginStart="@dimen/_10sdp"
-                    android:layout_marginEnd="@dimen/_10sdp"
-                    android:contentDescription="@string/content_align"
-                    android:src="@drawable/align_icon" />
+<!--                <ImageView-->
+<!--                    android:layout_width="@dimen/_20sdp"-->
+<!--                    android:layout_height="@dimen/_20sdp"-->
+<!--                    android:layout_margin="@dimen/_10sdp"-->
+<!--                    android:layout_marginStart="@dimen/_10sdp"-->
+<!--                    android:layout_marginEnd="@dimen/_10sdp"-->
+<!--                    android:contentDescription="@string/content_align"-->
+<!--                    android:src="@drawable/align_icon" />-->
 
                 <ImageView
                     android:id="@+id/noteTagId"

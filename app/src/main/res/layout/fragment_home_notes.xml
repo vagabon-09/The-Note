@@ -18,7 +18,6 @@
             android:layout_alignParentEnd="true"
             android:layout_alignParentBottom="true"
             android:layout_margin="@dimen/_20sdp"
-            android:backgroundTint="@color/light_orange"
             android:clickable="true"
             android:elevation="10dp"
             android:focusable="true"
@@ -27,6 +26,7 @@
             app:cardElevation="10dp">
 
             <RelativeLayout
+                android:background="@drawable/add_gradient_color"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
@@ -39,8 +39,8 @@
                     android:background="@color/white" />
 
                 <View
-                    android:layout_width="@dimen/_2sdp"
-                    android:layout_height="match_parent"
+                    android:layout_width="3dp"
+                    android:layout_height="26dp"
                     android:layout_centerInParent="true"
                     android:layout_marginTop="@dimen/_5sdp"
                     android:layout_marginBottom="@dimen/_5sdp"

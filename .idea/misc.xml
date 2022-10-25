@@ -3,6 +3,7 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/add_gradient_color.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/blue_circle.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/bottom_sheet_shape.xml" value="0.2155" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/drawable/buttom_sheet.xml" value="0.2155" />
@@ -25,7 +26,7 @@
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout-v28/single_starred.xml" value="0.22916666666666666" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_home.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_main.xml" value="0.17265625" />
-        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_note_makng_page.xml" value="0.1" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_note_makng_page.xml" value="0.264" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/activity_update_note.xml" value="0.17265625" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/bottom_sheet.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/buttom_operation.xml" value="0.171875" />
@@ -36,7 +37,7 @@
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/font_family_panel.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_blank.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_home_empty.xml" value="0.23020833333333332" />
-        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_home_notes.xml" value="0.17265625" />
+        <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_home_notes.xml" value="0.4" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_make_note.xml" value="0.23020833333333332" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_settings.xml" value="0.17265625" />
         <entry key="..\:/Android_Devlopment/MyNotes/app/src/main/res/layout/fragment_starred_activity.xml" value="0.18896964514749892" />
