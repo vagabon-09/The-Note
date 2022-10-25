@@ -1,11 +1,15 @@
 package com.thinknxtmedia.mynotes;
 
 import android.annotation.SuppressLint;
+import android.graphics.Typeface;
 import android.os.Bundle;
 import android.text.Editable;
 import android.text.Html;
+import android.text.Spannable;
+import android.text.SpannableStringBuilder;
 import android.text.Spanned;
 import android.text.TextWatcher;
+import android.text.style.StyleSpan;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
@@ -44,6 +48,7 @@ public class Update_Note extends AppCompatActivity {
         updateContent();
         //Edit Text
         textEditor();
+
     }
 
     private void textEditor() {
@@ -83,6 +88,46 @@ public class Update_Note extends AppCompatActivity {
             ColorName = "#FFFFFFFF";
             Toast.makeText(this, "White Circle", Toast.LENGTH_SHORT).show();
             bottomSheetDialog.dismiss();
+        });
+        //Bold button
+        binding.boldTextId.setOnClickListener(view -> {
+            Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+            spannableString.setSpan(new StyleSpan(Typeface.BOLD),
+                    binding.UpdateNoteNotesId.getSelectionStart(),
+                    binding.UpdateNoteNotesId.getSelectionEnd(),
+                    0);
+            binding.UpdateNoteNotesId.setText(spannableString);
+        });
+
+        //Italic Button
+        binding.ItalicTextId.setOnClickListener(view -> {
+            Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+            spannableString.setSpan(new StyleSpan(Typeface.ITALIC),
+                    binding.UpdateNoteNotesId.getSelectionStart(),
+                    binding.UpdateNoteNotesId.getSelectionEnd(),
+                    0);
+            binding.UpdateNoteNotesId.setText(spannableString);
+        });
+
+        //Center element
+        binding.alignCenterId.setOnClickListener(view -> {
+                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+                binding.UpdateNoteNotesId.setText(spannableString);
+        });
+
+        //Right element
+        binding.alignRightId.setOnClickListener(view -> {
+                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
+                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+                binding.UpdateNoteNotesId.setText(spannableString);
+        });
+
+     //End element
+        binding.alignLeftId.setOnClickListener(view -> {
+                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+                binding.UpdateNoteNotesId.setText(spannableString);
         });
 
     }
