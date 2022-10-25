@@ -17,6 +17,8 @@ import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.Tools.updateData;
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
+import java.util.Objects;
+
 import jp.wasabeef.richeditor.RichEditor;
 
 public class Update_Note extends AppCompatActivity {
@@ -89,6 +91,24 @@ public class Update_Note extends AppCompatActivity {
 
     private void updateContent() {
         binding.noteSaveBtnId.setOnClickListener(view -> onBackPressed());
+        binding.colorPanelId.setOnClickListener(view -> {
+            ColorDialogShow();
+        });
+        binding.noteTagId.setOnClickListener(view -> {
+            showTagDialog();
+        });
+    }
+
+    private void showTagDialog() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.note_tag);
+        bottomSheetDialog.show();
+    }
+
+    private void ColorDialogShow() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
+        bottomSheetDialog.setContentView(R.layout.color_plate);
+        bottomSheetDialog.show();
     }
 
     private void backBtnPressed() {
@@ -102,7 +122,7 @@ public class Update_Note extends AppCompatActivity {
         String note_color = getIntent().getStringExtra("color");
         note_id = getIntent().getIntExtra("note_id", 0);
 
-/*
+
         //Red color
         if (Objects.equals(note_color, "#EC0D0D")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.red_circle));
@@ -119,7 +139,7 @@ public class Update_Note extends AppCompatActivity {
         else if (Objects.equals(note_color, "#D9D9D9")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.white_circle));
         }
-*/
+
 
         title.setText(title_u);
 //        binding.UpdateNoteNotesId.loadData(Html.fromHtml(getIntent().getStringExtra("note"),text/html, "UTF-8"));
