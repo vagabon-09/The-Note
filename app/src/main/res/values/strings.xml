@@ -61,6 +61,7 @@
     <string name="recover_icon">recover icon</string>
     <string name="favourite">Favourite</string>
     <string name="unFavourite">Un Favourite</string>
+    <string name="note_title">This is note</string>
 
 
 </resources>

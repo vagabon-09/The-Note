@@ -144,9 +144,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             s_title = itemView.findViewById(R.id.s_note_title);
-            delete = itemView.findViewById(R.id.s_deleteBtn);
+//            delete = itemView.findViewById(R.id.s_deleteBtn);
             cardView = itemView.findViewById(R.id.NoteBtnId);
-            deleteBtn = itemView.findViewById(R.id.s_delete);
+//            deleteBtn = itemView.findViewById(R.id.s_delete);
             NoteBtn = itemView.findViewById(R.id.NoteBtn);
             colorCard = itemView.findViewById(R.id.cardViewBtn);
         }

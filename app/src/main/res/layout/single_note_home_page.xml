@@ -3,98 +3,48 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/cardViewBtn"
-    android:layout_width="wrap_content"
+    android:layout_width="@dimen/_130sdp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
     android:layout_weight="1"
-    app:cardPreventCornerOverlap="false"
+   app:cardCornerRadius="@dimen/_10sdp"
     card_view:cardCornerRadius="4dp">
 
-
-    <RelativeLayout
-        android:id="@+id/NoteBtnId"
-        android:layout_width="@dimen/_130sdp"
+    <LinearLayout
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_margin="@dimen/_5sdp">
-
-
-        <LinearLayout
-            android:id="@+id/NoteBtn"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:orientation="vertical">
-
-
-            <TextView
-                android:id="@+id/s_note_title"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_margin="@dimen/_5sdp"
-                android:gravity="center"
-                android:paddingTop="@dimen/_10sdp"
-                android:paddingBottom="@dimen/_10sdp"
-                android:text="@string/title_note_making_page"
-                android:textColor="@color/black"
-                android:textSize="@dimen/_15sdp" />
-
-            <TextView
-                android:id="@+id/s_data_id"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_gravity="center"
-                android:layout_margin="@dimen/_5sdp"
-                android:gravity="center|bottom"
-                android:text="@string/date"
-                android:textSize="@dimen/_10sdp" />
-
-        </LinearLayout>
-
-        <ImageView
-            android:id="@+id/star_non_color_id"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_marginStart="@dimen/_5sdp"
-            android:layout_marginTop="@dimen/_5sdp"
-            android:layout_marginEnd="@dimen/_5sdp"
-            android:layout_marginBottom="@dimen/_5sdp"
-            android:contentDescription="@string/non_color"
-            android:src="@drawable/star_black_icon"
-            android:visibility="gone" />
-
-
-        <ImageView
-            android:id="@+id/star_color_id"
-            android:layout_width="@dimen/_15sdp"
-            android:layout_height="@dimen/_15sdp"
-            android:layout_alignParentEnd="true"
-            android:layout_alignParentBottom="true"
-            android:layout_margin="@dimen/_5sdp"
-            android:visibility="gone"
-            android:contentDescription="@string/color_star_icon"
-            android:src="@drawable/star_color_icon" />
-
+        android:orientation="vertical">
 
         <RelativeLayout
-            android:id="@+id/s_deleteBtn"
+            android:id="@+id/NoteBtnId"
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_centerInParent="true"
-            android:layout_gravity="center"
-            android:background="@android:color/transparent"
-            android:gravity="center"
-            android:visibility="gone">
+            android:layout_height="wrap_content"
+            card_view:ignore="UselessParent">
 
-            <ImageView
-                android:id="@+id/s_delete"
-                android:layout_width="@dimen/_20sdp"
-                android:layout_height="@dimen/_20sdp"
-                android:contentDescription="@string/delete_button"
-                android:src="@drawable/delete" />
+            <LinearLayout
+                android:id="@+id/NoteBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@drawable/card_background"
+                android:orientation="vertical"
+                card_view:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/s_note_title"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/_5sdp"
+                    android:gravity="center"
+                    android:paddingTop="@dimen/_10sdp"
+                    android:paddingBottom="@dimen/_30sdp"
+                    android:text="@string/title_note_making_page"
+                    android:textColor="@color/black"
+                    android:textSize="@dimen/_15sdp" />
+
+            </LinearLayout>
 
         </RelativeLayout>
-    </RelativeLayout>
+    </LinearLayout>
 
 
 </androidx.cardview.widget.CardView>

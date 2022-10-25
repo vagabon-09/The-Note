@@ -74,8 +74,8 @@ public class starredAdapter extends RecyclerView.Adapter<starredAdapter.MyViewHo
             super(itemView);
             s_title = itemView.findViewById(R.id.s_starred_title_id);
             s_date = itemView.findViewById(R.id.s_starred_date_id);
-            s_color_star = itemView.findViewById(R.id.star_color_id);
-            s_non_color_star = itemView.findViewById(R.id.star_non_color_id);
+//            s_color_star = itemView.findViewById(R.id.star_color_id);
+//            s_non_color_star = itemView.findViewById(R.id.star_non_color_id);
             s_starredUpdate = itemView.findViewById(R.id.starred_favourite_id);
         }
     }
