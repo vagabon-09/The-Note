@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">MY NOTES</string>
+    <string name="app_name">The Notes</string>
     <string name="profile_name">Rajesh Bhadra</string>
     <string name="profile_email">rajeshbhadra62@gmail.com</string>
     <string name="drawer_home">Home</string>
@@ -62,6 +62,9 @@
     <string name="favourite">Favourite</string>
     <string name="unFavourite">Un Favourite</string>
     <string name="note_title">This is note</string>
+    <string name="powered_by">Powered by</string>
+    <string name="company_name">Think nXt Media :</string>
+    <string name="copyRight">All copyright reserved</string>
 
 
 </resources>

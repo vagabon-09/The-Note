@@ -1,50 +1,73 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:background="@drawable/drawble_gradient"
-    android:layout_height="@dimen/_176sdp">
-<!--    <ImageView-->
-<!--        android:layout_width="@dimen/_25sdp"-->
-<!--        android:layout_height="@dimen/_25sdp"-->
-<!--        android:src="@drawable/edit_white"-->
-<!--        android:layout_alignParentEnd="true"-->
-<!--        android:layout_marginEnd="@dimen/_8sdp"-->
-<!--        android:layout_marginTop="@dimen/_8sdp"-->
-<!--        android:contentDescription="@string/profile_edit_option"-->
-<!--        android:id="@+id/profile_edit_id"/>-->
+    android:layout_height="@dimen/_70sdp"
+    android:gravity="center">
 
-<!--    <LinearLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="match_parent"-->
-<!--        android:gravity="center"-->
-<!--        android:orientation="vertical">-->
+    <TextView
+        android:id="@+id/titleId"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/_20sdp"
+        android:layout_marginTop="@dimen/_5sdp"
+        android:fontFamily="@font/source_bold"
+        android:gravity="start|center_vertical"
+        android:text="@string/app_name"
+        android:textColor="@color/black"
+        android:textSize="@dimen/_20sdp" />
 
-<!--        <de.hdodenhof.circleimageview.CircleImageView-->
-<!--            android:id="@+id/drawer_profileImg_id"-->
-<!--            android:layout_width="@dimen/_80sdp"-->
-<!--            android:layout_height="@dimen/_80sdp"-->
-<!--            android:src="@drawable/profile" />-->
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/_1sdp"
+        android:layout_below="@+id/titleId"
 
-<!--        <TextView-->
-<!--            android:id="@+id/profile_name_id"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:layout_marginTop="@dimen/_5sdp"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/profile_name"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="@dimen/_12sdp"-->
-<!--            android:textStyle="bold" />-->
+        android:layout_marginTop="@dimen/_10sdp"
 
-<!--        <TextView-->
-<!--            android:id="@+id/profile_email_id"-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="wrap_content"-->
-<!--            android:gravity="center"-->
-<!--            android:text="@string/profile_email"-->
-<!--            android:textColor="@color/white"-->
-<!--            android:textSize="@dimen/_9sdp" />-->
+        android:background="@color/black" />
 
-<!--    </LinearLayout>-->
+
+    <!--    <ImageView-->
+    <!--        android:layout_width="@dimen/_25sdp"-->
+    <!--        android:layout_height="@dimen/_25sdp"-->
+    <!--        android:src="@drawable/edit_white"-->
+    <!--        android:layout_alignParentEnd="true"-->
+    <!--        android:layout_marginEnd="@dimen/_8sdp"-->
+    <!--        android:layout_marginTop="@dimen/_8sdp"-->
+    <!--        android:contentDescription="@string/profile_edit_option"-->
+    <!--        android:id="@+id/profile_edit_id"/>-->
+
+    <!--    <LinearLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="match_parent"-->
+    <!--        android:gravity="center"-->
+    <!--        android:orientation="vertical">-->
+
+    <!--        <de.hdodenhof.circleimageview.CircleImageView-->
+    <!--            android:id="@+id/drawer_profileImg_id"-->
+    <!--            android:layout_width="@dimen/_80sdp"-->
+    <!--            android:layout_height="@dimen/_80sdp"-->
+    <!--            android:src="@drawable/profile" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/profile_name_id"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:layout_marginTop="@dimen/_5sdp"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="@string/profile_name"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/_12sdp"-->
+    <!--            android:textStyle="bold" />-->
+
+    <!--        <TextView-->
+    <!--            android:id="@+id/profile_email_id"-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="wrap_content"-->
+    <!--            android:gravity="center"-->
+    <!--            android:text="@string/profile_email"-->
+    <!--            android:textColor="@color/white"-->
+    <!--            android:textSize="@dimen/_9sdp" />-->
+
+    <!--    </LinearLayout>-->
 
 </RelativeLayout>
