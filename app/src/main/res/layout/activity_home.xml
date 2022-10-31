@@ -12,7 +12,6 @@
     <include layout="@layout/toolbar" />
 
 
-
     <com.google.android.material.navigation.NavigationView
         android:id="@+id/home_navigation_id"
         android:layout_width="wrap_content"
