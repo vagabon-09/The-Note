@@ -6,21 +6,20 @@
         android:icon="@drawable/home"
         android:title="@string/drawer_home" />
 
-<!--    <item-->
-<!--        android:id="@+id/drawer_menu_trash_id"-->
-<!--        android:icon="@drawable/trash"-->
-<!--        android:title="@string/drawer_trash" />-->
-
-
     <!--    <item-->
-    <!--        android:id="@+id/drawer_menu_setting_id"-->
-    <!--        android:icon="@drawable/setting"-->
-    <!--        android:title="@string/drawer_setting" />-->
+    <!--        android:id="@+id/drawer_menu_trash_id"-->
+    <!--        android:icon="@drawable/trash"-->
+    <!--        android:title="@string/drawer_trash" />-->
+
 
     <item
         android:id="@+id/drawer_menu_star_id"
         android:icon="@drawable/star_black_icon"
         android:title="@string/starred" />
+    <item
+        android:id="@+id/drawer_menu_setting_id"
+        android:icon="@drawable/setting"
+        android:title="@string/drawer_setting" />
     <item
         android:id="@+id/drawer_menu_more_id"
         android:icon="@drawable/more_"
@@ -32,10 +31,10 @@
     <!--        android:icon="@drawable/log_out"-->
     <!--        android:title="@string/drawer_logout" />-->
 
-<!--        <item-->
-<!--            android:id="@+id/drawer_menu_lock_id"-->
-<!--            android:icon="@drawable/loc"-->
-<!--            android:title="@string/drawer_lock" />-->
+    <!--        <item-->
+    <!--            android:id="@+id/drawer_menu_lock_id"-->
+    <!--            android:icon="@drawable/loc"-->
+    <!--            android:title="@string/drawer_lock" />-->
 
 
-    </menu >
+</menu>
