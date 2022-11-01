@@ -140,6 +140,36 @@ public class note_makng_page extends AppCompatActivity {
             ColorName = "#FFFFFF";
             bottomSheetDialog.dismiss();
         });
+
+        //Blue circle
+        View blue_circle = bottomSheetDialog.findViewById(R.id.blue_circle);
+        assert blue_circle != null;
+        blue_circle.setOnClickListener(view -> {
+            ColorName = "#3D1EF9";
+            bottomSheetDialog.dismiss();
+        });
+        //Yellow circle
+        View yellow_circle = bottomSheetDialog.findViewById(R.id.yellow_circle);
+        assert yellow_circle != null;
+        yellow_circle.setOnClickListener(view -> {
+            ColorName = "#F9DC1E";
+            bottomSheetDialog.dismiss();
+        });
+        //Sea Blue circle
+        View sea_circle = bottomSheetDialog.findViewById(R.id.sea_blue_circle);
+        assert sea_circle != null;
+        sea_circle.setOnClickListener(view -> {
+            ColorName = "#6DA8FF";
+            bottomSheetDialog.dismiss();
+        });
+
+        //Purple circle
+        View purple_circle = bottomSheetDialog.findViewById(R.id.purple_circle);
+        assert purple_circle != null;
+        purple_circle.setOnClickListener(view -> {
+            ColorName = "#A800F7";
+            bottomSheetDialog.dismiss();
+        });
         bottomSheetDialog.show();
     }
 
