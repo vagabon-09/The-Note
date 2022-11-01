@@ -182,6 +182,23 @@ public class Update_Note extends AppCompatActivity {
         else if (Objects.equals(note_color, "#D9D9D9")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.white_circle));
         }
+        //Blue color
+        else if (Objects.equals(note_color,"#3D1EF9")){
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.blue_circle));
+        }
+        //Yellow Color
+        else if(Objects.equals(note_color,"#F9DC1E")){
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.yellow));
+        }
+        //Sea blue color
+        else if (Objects.equals(note_color,"#6DA8FF")){
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.sea_blue_circle));
+        }
+        //Purple Color
+        else if(Objects.equals(note_color,"#A800F7")){
+            binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.purple_circle));
+        }
+
 
 
         title.setText(title_u);
