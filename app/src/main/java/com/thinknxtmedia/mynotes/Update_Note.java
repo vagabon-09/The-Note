@@ -28,6 +28,7 @@ public class Update_Note extends AppCompatActivity {
     ActivityUpdateNoteBinding binding;
     EditText title;
     updateData updateData;
+    String note_color;
     private String ColorName, text_data;
     private int note_id;
 
@@ -38,6 +39,7 @@ public class Update_Note extends AppCompatActivity {
         setContentView(binding.getRoot());
         //Removing status bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+        note_color = getIntent().getStringExtra("color");
         //finding views from layout
         getView();
         //Setting data to views
@@ -89,6 +91,8 @@ public class Update_Note extends AppCompatActivity {
             Toast.makeText(this, "White Circle", Toast.LENGTH_SHORT).show();
             bottomSheetDialog.dismiss();
         });
+
+
         //Bold button
         binding.boldTextId.setOnClickListener(view -> {
             Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
@@ -111,35 +115,31 @@ public class Update_Note extends AppCompatActivity {
 
         //Center element
         binding.alignCenterId.setOnClickListener(view -> {
-                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
-                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
-                binding.UpdateNoteNotesId.setText(spannableString);
+            binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_CENTER);
+            Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+            binding.UpdateNoteNotesId.setText(spannableString);
         });
 
         //Right element
         binding.alignRightId.setOnClickListener(view -> {
-                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
-                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
-                binding.UpdateNoteNotesId.setText(spannableString);
+            binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_VIEW_END);
+            Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+            binding.UpdateNoteNotesId.setText(spannableString);
         });
 
-     //End element
+        //End element
         binding.alignLeftId.setOnClickListener(view -> {
-                binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
-                Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
-                binding.UpdateNoteNotesId.setText(spannableString);
+            binding.UpdateNoteNotesId.setTextAlignment(View.TEXT_ALIGNMENT_TEXT_START);
+            Spannable spannableString = new SpannableStringBuilder(binding.UpdateNoteNotesId.getText());
+            binding.UpdateNoteNotesId.setText(spannableString);
         });
 
     }
 
     private void updateContent() {
         binding.noteSaveBtnId.setOnClickListener(view -> onBackPressed());
-        binding.colorPanelId.setOnClickListener(view -> {
-            ColorDialogShow();
-        });
-        binding.noteTagId.setOnClickListener(view -> {
-            showTagDialog();
-        });
+        binding.colorPanelId.setOnClickListener(view -> ColorDialogShow());
+        binding.noteTagId.setOnClickListener(view -> showTagDialog());
     }
 
     private void showTagDialog() {
@@ -151,6 +151,64 @@ public class Update_Note extends AppCompatActivity {
     private void ColorDialogShow() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.color_plate);
+        View red_circle = bottomSheetDialog.findViewById(R.id.red_circle);
+        View green_circle = bottomSheetDialog.findViewById(R.id.green_circle);
+        View orange_circle = bottomSheetDialog.findViewById(R.id.orange_circle);
+        View white_circle = bottomSheetDialog.findViewById(R.id.white_circle);
+        View blue_circle = bottomSheetDialog.findViewById(R.id.blue_circle);
+        View yellow_circle = bottomSheetDialog.findViewById(R.id.yellow_circle);
+        View seaBlue_circle = bottomSheetDialog.findViewById(R.id.sea_blue_circle);
+        View purple_circle = bottomSheetDialog.findViewById(R.id.purple_circle);
+
+        assert red_circle != null;
+        red_circle.setOnClickListener(view -> {
+            note_color = "#EC0D0D";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert green_circle != null;
+        green_circle.setOnClickListener(view -> {
+            note_color = "#2FFF00";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert orange_circle != null;
+        orange_circle.setOnClickListener(view -> {
+            note_color = "#F37806";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert white_circle != null;
+        white_circle.setOnClickListener(view -> {
+            note_color = "#FFFFFF";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert blue_circle != null;
+        blue_circle.setOnClickListener(view -> {
+            note_color = "#3D1EF9";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert yellow_circle != null;
+        yellow_circle.setOnClickListener(view -> {
+            note_color = "#F9DC1E";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert seaBlue_circle != null;
+        seaBlue_circle.setOnClickListener(view -> {
+            note_color = "#6DA8FF";
+            bottomSheetDialog.dismiss();
+        });
+
+        assert purple_circle != null;
+        purple_circle.setOnClickListener(view -> {
+            note_color = "#A800F7";
+            bottomSheetDialog.dismiss();
+        });
+
+
         bottomSheetDialog.show();
     }
 
@@ -162,10 +220,12 @@ public class Update_Note extends AppCompatActivity {
     private void setContent() {
         Spanned title_u = Html.fromHtml(getIntent().getStringExtra("title"));
         Spanned note_u = Html.fromHtml(getIntent().getStringExtra("note"));
-        String note_color = getIntent().getStringExtra("color");
+        note_color = getIntent().getStringExtra("color");
         note_id = getIntent().getIntExtra("note_id", 0);
 
 
+        //Setting Color panel btn color
+        /* This code will set color panel background color */
         //Red color
         if (Objects.equals(note_color, "#EC0D0D")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.red_circle));
@@ -183,22 +243,21 @@ public class Update_Note extends AppCompatActivity {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.white_circle));
         }
         //Blue color
-        else if (Objects.equals(note_color,"#3D1EF9")){
+        else if (Objects.equals(note_color, "#3D1EF9")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.blue_circle));
         }
         //Yellow Color
-        else if(Objects.equals(note_color,"#F9DC1E")){
+        else if (Objects.equals(note_color, "#F9DC1E")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.yellow));
         }
         //Sea blue color
-        else if (Objects.equals(note_color,"#6DA8FF")){
+        else if (Objects.equals(note_color, "#6DA8FF")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.sea_blue_circle));
         }
         //Purple Color
-        else if(Objects.equals(note_color,"#A800F7")){
+        else if (Objects.equals(note_color, "#A800F7")) {
             binding.colorPanelId.setBackground(getResources().getDrawable(R.drawable.purple_circle));
         }
-
 
 
         title.setText(title_u);
@@ -225,6 +284,7 @@ public class Update_Note extends AppCompatActivity {
 
     }
 
+
     private void getView() {
         title = findViewById(R.id.update_NoteTitleId);
 //        note = findViewById(R.id.Update_NoteNotesId);
@@ -233,7 +293,7 @@ public class Update_Note extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         String span_text = Html.toHtml(binding.UpdateNoteNotesId.getText());
-        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id);
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id, note_color);
         super.onBackPressed();
 
     }

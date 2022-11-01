@@ -67,4 +67,5 @@ public interface NoteDao {
     void updateStarredOne(int uId);
 
 
+
 }
