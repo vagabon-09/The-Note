@@ -40,6 +40,11 @@ public class Home extends AppCompatActivity {
         replaceFragment();
         /* Supporting toolbar*/
         setToolbar();
+        /*Check night mode on or not*/
+        checkNightMode();
+    }
+
+    private void checkNightMode() {
 
     }
 
@@ -53,7 +58,7 @@ public class Home extends AppCompatActivity {
         if (noteDao.getRow()) {
             ReplaceFreagment replaceFreagment = new ReplaceFreagment();
             replaceFreagment.setItemClickable(R.id.main_container_id, new HomeNotes(), fragmentManager);
-        } else{
+        } else {
             ft.replace(R.id.main_container_id, new HomeEmpty());
             ft.commit();
         }
@@ -86,5 +91,11 @@ public class Home extends AppCompatActivity {
 
         toolbar = findViewById(R.id.toolbar);
 
+    }
+
+    @Override
+    protected void onResume() {
+        checkNightMode();
+        super.onResume();
     }
 }

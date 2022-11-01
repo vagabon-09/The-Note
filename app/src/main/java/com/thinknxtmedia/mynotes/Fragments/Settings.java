@@ -1,12 +1,18 @@
 package com.thinknxtmedia.mynotes.Fragments;
 
+import android.annotation.SuppressLint;
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-
-import androidx.fragment.app.Fragment;
-
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.CompoundButton;
+import android.widget.Switch;
+import android.widget.Toast;
+
+import androidx.appcompat.app.AppCompatDelegate;
+import androidx.fragment.app.Fragment;
 
 import com.thinknxtmedia.mynotes.R;
 
@@ -57,10 +63,19 @@ public class Settings extends Fragment {
         }
     }
 
+    @SuppressLint("UseSwitchCompatOrMaterialCode")
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_settings, container, false);
+        View view = inflater.inflate(R.layout.fragment_settings, container, false);
+        Switch darkBtn = view.findViewById(R.id.nightModeSwitchId);
+
+
+        
+
+
+
+        return view;
     }
 }

@@ -10,6 +10,7 @@ import androidx.fragment.app.FragmentManager;
 
 import com.google.android.material.navigation.NavigationView;
 import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
+import com.thinknxtmedia.mynotes.Fragments.Settings;
 import com.thinknxtmedia.mynotes.Fragments.Starred_activity;
 import com.thinknxtmedia.mynotes.R;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
@@ -29,7 +30,9 @@ public class ToggleDrawer {
               replaceFreagment.setItemClickable(R.id.main_container_id, new Trash(), fm, "yes");
            }
            */
-
+            else if (id == R.id.drawer_menu_setting_id) {
+                replaceFreagment.setItemClickable(R.id.main_container_id, new Settings(), fm, "settingPage");
+            }
             else if (id == R.id.drawer_menu_more_id) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(
