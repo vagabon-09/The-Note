@@ -32,7 +32,7 @@ public class Update_Note extends AppCompatActivity {
     updateData updateData;
     String note_color;
     String noteTag;
-    private String ColorName, text_data;
+    String ColorName;
     private int note_id;
 
     @Override
@@ -56,59 +56,6 @@ public class Update_Note extends AppCompatActivity {
         textEditor();
 
 
-    }
-
-    @SuppressLint("UseCompatLoadingForDrawables")
-    private void updateNoteTag() {
-        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
-        bottomSheetDialog.setContentView(R.layout.note_tag);
-        TextView all_tag = bottomSheetDialog.findViewById(R.id.all_tag_add);
-        TextView home_tag = bottomSheetDialog.findViewById(R.id.home_tag_add);
-        TextView work_tag = bottomSheetDialog.findViewById(R.id.work_tag_add);
-        TextView personal_tag = bottomSheetDialog.findViewById(R.id.personal_tag_add);
-        TextView set_tag = bottomSheetDialog.findViewById(R.id.NoteTagId);
-
-        assert all_tag != null;
-        all_tag.setOnClickListener(view -> {
-            noteTag = "All";
-            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
-            assert home_tag != null;
-            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            assert work_tag != null;
-            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            assert personal_tag != null;
-            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-        });
-
-        assert home_tag != null;
-        home_tag.setOnClickListener(view -> {
-            noteTag = "Home";
-            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
-            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            assert work_tag != null;
-            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            assert personal_tag != null;
-            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-        });
-
-        assert work_tag != null;
-        work_tag.setOnClickListener(view -> {
-            noteTag = "Work";
-            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
-            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            assert personal_tag != null;
-            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-        });
-
-        assert personal_tag != null;
-        personal_tag.setOnClickListener(view -> {
-            noteTag = "Personal";
-            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
-            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
-        });
     }
 
 
@@ -228,8 +175,7 @@ public class Update_Note extends AppCompatActivity {
             assert personal_tag != null;
             personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
 
-        }
-        else if (Objects.equals(noteTag, "Home")) {
+        } else if (Objects.equals(noteTag, "Home")) {
 
             assert set_tag != null;
             set_tag.setText(noteTag);
@@ -242,8 +188,7 @@ public class Update_Note extends AppCompatActivity {
             assert personal_tag != null;
             personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
 
-        }
-        else if (Objects.equals(noteTag, "Work")) {
+        } else if (Objects.equals(noteTag, "Work")) {
 
             assert set_tag != null;
             set_tag.setText(noteTag);
@@ -256,8 +201,7 @@ public class Update_Note extends AppCompatActivity {
             assert personal_tag != null;
             personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
 
-        }
-        else if (Objects.equals(noteTag, "Personal")) {
+        } else if (Objects.equals(noteTag, "Personal")) {
 
             assert set_tag != null;
             set_tag.setText(noteTag);
@@ -312,7 +256,6 @@ public class Update_Note extends AppCompatActivity {
             home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
             all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
         });
-
 
 
         bottomSheetDialog.show();
@@ -464,7 +407,7 @@ public class Update_Note extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         String span_text = Html.toHtml(binding.UpdateNoteNotesId.getText());
-        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id, note_color,noteTag);
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id, note_color, noteTag);
         super.onBackPressed();
 
     }
