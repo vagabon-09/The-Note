@@ -32,8 +32,7 @@ public class ToggleDrawer {
            */
             else if (id == R.id.drawer_menu_setting_id) {
                 replaceFreagment.setItemClickable(R.id.main_container_id, new Settings(), fm, "settingPage");
-            }
-            else if (id == R.id.drawer_menu_more_id) {
+            } else if (id == R.id.drawer_menu_more_id) {
                 Intent intent = new Intent(Intent.ACTION_VIEW);
                 intent.setData(Uri.parse(
                         "https://play.google.com/store/search?q=pub%3A%20Think%20nXt%20Media&c=apps"));
