@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
+    style="@style/splashNight"
     android:layout_height="match_parent"
     tools:context=".Update_Note">
 
@@ -185,6 +186,7 @@
         </HorizontalScrollView>
 
         <EditText
+            style="@style/createNoteTextColor"
             android:id="@+id/update_NoteTitleId"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
@@ -226,6 +228,7 @@
             <!--                android:textSize="@dimen/_10sdp" />-->
 
             <EditText
+                style="@style/createNoteTextColor"
                 android:id="@+id/Update_NoteNotesId"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
