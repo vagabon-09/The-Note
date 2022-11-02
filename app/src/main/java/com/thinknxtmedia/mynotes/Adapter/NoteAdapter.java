@@ -58,6 +58,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             intent.putExtra("color", noteEntities.get(position).getColor());
             intent.putExtra("note_id", noteEntities.get(position).getId());
+            intent.putExtra("note_tag",noteEntities.get(position).getTag());
             context.startActivity(intent);
         });
         holder.s_title.setOnClickListener(view -> {
@@ -67,6 +68,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             intent.putExtra("color", noteEntities.get(position).getColor());
             intent.putExtra("note_id", noteEntities.get(position).getId());
+            intent.putExtra("note_tag",noteEntities.get(position).getTag());
             context.startActivity(intent);
         });
         holder.s_title.setOnLongClickListener(view -> {

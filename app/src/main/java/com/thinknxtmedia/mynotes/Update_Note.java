@@ -13,6 +13,7 @@ import android.text.style.StyleSpan;
 import android.view.View;
 import android.view.WindowManager;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -29,6 +30,7 @@ public class Update_Note extends AppCompatActivity {
     EditText title;
     updateData updateData;
     String note_color;
+    String noteTag;
     private String ColorName, text_data;
     private int note_id;
 
@@ -40,6 +42,7 @@ public class Update_Note extends AppCompatActivity {
         //Removing status bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
         note_color = getIntent().getStringExtra("color");
+        noteTag = getIntent().getStringExtra("note_tag");
         //finding views from layout
         getView();
         //Setting data to views
@@ -52,6 +55,7 @@ public class Update_Note extends AppCompatActivity {
         textEditor();
 
     }
+
 
     private void textEditor() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
@@ -142,10 +146,74 @@ public class Update_Note extends AppCompatActivity {
         binding.noteTagId.setOnClickListener(view -> showTagDialog());
     }
 
+    @SuppressLint({"UseCompatLoadingForDrawables", "SetTextI18n"})
     private void showTagDialog() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.note_tag);
+
+        TextView all_tag = bottomSheetDialog.findViewById(R.id.all_tag_add);
+        TextView home_tag = bottomSheetDialog.findViewById(R.id.home_tag_add);
+        TextView work_tag = bottomSheetDialog.findViewById(R.id.work_tag_add);
+        TextView personal_tag = bottomSheetDialog.findViewById(R.id.personal_tag_add);
+        TextView set_tag = bottomSheetDialog.findViewById(R.id.NoteTagId);
+
+
+        if (Objects.equals(noteTag, "")) {
+
+            assert set_tag != null;
+            set_tag.setText(noteTag);
+            assert all_tag != null;
+            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            assert home_tag != null;
+            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert work_tag != null;
+            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personal_tag != null;
+            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+
+        } else if (Objects.equals(noteTag, "Home")) {
+
+            assert set_tag != null;
+            set_tag.setText(noteTag);
+            assert home_tag != null;
+            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            assert all_tag != null;
+            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert work_tag != null;
+            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personal_tag != null;
+            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+
+        } else if (Objects.equals(noteTag, "Work")) {
+
+            assert set_tag != null;
+            set_tag.setText(noteTag);
+            assert work_tag != null;
+            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            assert home_tag != null;
+            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert all_tag != null;
+            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert personal_tag != null;
+            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+
+        } else if (Objects.equals(noteTag, "Personal")) {
+
+            assert set_tag != null;
+            set_tag.setText(noteTag);
+            assert personal_tag != null;
+            personal_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape));
+            assert home_tag != null;
+            home_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert all_tag != null;
+            all_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+            assert work_tag != null;
+            work_tag.setBackground(getResources().getDrawable(R.drawable.tag_shape_));
+        }
+
+
         bottomSheetDialog.show();
+//        Toast.makeText(this, noteTag, Toast.LENGTH_SHORT).show();
     }
 
     private void ColorDialogShow() {
