@@ -14,6 +14,7 @@
 
 
     <com.google.android.material.navigation.NavigationView
+        app:itemIconTint="@color/black"
         android:id="@+id/home_navigation_id"
         android:layout_width="wrap_content"
         android:layout_height="match_parent"

@@ -12,6 +12,7 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/ash</item>
         <!-- Customize your theme here. -->
+
     </style>
 
 <!--    Custom Night mode -->
@@ -26,6 +27,9 @@
         <item name="android:textColor">@color/black</item>
     </style>
 
+    <style name="forceDark">
+
+    </style>
 
 
 </resources>
