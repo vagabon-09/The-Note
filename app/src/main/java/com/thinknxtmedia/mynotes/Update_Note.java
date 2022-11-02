@@ -361,7 +361,7 @@ public class Update_Note extends AppCompatActivity {
     @Override
     public void onBackPressed() {
         String span_text = Html.toHtml(binding.UpdateNoteNotesId.getText());
-        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id, note_color);
+        updateData = new updateData(getApplicationContext(), binding.updateNoteTitleId.getText().toString(), span_text, note_id, note_color,noteTag);
         super.onBackPressed();
 
     }

@@ -5,6 +5,7 @@ import android.text.SpannableStringBuilder;
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
+import androidx.room.Update;
 
 import java.util.List;
 
@@ -54,6 +55,9 @@ public interface NoteDao {
     @Query("SELECT * FROM NoteEntity WHERE Tag =:uTag and trash ='all'")
     List<NoteEntity> getTag(String uTag);
 
+    //Update tag
+    @Query("UPDATE noteentity SET Tag =:newTag WHERE id =:updateTag")
+    void updateTag(String newTag, int updateTag );
     //Starred Page
     @Query("SELECT * FROM noteentity WHERE starred ='1' and trash = 'all'")
     List<NoteEntity> getStarred();
