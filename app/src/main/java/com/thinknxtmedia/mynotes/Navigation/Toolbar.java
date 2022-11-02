@@ -4,9 +4,6 @@ import android.app.Activity;
 
 import androidx.appcompat.app.ActionBarDrawerToggle;
 import androidx.drawerlayout.widget.DrawerLayout;
-import androidx.fragment.app.Fragment;
-import androidx.fragment.app.FragmentManager;
-import androidx.fragment.app.FragmentTransaction;
 
 import com.thinknxtmedia.mynotes.R;
 
@@ -17,7 +14,6 @@ public class Toolbar {
         toggle.syncState();
 
     }
-
 
 
 }
