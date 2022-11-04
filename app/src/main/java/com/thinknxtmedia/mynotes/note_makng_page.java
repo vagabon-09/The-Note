@@ -9,6 +9,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,6 +20,8 @@ import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
 import com.thinknxtmedia.mynotes.Tools.FontEditor;
 import com.thinknxtmedia.mynotes.Tools.InsertData;
 import com.thinknxtmedia.mynotes.databinding.ActivityNoteMakngPageBinding;
+
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 
 public class note_makng_page extends AppCompatActivity {
@@ -113,6 +116,7 @@ public class note_makng_page extends AppCompatActivity {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.color_plate);
         View red_circle = bottomSheetDialog.findViewById(R.id.red_circle);
+        ImageView colorPicker = bottomSheetDialog.findViewById(R.id.color_picker);
         //Red circle
         assert red_circle != null;
         red_circle.setOnClickListener(view -> {
@@ -170,6 +174,10 @@ public class note_makng_page extends AppCompatActivity {
             ColorName = "#A800F7";
             bottomSheetDialog.dismiss();
         });
+
+        //When click color picker icon
+        assert colorPicker != null;
+        colorPicker.setOnClickListener(view -> pickColor(bottomSheetDialog));
         bottomSheetDialog.show();
     }
 
@@ -191,6 +199,8 @@ public class note_makng_page extends AppCompatActivity {
         TextView homeTag = bottomSheetDialog.findViewById(R.id.home_tag_add);
         TextView workTag = bottomSheetDialog.findViewById(R.id.work_tag_add);
         TextView personalTag = bottomSheetDialog.findViewById(R.id.personal_tag_add);
+
+
         @SuppressLint("CutPasteId") TextView noteTagView = bottomSheetDialog.findViewById(R.id.NoteTagId);
         assert allTag != null;
         //When click all btn
@@ -242,6 +252,24 @@ public class note_makng_page extends AppCompatActivity {
         bottomSheetDialog.show();
     }
 
+    private void pickColor(BottomSheetDialog bottomSheetDialog) {
+
+        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, R.color.red,false, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+                ColorName = "#"+Integer.toHexString(color);
+                bottomSheetDialog.dismiss();
+            }
+
+            @Override
+            public void onCancel(AmbilWarnaDialog dialog) {
+
+            }
+
+
+        });
+        dialog.show();
+    }
 
     @Override
     public void onBackPressed() {
