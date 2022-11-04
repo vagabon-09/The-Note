@@ -22,12 +22,7 @@ private final static int SPLASH_TIME= 3000;
         setContentView(R.layout.activity_splash_screen);
         //Removing top bar
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,WindowManager.LayoutParams.FLAG_FULLSCREEN);
-        //Redirection to home page
-        new Handler().postDelayed(() -> {
-            Intent intent = new Intent(getApplicationContext(), Home.class);
-            startActivity(intent);
-            finish();
-        },SPLASH_TIME);
+
         //Checking dark mode is on or not
         NightMode nightMode = new NightMode();
         boolean isDarkModeOn = nightMode.isDarkModeOn(getApplicationContext());
@@ -36,5 +31,12 @@ private final static int SPLASH_TIME= 3000;
         }else{
             AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
         }
+
+        //Redirection to home page
+        new Handler().postDelayed(() -> {
+            Intent intent = new Intent(getApplicationContext(), Home.class);
+            startActivity(intent);
+            finish();
+        },SPLASH_TIME);
     }
 }
