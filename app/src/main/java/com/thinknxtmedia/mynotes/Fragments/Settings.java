@@ -10,12 +10,9 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.CompoundButton;
 import android.widget.Switch;
-
 import androidx.appcompat.app.AppCompatDelegate;
 import androidx.fragment.app.Fragment;
-
 import com.thinknxtmedia.mynotes.R;
-import com.thinknxtmedia.mynotes.Tools.NightMode;
 
 public class Settings extends Fragment {
 
@@ -51,20 +48,15 @@ public class Settings extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        NightMode isNightOn;
-        isNightOn = new NightMode();
+
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_settings, container, false);
         Switch darkBtn = view.findViewById(R.id.nightModeSwitchId);
 
 
-        SharedPreferences sharedPreferences
-                = requireActivity().getSharedPreferences(
-                "sharedPrefs", MODE_PRIVATE);
-        final SharedPreferences.Editor editor
-                = sharedPreferences.edit();
-        final boolean isDarkModeOn
-                = sharedPreferences.getBoolean("isDarkModeOn", false);
+        SharedPreferences sharedPreferences = requireActivity().getSharedPreferences("sharedPrefs", MODE_PRIVATE);
+        final SharedPreferences.Editor editor = sharedPreferences.edit();
+        final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
 
         // When user reopens the app
         // after applying dark/light mode
