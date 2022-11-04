@@ -1,12 +1,7 @@
 package com.thinknxtmedia.mynotes.DataBase;
-
-import android.text.SpannableStringBuilder;
-
 import androidx.room.Dao;
 import androidx.room.Insert;
 import androidx.room.Query;
-import androidx.room.Update;
-
 import java.util.List;
 
 @Dao
