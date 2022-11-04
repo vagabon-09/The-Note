@@ -13,4 +13,10 @@ public class NightMode {
        @SuppressLint("CommitPrefEdits") final SharedPreferences.Editor editor = sharedPreferences.edit();
        return sharedPreferences.getBoolean("isDarkModeOn",false);
    }
+
+   public SharedPreferences isNight(Context context){
+       SharedPreferences sharedPreferences = context.getSharedPreferences("darkMode",MODE_PRIVATE);
+       final SharedPreferences.Editor editor = sharedPreferences.edit();
+       return  sharedPreferences;
+   }
 }
