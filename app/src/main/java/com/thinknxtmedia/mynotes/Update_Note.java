@@ -14,6 +14,7 @@ import android.view.View;
 import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -24,6 +25,8 @@ import com.thinknxtmedia.mynotes.Tools.updateData;
 import com.thinknxtmedia.mynotes.databinding.ActivityUpdateNoteBinding;
 
 import java.util.Objects;
+
+import yuku.ambilwarna.AmbilWarnaDialog;
 
 
 public class Update_Note extends AppCompatActivity {
@@ -62,6 +65,7 @@ public class Update_Note extends AppCompatActivity {
     private void textEditor() {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(this);
         bottomSheetDialog.setContentView(R.layout.color_plate);
+
         //show color plate
 //        binding.colorPanelId.setOnClickListener(view -> bottomSheetDialog.show());
 
@@ -139,7 +143,9 @@ public class Update_Note extends AppCompatActivity {
             binding.UpdateNoteNotesId.setText(spannableString);
         });
 
+
     }
+
 
     private void updateContent() {
         binding.noteSaveBtnId.setOnClickListener(view -> onBackPressed());
@@ -322,8 +328,30 @@ public class Update_Note extends AppCompatActivity {
             bottomSheetDialog.dismiss();
         });
 
+        //Color picker
+        ImageView colorPicker = bottomSheetDialog.findViewById(R.id.color_picker);
+        assert colorPicker != null;
+        colorPicker.setOnClickListener(view -> pickColorDialog(bottomSheetDialog));
 
         bottomSheetDialog.show();
+    }
+
+    private void pickColorDialog(BottomSheetDialog bottomSheetDialog) {
+        AmbilWarnaDialog dialog = new AmbilWarnaDialog(this, R.color.red, false, new AmbilWarnaDialog.OnAmbilWarnaListener() {
+            @Override
+            public void onOk(AmbilWarnaDialog dialog, int color) {
+                note_color = "#" + Integer.toHexString(color);
+                bottomSheetDialog.dismiss();
+            }
+
+            @Override
+            public void onCancel(AmbilWarnaDialog dialog) {
+
+            }
+
+
+        });
+        dialog.show();
     }
 
     private void backBtnPressed() {
