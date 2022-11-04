@@ -68,6 +68,7 @@
     <string name="nightMode">Night Mode</string>
     <string name="night_mode">Night Mode</string>
     <string name="color_picker">color picker</string>
+    <string name="pin_note">Pin Note</string>
 
 
 </resources>

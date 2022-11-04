@@ -13,11 +13,13 @@ import android.widget.Toast;
 import androidx.cardview.widget.CardView;
 import androidx.fragment.app.Fragment;
 import androidx.recyclerview.widget.GridLayoutManager;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.room.Room;
 import androidx.swiperefreshlayout.widget.SwipeRefreshLayout;
 
 import com.thinknxtmedia.mynotes.Adapter.NoteAdapter;
+import com.thinknxtmedia.mynotes.Adapter.pinNoteAdapter;
 import com.thinknxtmedia.mynotes.DataBase.NoteDao;
 import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
@@ -31,10 +33,11 @@ import java.util.Objects;
 public class HomeNotes extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    RecyclerView recView, tagRecyclerView;
+    RecyclerView recView, tagRecyclerView,pinRecView;
     SwipeRefreshLayout swipeRefreshLayout;
     NoteDao noteDao;
     String title;
+    pinNoteAdapter pinAdapter;
     String text;
     private String clicked;
 
@@ -83,7 +86,9 @@ public class HomeNotes extends Fragment {
 
         //Finding through id
         recView = v.findViewById(R.id.recViewHomeId);
+        pinRecView = v.findViewById(R.id.pinNoteId);
         recView.setLayoutManager(new GridLayoutManager(requireActivity().getApplicationContext(), 2));
+        pinRecView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
         //Tag adapter
         tagRecyclerView = v.findViewById(R.id.tag_list_id);
 
@@ -95,9 +100,15 @@ public class HomeNotes extends Fragment {
         });
 
 
+        //Getting all node
         List<NoteEntity> noteEntities = noteDao.getAll();
         NoteAdapter adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
+
+        //Pin RecView
+        List<NoteEntity> pinEntities = noteDao.getPinNote();
+        pinNoteAdapter pinNoteAdapter = new pinNoteAdapter(pinEntities,getContext());
+        pinRecView.setAdapter(pinNoteAdapter);
 
 
         //Setting Action when clicking on add notes button

@@ -20,8 +20,10 @@ public class NoteEntity {
     public String color;
     @ColumnInfo(name = "starred")
     public String starred;
+    @ColumnInfo(name = "pin")
+    public String pin;
 
-    public NoteEntity(int id, String title, String note, String tag, String trash, String color, String starred) {
+    public NoteEntity(int id, String title, String note, String tag, String trash, String color, String starred, String pin) {
         this.id = id;
         this.title = title;
         this.note = note;
@@ -29,6 +31,7 @@ public class NoteEntity {
         this.trash = trash;
         this.color = color;
         this.starred = starred;
+        this.pin = pin;
     }
 
     public int getId() {
@@ -87,5 +90,13 @@ public class NoteEntity {
 
     public void setStarred(String starred) {
         this.starred = starred;
+    }
+
+    public String getPin() {
+        return pin;
+    }
+
+    public void setPin(String pin) {
+        this.pin = pin;
     }
 }

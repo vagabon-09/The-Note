@@ -70,6 +70,13 @@ public interface NoteDao {
     @Query("UPDATE noteentity SET starred ='1' WHERE id =:uId")
     void updateStarredOne(int uId);
 
+    //Pin Note
+    @Query("SELECT * FROM noteentity WHERE pin = '1' and trash ='all'")
+    List<NoteEntity> getPinNote();
+
+    //Unpin Note
+    @Query("UPDATE noteentity SET pin = '0' and id = :uId")
+    void unpinNote(int uId);
 
 
 }

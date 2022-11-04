@@ -26,9 +26,9 @@
             app:cardElevation="10dp">
 
             <RelativeLayout
-                android:background="@drawable/add_gradient_color"
                 android:layout_width="match_parent"
-                android:layout_height="match_parent">
+                android:layout_height="match_parent"
+                android:background="@drawable/add_gradient_color">
 
                 <View
                     android:layout_width="match_parent"
@@ -58,19 +58,33 @@
             android:layout_height="match_parent"
             android:gravity="center"
             android:orientation="vertical">
-            <include layout="@layout/tag_list_"/>
+
+            <include layout="@layout/tag_list_" />
 
             <androidx.swiperefreshlayout.widget.SwipeRefreshLayout
                 android:id="@+id/swipeRefreshId"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent">
 
-                <androidx.recyclerview.widget.RecyclerView
-
-                    android:id="@+id/recViewHomeId"
+                <LinearLayout
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
-                    android:layout_marginBottom="@dimen/_5sdp" />
+                    android:orientation="vertical">
+
+                    <androidx.recyclerview.widget.RecyclerView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="@dimen/_5sdp"
+                        android:id="@+id/pinNoteId"/>
+
+                    <androidx.recyclerview.widget.RecyclerView
+
+                        android:id="@+id/recViewHomeId"
+                        android:layout_width="match_parent"
+                        android:layout_height="match_parent"
+                        android:layout_marginBottom="@dimen/_5sdp" />
+                </LinearLayout>
+
             </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>
 
 
