@@ -59,21 +59,21 @@
             android:layout_margin="@dimen/_5sdp"
             android:background="@drawable/sea_blue_circle" />
 
- <View
+        <View
             android:id="@+id/purple_circle"
             android:layout_width="@dimen/_30sdp"
             android:layout_height="@dimen/_30sdp"
             android:layout_margin="@dimen/_5sdp"
             android:background="@drawable/purple_circle" />
 
-<ImageView
-    android:layout_gravity="center"
-    android:layout_width="@dimen/_25sdp"
-    android:layout_height="@dimen/_30sdp"
-    android:src="@drawable/color_picker"
-    android:id="@+id/color_picker"
-    android:layout_margin="@dimen/_5sdp"
-    android:contentDescription="@string/color_picker" />
+        <ImageView
+            android:id="@+id/color_picker"
+            android:layout_width="@dimen/_25sdp"
+            android:layout_height="@dimen/_30sdp"
+            android:layout_gravity="center"
+            android:layout_margin="@dimen/_5sdp"
+            android:contentDescription="@string/color_picker"
+            android:src="@drawable/color_picker" />
 
 
     </LinearLayout>
