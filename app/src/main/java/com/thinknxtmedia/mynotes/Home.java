@@ -17,6 +17,7 @@ import com.thinknxtmedia.mynotes.Fragments.HomeEmpty;
 import com.thinknxtmedia.mynotes.Fragments.HomeNotes;
 import com.thinknxtmedia.mynotes.Navigation.ToggleDrawer;
 import com.thinknxtmedia.mynotes.ReplaceFreagment.ReplaceFreagment;
+import com.thinknxtmedia.mynotes.Tools.NightMode;
 import com.thinknxtmedia.mynotes.databinding.ActivityHomeBinding;
 
 public class Home extends AppCompatActivity {
@@ -42,6 +43,9 @@ public class Home extends AppCompatActivity {
         setToolbar();
         /*Check night mode on or not*/
         checkNightMode();
+        //Activating night mode
+        NightMode nightMode = new NightMode();
+        nightMode.isDarkModeOn(getApplicationContext());
     }
 
     private void checkNightMode() {
@@ -98,4 +102,6 @@ public class Home extends AppCompatActivity {
         checkNightMode();
         super.onResume();
     }
+
+
 }

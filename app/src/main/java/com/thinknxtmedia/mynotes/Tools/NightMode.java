@@ -6,12 +6,21 @@ import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.SharedPreferences;
 
+import androidx.appcompat.app.AppCompatDelegate;
+
 public class NightMode {
    @SuppressLint("NotConstructor")
-   public boolean isDarkModeOn(Context context){
-       SharedPreferences sharedPreferences = context.getSharedPreferences("darkMode",MODE_PRIVATE);
+   public void isDarkModeOn(Context context){
+       //Checking dark mode is on or not
+       SharedPreferences sharedPreferences =context.getSharedPreferences("sharedPrefs", MODE_PRIVATE);
        @SuppressLint("CommitPrefEdits") final SharedPreferences.Editor editor = sharedPreferences.edit();
-       return sharedPreferences.getBoolean("isDarkModeOn",false);
+       final boolean isDarkModeOn = sharedPreferences.getBoolean("isDarkModeOn", false);
+       if (isDarkModeOn) {
+           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_YES);
+       } else {
+           AppCompatDelegate.setDefaultNightMode(AppCompatDelegate.MODE_NIGHT_NO);
+       }
+
    }
 
    public SharedPreferences isNight(Context context){
