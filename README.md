@@ -20,6 +20,7 @@ if you finde any bug in this application you can make issue.
 - UnFavourite Notes
 - Inbuild Tags
 - Inbuild colors or random colors picker
+- Best note editor for edit note
 
 ## Feature Image
 ![notation-removebg-preview](https://user-images.githubusercontent.com/89797141/200139304-1f32b00b-ee95-41bf-a259-7996244a5f56.png)
