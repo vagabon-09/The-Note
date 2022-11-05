@@ -1,5 +1,5 @@
 # My-Notes
-A Simple note taking application for android users . Notation is a simple note taking application . If you don't want to forgot your thought then it will help you a lot. You can set color to your note . You can set tag to your note. In this application we providing best note editor. You can make favourite notes. Also there have lots of new feature to use this application download .
+A Simple note taking application for android users . Notation is a simple note taking application . If you don't want to forgot your thought then it will help you a lot. You can set color to your note . You can set tag to your note. In this application we providing best note editor. You can make favourite notes. Also there have lots of new feature, to use this application download .
 
 ### Note : 
 if you finde any bug in this application you can make issue.
