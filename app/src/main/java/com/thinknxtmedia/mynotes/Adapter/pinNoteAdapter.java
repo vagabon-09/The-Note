@@ -4,13 +4,17 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.room.Room;
 
 import com.google.android.material.bottomsheet.BottomSheetDialog;
+import com.thinknxtmedia.mynotes.DataBase.NoteDao;
+import com.thinknxtmedia.mynotes.DataBase.NoteDataBase;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
 import com.thinknxtmedia.mynotes.R;
 
@@ -36,16 +40,23 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.note_title.setText(noteEntities.get(position).getTitle());
         holder.unPinBtn.setOnLongClickListener(view -> {
-            showUnpinSheet();
+            showUnpinSheet(holder,position);
             return false;
         });
 
     }
 
-    private void showUnpinSheet() {
+    private void showUnpinSheet(MyViewHolder holder, int position) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.single_unpin_layout);
-
+        LinearLayout unPinBtn = bottomSheetDialog.findViewById(R.id.unPinNoteId);
+        assert unPinBtn != null;
+        unPinBtn.setOnClickListener(view -> {
+            NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+            NoteDao dao = db.noteDao();
+            dao.unpinNote(noteEntities.get(position).getId());
+            bottomSheetDialog.dismiss();
+        });
         bottomSheetDialog.show();
     }
 
