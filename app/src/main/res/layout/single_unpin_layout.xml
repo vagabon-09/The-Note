@@ -2,12 +2,12 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content"
-    android:background="@drawable/bottom_sheet_shape"
-    android:orientation="vertical"
-    android:padding="@dimen/_10sdp">
+    android:layout_height="match_parent"
+    android:id="@+id/unPinCardBtn"
+    android:orientation="vertical">
+
     <LinearLayout
-        android:id="@+id/pinNoteId"
+        android:id="@+id/unPinNoteId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/_10sdp"
@@ -26,13 +26,13 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
-            android:text="@string/pin"
+            android:text="@string/un_pin"
             android:textSize="@dimen/_15sdp" />
 
 
     </LinearLayout>
 
-    <LinearLayout
+      <LinearLayout
         android:id="@+id/btm_deleteBtn_id"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -56,7 +56,6 @@
 
 
     </LinearLayout>
-
     <LinearLayout
         android:id="@+id/FavouriteBtn"
         android:layout_width="match_parent"
@@ -82,6 +81,4 @@
 
 
     </LinearLayout>
-
-
 </LinearLayout>

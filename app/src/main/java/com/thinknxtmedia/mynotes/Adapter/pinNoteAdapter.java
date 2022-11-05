@@ -34,6 +34,7 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.note_title.setText(noteEntities.get(position).getTitle());
+
     }
 
     @Override
