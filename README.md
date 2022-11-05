@@ -5,6 +5,7 @@ A Simple note taking application for android users .
  
  
 
+
 ## Features
 
 - Light/dark mode toggle
@@ -17,6 +18,8 @@ A Simple note taking application for android users .
 - Inbuild Tags
 - Inbuild colors or random colors picker
 
+## Feature Image
+![notation-removebg-preview](https://user-images.githubusercontent.com/89797141/200139304-1f32b00b-ee95-41bf-a259-7996244a5f56.png)
 
 ## Tech Stack
 - Room Database - as offline data base we used Room Databse to store data.
