@@ -11,11 +11,11 @@ public interface NoteDao {
     void InsertData(NoteEntity note);
 
     //Fetching data from room Database
-    @Query("SELECT * FROM NoteEntity")
+    @Query("SELECT * FROM NoteEntity ")
     List<NoteEntity> getAllData();
 
     //Getting data from all
-    @Query("SELECT * FROM NoteEntity WHERE trash = 'all'")
+    @Query("SELECT * FROM NoteEntity WHERE trash = 'all' and pin = '0'")
     List<NoteEntity> getAll();
 
     //Fetching data to trash

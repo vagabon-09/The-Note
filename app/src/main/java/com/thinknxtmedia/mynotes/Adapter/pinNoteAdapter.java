@@ -3,6 +3,7 @@ package com.thinknxtmedia.mynotes.Adapter;
 import android.annotation.SuppressLint;
 import android.content.Context;
 import android.content.Intent;
+import android.graphics.Color;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,6 +47,7 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
             showUnpinSheet(holder, position);
             return false;
         });
+        holder.noteBodyColor.setBackgroundColor(Color.parseColor(noteEntities.get(position).getColor()));
 
         holder.unPinBtn.setOnClickListener(view -> {
             Intent intent = new Intent(context, Update_Note.class);
@@ -85,12 +87,13 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView note_title;
         CardView unPinBtn, updatePinBtn;
-
+        LinearLayout noteBodyColor;
         @SuppressLint("CutPasteId")
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             note_title = itemView.findViewById(com.thinknxtmedia.mynotes.R.id.s_note_title_pin);
             unPinBtn = itemView.findViewById(R.id.pinCardBtnId);
+            noteBodyColor = itemView.findViewById(R.id.NoteBtn);
         }
     }
 }

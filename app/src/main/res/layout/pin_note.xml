@@ -30,7 +30,7 @@
                 android:id="@+id/NoteBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                style="@style/nightModeCard"
+                android:background="@drawable/card_background"
                 android:orientation="vertical"
                 card_view:ignore="UselessParent">
 
