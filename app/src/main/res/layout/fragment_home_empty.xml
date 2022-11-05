@@ -70,7 +70,17 @@
             android:layout_height="wrap_content"
             android:layout_gravity="center"
             android:fontFamily="@font/baloo_tw_medium"
+            android:gravity="center"
             android:text="@string/no_notes"
+            android:textColor="@color/black"
+            android:textSize="@dimen/_15sdp" />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:fontFamily="@font/baloo_tw_medium"
+            android:gravity="center"
+            android:text="@string/no_notes2"
             android:textColor="@color/black"
             android:textSize="@dimen/_15sdp" />
 

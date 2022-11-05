@@ -15,7 +15,6 @@
     <string name="close_drawer">Close Navigation Drawer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
-    <string name="no_notes">Write New Notes</string>
     <string name="home_notes">Home Notes</string>
     <string name="title">Note Title</string>
     <string name="notes">Notes</string>
@@ -70,6 +69,8 @@
     <string name="color_picker">color picker</string>
     <string name="pin_note">Pin Note</string>
     <string name="un_pin">Unpin</string>
+    <string name="no_notes2">write your notes now</string>
+    <string name="no_notes">One app for remember everything</string>
 
 
 </resources>
