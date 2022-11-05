@@ -3,7 +3,6 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/tools"
     android:id="@+id/pinCardBtnId"
-    style="@style/splashNight"
     android:layout_width="@dimen/_130sdp"
     android:layout_height="wrap_content"
     android:layout_margin="@dimen/_10sdp"
@@ -15,7 +14,6 @@
     card_view:cardCornerRadius="4dp">
 
     <LinearLayout
-
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@android:color/transparent"
@@ -29,10 +27,10 @@
             card_view:ignore="UselessParent">
 
             <LinearLayout
+                style="@style/splashNight"
                 android:id="@+id/NoteBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:background="@drawable/card_background"
                 android:orientation="vertical"
                 card_view:ignore="UselessParent">
 

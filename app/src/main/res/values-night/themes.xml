@@ -35,4 +35,8 @@
         <item name="itemIconTint">@color/white</item>
     </style>
 
+    <style name="nightModeCard">
+        <item name="backgroundTint">@color/white</item>
+    </style>
+
 </resources>
