@@ -4,11 +4,13 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
-
 import androidx.annotation.NonNull;
+import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
 
+import com.google.android.material.bottomsheet.BottomSheetDialog;
 import com.thinknxtmedia.mynotes.DataBase.NoteEntity;
+import com.thinknxtmedia.mynotes.R;
 
 import java.util.List;
 
@@ -31,7 +33,18 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.note_title.setText(noteEntities.get(position).getTitle());
+       holder.unPinBtn.setOnLongClickListener(view -> {
+           showUnpinSheet();
+           return false;
+       });
 
+    }
+
+    private void showUnpinSheet() {
+        BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
+        bottomSheetDialog.setContentView(R.layout.single_unpin_layout);
+
+        bottomSheetDialog.show();
     }
 
     @Override
@@ -41,10 +54,12 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
         TextView note_title ;
+        CardView unPinBtn;
 
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             note_title = itemView.findViewById(com.thinknxtmedia.mynotes.R.id.s_note_title_pin);
+            unPinBtn = itemView.findViewById(R.id.pinCardBtnId);
         }
     }
 }
