@@ -34,3 +34,13 @@ you can use this repo for learning purpose.
 Your any contribution is acceptable(Adding new Features , Improving Code efficiency, Fixing Bug).
 You can Start your contribution . Happy Contributions.
 
+
+## Authors & Developer
+
+- [@RajeshBhadra](https://www.github.com/vagabon-09)
+
+
+## All Rights Reserved by
+
+- [ThinkNxtMedia](https://www.thinknxtmedia.com/)
+
