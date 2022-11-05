@@ -1,5 +1,6 @@
 package com.thinknxtmedia.mynotes.Adapter;
 
+import android.annotation.SuppressLint;
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,6 +47,7 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
 
     }
 
+    @SuppressLint("NotifyDataSetChanged")
     private void showUnpinSheet(MyViewHolder holder, int position) {
         BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
         bottomSheetDialog.setContentView(R.layout.single_unpin_layout);
@@ -55,6 +57,8 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
             NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
             NoteDao dao = db.noteDao();
             dao.unpinNote(noteEntities.get(position).getId());
+            noteEntities.remove(position);
+            notifyDataSetChanged();
             bottomSheetDialog.dismiss();
         });
         bottomSheetDialog.show();
