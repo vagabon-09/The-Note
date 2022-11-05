@@ -16,8 +16,8 @@
         tools:ignore="UseCompoundDrawables,UselessParent">
 
         <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
+            android:layout_width="@dimen/_18sdp"
+            android:layout_height="@dimen/_18sdp"
             android:layout_margin="@dimen/_10sdp"
             android:contentDescription="@string/pin"
             android:src="@drawable/pin_black" />
