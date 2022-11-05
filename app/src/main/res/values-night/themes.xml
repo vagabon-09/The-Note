@@ -36,7 +36,8 @@
     </style>
 
     <style name="nightModeCard">
-        <item name="backgroundTint">@color/white</item>
+        <item name="android:background">@drawable/card_night_mode</item>
+        <item name="android:textColor">@color/black</item>
     </style>
 
 </resources>

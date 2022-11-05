@@ -27,10 +27,10 @@
             card_view:ignore="UselessParent">
 
             <LinearLayout
-                style="@style/splashNight"
                 android:id="@+id/NoteBtn"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                style="@style/nightModeCard"
                 android:orientation="vertical"
                 card_view:ignore="UselessParent">
 
