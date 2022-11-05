@@ -58,7 +58,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             intent.putExtra("color", noteEntities.get(position).getColor());
             intent.putExtra("note_id", noteEntities.get(position).getId());
-            intent.putExtra("note_tag",noteEntities.get(position).getTag());
+            intent.putExtra("note_tag", noteEntities.get(position).getTag());
             context.startActivity(intent);
         });
         holder.s_title.setOnClickListener(view -> {
@@ -68,7 +68,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             intent.putExtra("note", noteEntities.get(position).getNote());
             intent.putExtra("color", noteEntities.get(position).getColor());
             intent.putExtra("note_id", noteEntities.get(position).getId());
-            intent.putExtra("note_tag",noteEntities.get(position).getTag());
+            intent.putExtra("note_tag", noteEntities.get(position).getTag());
             context.startActivity(intent);
         });
         holder.s_title.setOnLongClickListener(view -> {
@@ -113,7 +113,7 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
             });
             assert favourite != null;
             favourite.setOnClickListener(view1 -> {
-               favouriteOperation(position);
+                favouriteOperation(position);
                 bottomSheetDialog.dismiss();
             });
 
@@ -131,13 +131,13 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     }
 
     private void pinOperation(int position) {
-        NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+        NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         NoteDao dao = db.noteDao();
         dao.pinNote(noteEntities.get(position).getId());
     }
 
     private void favouriteOperation(int position) {
-        NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+        NoteDataBase db = Room.databaseBuilder(context, NoteDataBase.class, "NoteDataBase").allowMainThreadQueries().build();
         NoteDao dao = db.noteDao();
         dao.updateStarredOne(noteEntities.get(position).getId());
     }
