@@ -41,7 +41,7 @@
     <string name="delete_button">delete Button</string>
     <string name="tag_text">Random 1</string>
     <string name="delete">Delete</string>
-    <string name="pin">Pin</string>
+    <string name="pin">Pin (Refresh after pin)</string>
     <string name="trash_title">This is title</string>
     <string name="recover">Recover</string>
     <string name="all_tag">All</string>
@@ -68,7 +68,7 @@
     <string name="night_mode">Night Mode</string>
     <string name="color_picker">color picker</string>
     <string name="pin_note">Pin Note</string>
-    <string name="un_pin">Unpin</string>
+    <string name="un_pin">Unpin (Refresh after Unpin)</string>
     <string name="no_notes2">write your notes now</string>
     <string name="no_notes">One app for remember everything</string>
 
