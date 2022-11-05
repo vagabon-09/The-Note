@@ -23,3 +23,14 @@ A Simple note taking application for android users .
  - TextEditor - for making note.
  - Color picker - for picking random color for card background.
 - Programing Language - JAVA , XML
+## Contributing
+
+Contributions are always welcome!
+
+Hello Cotributors .
+If you foking this repo then you must understand you cannot use this repo for  earning money or you cannot use this repo for your personal intrest.
+you can use this repo for learning purpose. 
+
+Your any contribution is acceptable(Adding new Features , Improving Code efficiency, Fixing Bug).
+You can Start your contribution . Happy Contributions.
+
