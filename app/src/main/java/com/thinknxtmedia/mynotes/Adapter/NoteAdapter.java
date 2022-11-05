@@ -74,9 +74,9 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
         holder.s_title.setOnLongClickListener(view -> {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
-            bottomSheetDialog.show();
             LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
             LinearLayout favourite = bottomSheetDialog.findViewById(R.id.FavouriteBtn);
+            LinearLayout pinBtn = bottomSheetDialog.findViewById(R.id.pinNoteId);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);
@@ -88,13 +88,24 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                 bottomSheetDialog.dismiss();
             });
 
+            assert pinBtn != null;
+            pinBtn.setOnClickListener(view1 -> {
+                pinOperation(position);
+                notifyDataSetChanged();
+                bottomSheetDialog.dismiss();
+            });
+
+            bottomSheetDialog.show();
             return false;
+
         });
+
         holder.cardView.setOnLongClickListener(view -> {
             BottomSheetDialog bottomSheetDialog = new BottomSheetDialog(context);
             bottomSheetDialog.setContentView(R.layout.buttom_operation);
             LinearLayout delete = bottomSheetDialog.findViewById(R.id.btm_deleteBtn_id);
             LinearLayout favourite = bottomSheetDialog.findViewById(R.id.FavouriteBtn);
+            LinearLayout pinBtn = bottomSheetDialog.findViewById(R.id.pinNoteId);
             assert delete != null;
             delete.setOnClickListener(view1 -> {
                 deleteF(position);
@@ -106,12 +117,23 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
                 bottomSheetDialog.dismiss();
             });
 
+            assert pinBtn != null;
+            pinBtn.setOnClickListener(view1 -> {
+                pinOperation(position);
+                bottomSheetDialog.dismiss();
+            });
 
             bottomSheetDialog.show();
             return false;
         });
 
 
+    }
+
+    private void pinOperation(int position) {
+        NoteDataBase db = Room.databaseBuilder(context,NoteDataBase.class,"NoteDataBase").allowMainThreadQueries().build();
+        NoteDao dao = db.noteDao();
+        dao.pinNote(noteEntities.get(position).getId());
     }
 
     private void favouriteOperation(int position) {

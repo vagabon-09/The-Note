@@ -33,7 +33,7 @@ import java.util.Objects;
 public class HomeNotes extends Fragment {
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
-    RecyclerView recView, tagRecyclerView,pinRecView;
+    RecyclerView recView, tagRecyclerView, pinRecView;
     SwipeRefreshLayout swipeRefreshLayout;
     NoteDao noteDao;
     String title;
@@ -88,7 +88,7 @@ public class HomeNotes extends Fragment {
         recView = v.findViewById(R.id.recViewHomeId);
         pinRecView = v.findViewById(R.id.pinNoteId);
         recView.setLayoutManager(new GridLayoutManager(requireActivity().getApplicationContext(), 2));
-        pinRecView.setLayoutManager(new LinearLayoutManager(getContext(),LinearLayoutManager.HORIZONTAL,false));
+        pinRecView.setLayoutManager(new LinearLayoutManager(getContext(), LinearLayoutManager.HORIZONTAL, false));
         //Tag adapter
         tagRecyclerView = v.findViewById(R.id.tag_list_id);
 
@@ -107,7 +107,7 @@ public class HomeNotes extends Fragment {
 
         //Pin RecView
         List<NoteEntity> pinEntities = noteDao.getPinNote();
-        pinNoteAdapter pinNoteAdapter = new pinNoteAdapter(pinEntities,getContext());
+        pinNoteAdapter pinNoteAdapter = new pinNoteAdapter(pinEntities, getContext());
         pinRecView.setAdapter(pinNoteAdapter);
 
 
@@ -190,6 +190,11 @@ public class HomeNotes extends Fragment {
 
         adapter = new NoteAdapter(noteEntities, getContext());
         recView.setAdapter(adapter);
+
+        //Pin load freshly
+        List<NoteEntity> pinEntities = noteDao.getPinNote();
+        pinNoteAdapter pinNoteAdapter = new pinNoteAdapter(pinEntities, getContext());
+        pinRecView.setAdapter(pinNoteAdapter);
     }
 
     @Override
