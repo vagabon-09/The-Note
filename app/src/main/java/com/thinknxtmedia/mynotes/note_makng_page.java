@@ -277,7 +277,7 @@ public class note_makng_page extends AppCompatActivity {
             tag = "";
         }
         if (ColorName == null) {
-            ColorName = "#C0CCC3";
+            ColorName = "#FFFFFF";
         }
         if (!note_data.isEmpty() || !binding.NoteTitleId.getText().toString().isEmpty()) {
             insertData = new InsertData(getApplicationContext(), binding.NoteTitleId.getText().toString(), note_data, tag, binding, ColorName);

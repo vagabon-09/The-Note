@@ -7,6 +7,7 @@
     android:orientation="vertical">
 
     <LinearLayout
+        android:layout_marginBottom="@dimen/_10sdp"
         android:id="@+id/unPinNoteId"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -32,53 +33,53 @@
 
     </LinearLayout>
 
-      <LinearLayout
-        android:id="@+id/btm_deleteBtn_id"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables,UselessParent">
+<!--      <LinearLayout-->
+<!--        android:id="@+id/btm_deleteBtn_id"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_10sdp"-->
+<!--        android:orientation="horizontal"-->
+<!--        tools:ignore="UseCompoundDrawables,UselessParent">-->
 
-        <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_margin="@dimen/_10sdp"
-            android:contentDescription="@string/delete_icon"
-            android:src="@drawable/delete_black" />
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_20sdp"-->
+<!--            android:layout_height="@dimen/_20sdp"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            android:contentDescription="@string/delete_icon"-->
+<!--            android:src="@drawable/delete_black" />-->
 
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/delete"
-            android:textSize="@dimen/_15sdp" />
-
-
-    </LinearLayout>
-    <LinearLayout
-        android:id="@+id/FavouriteBtn"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="@dimen/_10sdp"
-        android:layout_marginBottom="@dimen/_10sdp"
-        android:orientation="horizontal"
-        tools:ignore="UseCompoundDrawables,UselessParent">
-
-        <ImageView
-            android:layout_width="@dimen/_20sdp"
-            android:layout_height="@dimen/_20sdp"
-            android:layout_margin="@dimen/_10sdp"
-            android:contentDescription="@string/starred"
-            android:src="@drawable/star_black_icon" />
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:text="@string/favourite"
-            android:textSize="@dimen/_15sdp" />
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="@string/delete"-->
+<!--            android:textSize="@dimen/_15sdp" />-->
 
 
-    </LinearLayout>
+<!--    </LinearLayout>-->
+<!--    <LinearLayout-->
+<!--        android:id="@+id/FavouriteBtn"-->
+<!--        android:layout_width="match_parent"-->
+<!--        android:layout_height="wrap_content"-->
+<!--        android:layout_marginStart="@dimen/_10sdp"-->
+<!--        android:layout_marginBottom="@dimen/_10sdp"-->
+<!--        android:orientation="horizontal"-->
+<!--        tools:ignore="UseCompoundDrawables,UselessParent">-->
+
+<!--        <ImageView-->
+<!--            android:layout_width="@dimen/_20sdp"-->
+<!--            android:layout_height="@dimen/_20sdp"-->
+<!--            android:layout_margin="@dimen/_10sdp"-->
+<!--            android:contentDescription="@string/starred"-->
+<!--            android:src="@drawable/star_black_icon" />-->
+
+<!--        <TextView-->
+<!--            android:layout_width="wrap_content"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:layout_gravity="center"-->
+<!--            android:text="@string/favourite"-->
+<!--            android:textSize="@dimen/_15sdp" />-->
+
+
+<!--    </LinearLayout>-->
 </LinearLayout>
