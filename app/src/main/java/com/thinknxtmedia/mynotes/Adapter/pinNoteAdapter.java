@@ -1,9 +1,11 @@
 package com.thinknxtmedia.mynotes.Adapter;
+
 import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+
 import androidx.annotation.NonNull;
 import androidx.cardview.widget.CardView;
 import androidx.recyclerview.widget.RecyclerView;
@@ -33,10 +35,10 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     @Override
     public void onBindViewHolder(@NonNull MyViewHolder holder, int position) {
         holder.note_title.setText(noteEntities.get(position).getTitle());
-       holder.unPinBtn.setOnLongClickListener(view -> {
-           showUnpinSheet();
-           return false;
-       });
+        holder.unPinBtn.setOnLongClickListener(view -> {
+            showUnpinSheet();
+            return false;
+        });
 
     }
 
@@ -53,7 +55,7 @@ public class pinNoteAdapter extends RecyclerView.Adapter<pinNoteAdapter.MyViewHo
     }
 
     public static class MyViewHolder extends RecyclerView.ViewHolder {
-        TextView note_title ;
+        TextView note_title;
         CardView unPinBtn;
 
         public MyViewHolder(@NonNull View itemView) {
