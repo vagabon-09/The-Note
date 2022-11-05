@@ -28,7 +28,7 @@ A Simple note taking application for android users .
 Contributions are always welcome!
 
 Hello Cotributors .
-If you foking this repo then you must understand you cannot use this repo for  earning money or you cannot use this repo for your personal intrest.
+If you forking this repo then you must understand you cannot use this repo for  earning money or you cannot use this repo for your personal intrest.
 you can use this repo for learning purpose. 
 
 Your any contribution is acceptable(Adding new Features , Improving Code efficiency, Fixing Bug).
