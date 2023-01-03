@@ -35,11 +35,11 @@ if you finde any bug in this application you can make issue.
 Contributions are always welcome!
 
 Hello Cotributors .
-If you forking this repo then you must understand you cannot use this repo for  earning money .
-you can use this repo for learning purpose. 
+You can use this repo for learning purpose. 
 
 Your any contribution is acceptable(Adding new Features , Improving Code efficiency, Fixing Bug).
-You can Start your contribution . Happy Contributions.
+You can Start your contribution . 
+Happy Contributions.
 
 ## PlayStore
 [Download It](https://play.google.com/store/apps/details?id=com.thinknxtmedia.mynotes)
