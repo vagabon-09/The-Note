@@ -50,7 +50,6 @@ Happy Contributions.
 
 [Rajesh](https://www.github.com/vagabon-09)
 
-
 ## All Rights Reserved by
 
 [ThinkNxtMedia](https://www.thinknxtmedia.com/)
