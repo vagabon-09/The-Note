@@ -44,7 +44,7 @@ You can Start your contribution .
 Happy Contributions.
 
 ## PlayStore
-[Download It](https://play.google.com/store/apps/details?id=com.thinknxtmedia.mynotes)
+[Download](https://play.google.com/store/apps/details?id=com.thinknxtmedia.mynotes)
 
 ## Authors & Developer
 
