@@ -48,10 +48,10 @@ Happy Contributions.
 
 ## Authors & Developer
 
-- [@RajeshBhadra](https://www.github.com/vagabon-09)
+[Rajesh](https://www.github.com/vagabon-09)
 
 
 ## All Rights Reserved by
 
-- [ThinkNxtMedia](https://www.thinknxtmedia.com/)
+[ThinkNxtMedia](https://www.thinknxtmedia.com/)
 
