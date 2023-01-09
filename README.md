@@ -27,9 +27,11 @@ if you finde any bug in this application you can make issue.
 
 ## Tech Stack
 - Room Database - as offline data base we used Room Databse to store data.
- - TextEditor - for making note.
- - Color picker - for picking random color for card background.
-- Programing Language - JAVA , XML
+- TextEditor - for making note.
+- Color picker - for picking random color for card background.
+- Programing Language as backend- JAVA.
+- For Frontend - XML
+- For UI Figma
 ## Contributing
 
 Contributions are always welcome!
